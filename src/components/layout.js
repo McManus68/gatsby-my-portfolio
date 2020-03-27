@@ -4,7 +4,7 @@ import { StaticQuery, graphql } from "gatsby";
 import "bootstrap/dist/css/bootstrap.css";
 
 import Header from "./header";
-import Footer from "./footer";
+import Footer from "./footer/footer";
 
 import "../css/style.css";
 import "../css/font-awesome.css";
