@@ -4,6 +4,8 @@ import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 
+import { ParallaxProvider } from 'react-scroll-parallax'
+
 import Intro from '../components/intro/intro'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -13,13 +15,15 @@ import { faAngellist } from '@fortawesome/free-brands-svg-icons'
 library.add(faCoffee, faAngellist)
 
 const IndexPage = ({ data }) => (
-  <Layout header="home">
-    <SEO
-      title={data.contentfulAboutMe.designation}
-      keywords={[`Rohit Gupta`, `Frontend Developer`, `Developer`]}
-    />
-    <Intro data={data.contentfulAboutMe}></Intro>
-  </Layout>
+  <ParallaxProvider>
+    <Layout header="home">
+      <SEO
+        title={data.contentfulAboutMe.designation}
+        keywords={[`Rohit Gupta`, `Frontend Developer`, `Developer`]}
+      />
+      <Intro data={data.contentfulAboutMe}></Intro>
+    </Layout>
+  </ParallaxProvider>
 )
 
 export default IndexPage
