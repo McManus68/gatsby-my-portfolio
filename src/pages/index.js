@@ -8,6 +8,7 @@ import { ParallaxProvider } from 'react-scroll-parallax'
 
 import Intro from '../components/intro/intro'
 import AboutMe from '../components/about-me/about-me'
+import Experiences from '../components/experiences/experiences'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faCoffee } from '@fortawesome/free-solid-svg-icons'
@@ -24,6 +25,7 @@ const IndexPage = ({ data }) => (
       />
       <Intro data={data.contentfulAboutMe}></Intro>
       <AboutMe data={data.contentfulAboutMe}></AboutMe>
+      <Experiences data={data.allContentfulExperiences.edges}></Experiences>
     </Layout>
   </ParallaxProvider>
 )
@@ -167,6 +169,22 @@ export const pageQuery = graphql`
     }
     contentfulSiteInformation {
       menus
+    }
+    allContentfulExperiences(sort: { fields: [startYear], order: ASC }) {
+      edges {
+        node {
+          id
+          startYear
+          title
+          period
+          icon
+          description {
+            childMarkdownRemark {
+              html
+            }
+          }
+        }
+      }
     }
   }
 `

@@ -5,7 +5,6 @@ import style from './about-me.module.scss'
 import Separator from '../separator/separator'
 
 const AboutMe = props => {
-  console.log(props)
   return (
     <section data-section="about-me">
       <div className={style.aboutMe}>
