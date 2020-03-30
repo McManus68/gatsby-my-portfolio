@@ -24,13 +24,28 @@
       background: rgba(14, 33, 44, 0.7);
       z-index: 5;
     }
+
+    img {
+      background-size: cover;
+      height: 100vh;
+      max-height: 100vh;
+      width: 100%;
+    }
   }
 
-  svg {
+  svg :global {
     color: $primary-color;
     margin: 0 0 10px;
-    animation-delay: 0.1s;
+    animation-duration: 1s;
     animation-name: fadeInDown;
+  }
+
+  .zoomIn :global {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation-duration: 1s;
+    animation-name: zoomIn;
   }
 
   .name {
@@ -38,6 +53,12 @@
     letter-spacing: 2px;
     text-transform: none;
     font: 2.5rem Nothing You Could Do, cursive;
+  }
+
+  .fadeInUp :global {
+    display: flex;
+    animation-duration: 1s;
+    animation-name: fadeInUp;
   }
 
   .sub-data {
@@ -69,5 +90,11 @@
         display: none;
       }
     }
+  }
+}
+
+@media all and (max-width: 800px) and (min-width: 0px) {
+  .intro .background img {
+    width: auto;
   }
 }

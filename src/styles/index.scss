@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,400i,600,700,700i&display=swap');
 @import './_variables';
+@import 'animate';
 
 @font-face {
   font-family: 'loveloline_bold';
@@ -14,12 +15,22 @@ body {
   margin: 0;
 }
 
+html {
+  font-size: 16px;
+}
+
 img {
-  max-width: 100%;
 }
 
 h1 {
-  font: 4em loveloline_bold;
-  letter-spacing: 5px;
+  font: 4rem loveloline_bold;
+  letter-spacing: 0.3rem;
   text-transform: uppercase;
+  margin: 0;
+}
+
+@media all and (max-width: 959px) and (min-width: 320px) {
+  html {
+    font-size: 12px;
+  }
 }

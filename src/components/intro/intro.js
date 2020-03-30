@@ -9,25 +9,30 @@ import Button from '../button/button'
 import { Parallax } from 'react-scroll-parallax'
 
 const Intro = props => {
-  console.log(props.data.bannerImage.fluid)
   return (
     <section data-section="intro">
       <div className={style.intro}>
         <FontAwesomeIcon icon={['fab', 'angellist']} size="4x" />
 
-        <span className={style.name}>{props.data.name}</span>
+        <div className={style.zoomIn}>
+          <span className={style.name}>{props.data.name}</span>
 
-        <ul className={style.subData}>
-          {props.data.bannerList.map((item, index) => {
-            return <li key={index}>{item}</li>
-          })}
-        </ul>
+          <ul className={style.subData}>
+            {props.data.bannerList.map((item, index) => {
+              return <li key={index}>{item}</li>
+            })}
+          </ul>
 
-        <h1>{props.data.designation}</h1>
+          <h1>{props.data.designation}</h1>
+        </div>
 
-        <Separator></Separator>
+        <div className={style.zoomIn}>
+          <Separator></Separator>
+        </div>
 
-        <Button label="En savoir plus..."></Button>
+        <div className={style.fadeInUp}>
+          <Button label="En savoir plus..."></Button>
+        </div>
 
         <Parallax className={style.background} y={[-50, 50]}>
           <img src={props.data.bannerImage.fluid.src} />
