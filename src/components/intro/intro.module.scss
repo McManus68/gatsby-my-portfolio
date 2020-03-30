@@ -1,0 +1,61 @@
+@import '../../styles/_variables';
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: $secondary-text-color;
+
+  .background {
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+  }
+
+  svg {
+    color: $primary-color;
+    margin: 0 0 10px;
+    animation-delay: 0.1s;
+    animation-name: fadeInDown;
+  }
+
+  .name {
+    margin: 0 0 25px;
+    letter-spacing: 2px;
+    text-transform: none;
+    font: 2.5rem Nothing You Could Do, cursive;
+  }
+
+  .sub-data {
+    padding: 0;
+    display: flex;
+    list-style: none;
+    margin: 0 0 30px 0;
+
+    li {
+      padding: 0 15px;
+      position: relative;
+      font-size: 18px;
+      text-shadow: 1px 1px 4px;
+
+      &:after {
+        content: '';
+        width: 6px;
+        height: 6px;
+        display: inline-block;
+        background: $secondary-text-color;
+        position: absolute;
+        top: 50%;
+        margin-top: -3px;
+        right: -3px;
+        border-radius: 50%;
+      }
+
+      &:last-child:after {
+        display: none;
+      }
+    }
+  }
+}

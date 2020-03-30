@@ -1,17 +1,16 @@
-import React from "react";
-import { graphql } from "gatsby";
+import React from 'react'
+import { graphql } from 'gatsby'
 
-import Layout from "../components/layout";
-import SEO from "../components/seo";
+import Layout from '../components/layout'
+import SEO from '../components/seo'
 
-import Banner from "../components/banner";
-import About from "../components/about";
-import Service from "../components/service";
-import Work from "../components/work";
-import Blogs from "../components/blogs";
-import Testimonial from "../components/testimonial";
-import Contact from "../components/contact";
-import Photos from "../components/photos";
+import Intro from '../components/intro/intro'
+
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+import { faAngellist } from '@fortawesome/free-brands-svg-icons'
+
+library.add(faCoffee, faAngellist)
 
 const IndexPage = ({ data }) => (
   <Layout header="home">
@@ -19,55 +18,11 @@ const IndexPage = ({ data }) => (
       title={data.contentfulAboutMe.designation}
       keywords={[`Rohit Gupta`, `Frontend Developer`, `Developer`]}
     />
-    <Banner data={data.contentfulAboutMe}></Banner>
-
-    {data.contentfulSiteInformation.menus
-      .filter(item => item === "About")
-      .map(t => {
-        return <About data={data.contentfulAboutMe}></About>;
-      })}
-
-    {data.contentfulSiteInformation.menus
-      .filter(item => item === "Service")
-      .map(t => {
-        return <Service data={data.allContentfulService}></Service>;
-      })}
-
-    {data.contentfulSiteInformation.menus
-      .filter(item => item === "Blogs")
-      .map(t => {
-        return <Blogs data={data.allContentfulBlogs}></Blogs>;
-      })}
-
-    {data.contentfulSiteInformation.menus
-      .filter(item => item === "Work")
-      .map(t => {
-        return <Work data={data.allContentfulWorks}></Work>;
-      })}
-
-    {data.contentfulSiteInformation.menus
-      .filter(item => item === "Testimonials")
-      .map(t => {
-        return (
-          <Testimonial data={data.allContentfulTestimonials}></Testimonial>
-        );
-      })}
-
-    {data.contentfulSiteInformation.menus
-      .filter(item => item === "Photos")
-      .map(t => {
-        return <Photos data={data.contentfulPhotos}></Photos>;
-      })}
-
-    {data.contentfulSiteInformation.menus
-      .filter(item => item === "Contact")
-      .map(t => {
-        return <Contact data={data.contentfulAboutMe.gmail}></Contact>;
-      })}
+    <Intro data={data.contentfulAboutMe}></Intro>
   </Layout>
-);
+)
 
-export default IndexPage;
+export default IndexPage
 
 export const pageQuery = graphql`
   query AboutQuery {
@@ -207,4 +162,4 @@ export const pageQuery = graphql`
       menus
     }
   }
-`;
+`
