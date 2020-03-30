@@ -8,7 +8,7 @@ import { ParallaxProvider } from 'react-scroll-parallax'
 
 import Intro from '../components/intro/intro'
 import AboutMe from '../components/about-me/about-me'
-import Experiences from '../components/experiences/experiences'
+import Experiences from '../components/experience/experiences'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faCoffee } from '@fortawesome/free-solid-svg-icons'
