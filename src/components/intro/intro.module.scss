@@ -46,13 +46,14 @@
     align-items: center;
     animation-duration: 1s;
     animation-name: zoomIn;
+    margin-bottom: 3rem;
   }
 
   .name {
     margin: 0 0 25px;
     letter-spacing: 2px;
     text-transform: none;
-    font: 2.5rem Nothing You Could Do, cursive;
+    font: 2.5rem $secondary-font;
   }
 
   .fadeInUp :global {

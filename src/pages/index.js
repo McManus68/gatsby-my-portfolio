@@ -7,6 +7,7 @@ import SEO from '../components/seo'
 import { ParallaxProvider } from 'react-scroll-parallax'
 
 import Intro from '../components/intro/intro'
+import AboutMe from '../components/about-me/about-me'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faCoffee } from '@fortawesome/free-solid-svg-icons'
@@ -22,6 +23,7 @@ const IndexPage = ({ data }) => (
         keywords={[`Rohit Gupta`, `Frontend Developer`, `Developer`]}
       />
       <Intro data={data.contentfulAboutMe}></Intro>
+      <AboutMe data={data.contentfulAboutMe}></AboutMe>
     </Layout>
   </ParallaxProvider>
 )
@@ -56,6 +58,7 @@ export const pageQuery = graphql`
       linkdin
       twitter
       location
+      descriptionTitle
       description {
         childMarkdownRemark {
           html
