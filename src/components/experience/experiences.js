@@ -3,6 +3,7 @@ import React from 'react'
 import style from './experiences.module.scss'
 
 import Separator from '../separator/separator'
+
 import Experience from './experience'
 
 const Experiences = props => {
