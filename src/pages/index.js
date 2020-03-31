@@ -11,10 +11,10 @@ import AboutMe from '../components/about-me/about-me'
 import Experiences from '../components/experience/experiences'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faCoffee } from '@fortawesome/free-solid-svg-icons'
-import { faAngellist } from '@fortawesome/free-brands-svg-icons'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+import { fab } from '@fortawesome/free-brands-svg-icons'
 
-library.add(faCoffee, faAngellist)
+library.add(fas, fab)
 
 const IndexPage = ({ data }) => (
   <ParallaxProvider>
@@ -170,7 +170,7 @@ export const pageQuery = graphql`
     contentfulSiteInformation {
       menus
     }
-    allContentfulExperiences(sort: { fields: [startYear], order: ASC }) {
+    allContentfulExperiences(sort: { fields: [startYear], order: DESC }) {
       edges {
         node {
           id

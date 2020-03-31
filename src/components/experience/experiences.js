@@ -13,9 +13,12 @@ const Experiences = props => {
         <h2>Experiences</h2>
 
         <Separator></Separator>
-        {props.data.map((item, index) => {
-          return <Experience data={item.node} key={index}></Experience>
-        })}
+
+        <div className={style.list}>
+          {props.data.map((item, index) => {
+            return <Experience data={item.node} key={index}></Experience>
+          })}
+        </div>
       </div>
     </section>
   )
