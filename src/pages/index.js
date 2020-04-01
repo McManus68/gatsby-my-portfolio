@@ -10,39 +10,10 @@ import Intro from '../components/intro/intro'
 import AboutMe from '../components/about-me/about-me'
 import Experiences from '../components/experience/experiences'
 import Hobbies from '../components/hobbie/hobbies'
+import { initIcons } from '../components/fa'
 
-import { library } from '@fortawesome/fontawesome-svg-core'
-import {
-  faCoffee,
-  faFilm,
-  faGlobeAmericas,
-  faGolfBall,
-  faTableTennis,
-  faLeaf,
-  faTrain,
-  faQrcode,
-  faBookMedical,
-  faUserNinja,
-  faWineGlass,
-  faBookOpen,
-} from '@fortawesome/free-solid-svg-icons'
-import { faAngellist } from '@fortawesome/free-brands-svg-icons'
-
-library.add(
-  faCoffee,
-  faFilm,
-  faGlobeAmericas,
-  faGolfBall,
-  faTableTennis,
-  faLeaf,
-  faTrain,
-  faQrcode,
-  faBookMedical,
-  faUserNinja,
-  faAngellist,
-  faWineGlass,
-  faBookOpen
-)
+// Initialize Font Awesone icons
+initIcons()
 
 const IndexPage = ({ data }) => (
   <ParallaxProvider>

@@ -6,7 +6,6 @@ import Separator from '../separator/separator'
 import Experience from './experience'
 
 const Experiences = props => {
-  console.log(props)
   return (
     <section data-section="experiences">
       <div className={style.experiences}>
