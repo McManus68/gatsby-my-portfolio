@@ -1,0 +1,83 @@
+@import '../../styles/_variables';
+
+.training {
+  padding: 0 0 0 50%;
+  position: relative;
+
+  &:nth-child(2n) {
+    padding: 0 50% 0 0;
+    text-align: right;
+  }
+
+  &:hover .icon:before {
+    background: $primary-color;
+  }
+
+  .bounce-in :global {
+    visibility: visible;
+    animation-name: bounceIn;
+    animation-duration: 0.5s;
+  }
+
+  .icon {
+    position: absolute;
+    display: block;
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    left: 50%;
+    top: 0;
+    margin: 0 0 0 -35px;
+    color: black;
+    text-align: center;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 60px;
+      height: 60px;
+      border: 4px double;
+      box-sizing: border-box;
+      transition: 0.3s;
+      transform: translate(-50%, -50%) rotate(45deg);
+      background: #fff;
+    }
+
+    svg {
+      z-index: 5;
+      font-size: 1rem;
+      position: relative;
+    }
+  }
+
+  .bounce-in-right :global {
+    visibility: visible;
+    animation-name: bounceInRight;
+    animation-duration: 1s;
+  }
+
+  .content {
+    padding: 28px 0 20px 60px;
+
+    .date {
+      font-weight: bold;
+      margin: 0 0 1rem;
+    }
+
+    h4 {
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-style: normal;
+      line-height: 1.5;
+    }
+  }
+
+  &:nth-child(2n) .content {
+    padding-left: 0;
+    padding-right: 60px;
+  }
+}

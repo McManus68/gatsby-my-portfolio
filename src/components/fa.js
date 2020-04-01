@@ -15,6 +15,7 @@ import {
   faUserNinja,
   faWineGlass,
   faBookOpen,
+  faGraduationCap,
 } from '@fortawesome/free-solid-svg-icons'
 
 import { faAngellist } from '@fortawesome/free-brands-svg-icons'
@@ -33,6 +34,7 @@ export function initIcons() {
     faUserNinja,
     faAngellist,
     faWineGlass,
-    faBookOpen
+    faBookOpen,
+    faGraduationCap
   )
 }

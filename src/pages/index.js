@@ -9,6 +9,7 @@ import { ParallaxProvider } from 'react-scroll-parallax'
 import Intro from '../components/intro/intro'
 import AboutMe from '../components/about-me/about-me'
 import Experiences from '../components/experience/experiences'
+import Trainings from '../components/training/trainings'
 import Hobbies from '../components/hobbie/hobbies'
 import { initIcons } from '../components/fa'
 
@@ -26,6 +27,7 @@ const IndexPage = ({ data }) => (
       <AboutMe data={data.contentfulAboutMe}></AboutMe>
       <Experiences data={data.allContentfulExperiences.nodes}></Experiences>
       <Hobbies data={data.allContentfulHobbies.nodes}></Hobbies>
+      <Trainings data={data.allContentfulTraining.nodes}></Trainings>
     </Layout>
   </ParallaxProvider>
 )
@@ -188,6 +190,16 @@ export const pageQuery = graphql`
       nodes {
         icon
         name
+      }
+    }
+    allContentfulTraining(sort: { fields: [startYear], order: DESC }) {
+      nodes {
+        id
+        startYear
+        title
+        period
+        icon
+        description
       }
     }
   }
