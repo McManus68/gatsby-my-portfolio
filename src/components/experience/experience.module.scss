@@ -13,6 +13,12 @@
     background: $primary-color;
   }
 
+  .animate-icon :global {
+    visibility: visible;
+    animation-name: bounceIn;
+    animation-duration: 0.5s;
+  }
+
   .icon {
     position: absolute;
     display: block;
@@ -24,9 +30,6 @@
     margin: 0 0 0 -35px;
     color: black;
     text-align: center;
-    animation-name: bounceIn;
-    animation-duration: 0.8s;
-    animation-iteration-count: infinite;
 
     &:before {
       content: '';
@@ -49,10 +52,14 @@
     }
   }
 
-  .content :global {
-    padding: 28px 0 20px 60px;
+  .animate-content :global {
+    visibility: visible;
     animation-name: bounceInRight;
-    animation-duration: 2s;
+    animation-duration: 1s;
+  }
+
+  .content {
+    padding: 28px 0 20px 60px;
 
     .date {
       font-weight: bold;
