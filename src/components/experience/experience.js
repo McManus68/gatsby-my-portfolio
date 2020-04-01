@@ -8,20 +8,21 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 const Experience = props => {
   return (
     <div className={style.experience}>
-      <OnVisible visibleClassName={style.animateIcon} className={style.icon}>
+      <OnVisible visibleClassName={style.bounceIn} className={style.icon}>
         <FontAwesomeIcon icon={props.data.icon} />
       </OnVisible>
 
-      <OnVisible visibleClassName={style.animateContent} className="hidden">
-        <div className={style.content}>
-          <div className={style.date}>{props.data.period}</div>
-          <h4>{props.data.title}</h4>
-          <span
-            dangerouslySetInnerHTML={{
-              __html: props.data.description.childMarkdownRemark.html,
-            }}
-          />
-        </div>
+      <OnVisible
+        visibleClassName={style.bounceInRight}
+        className={style.content}
+      >
+        <div className={style.date}>{props.data.period}</div>
+        <h4>{props.data.title}</h4>
+        <span
+          dangerouslySetInnerHTML={{
+            __html: props.data.description.childMarkdownRemark.html,
+          }}
+        />
       </OnVisible>
     </div>
   )

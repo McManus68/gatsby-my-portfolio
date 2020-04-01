@@ -9,12 +9,40 @@ import { ParallaxProvider } from 'react-scroll-parallax'
 import Intro from '../components/intro/intro'
 import AboutMe from '../components/about-me/about-me'
 import Experiences from '../components/experience/experiences'
+import Hobbies from '../components/hobbie/hobbies'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { fas } from '@fortawesome/free-solid-svg-icons'
-import { fab } from '@fortawesome/free-brands-svg-icons'
+import {
+  faCoffee,
+  faFilm,
+  faGlobeAmericas,
+  faGolfBall,
+  faTableTennis,
+  faLeaf,
+  faTrain,
+  faQrcode,
+  faBookMedical,
+  faUserNinja,
+  faWineGlass,
+  faBookOpen,
+} from '@fortawesome/free-solid-svg-icons'
+import { faAngellist } from '@fortawesome/free-brands-svg-icons'
 
-library.add(fas, fab)
+library.add(
+  faCoffee,
+  faFilm,
+  faGlobeAmericas,
+  faGolfBall,
+  faTableTennis,
+  faLeaf,
+  faTrain,
+  faQrcode,
+  faBookMedical,
+  faUserNinja,
+  faAngellist,
+  faWineGlass,
+  faBookOpen
+)
 
 const IndexPage = ({ data }) => (
   <ParallaxProvider>
@@ -25,7 +53,8 @@ const IndexPage = ({ data }) => (
       />
       <Intro data={data.contentfulAboutMe}></Intro>
       <AboutMe data={data.contentfulAboutMe}></AboutMe>
-      <Experiences data={data.allContentfulExperiences.edges}></Experiences>
+      <Experiences data={data.allContentfulExperiences.nodes}></Experiences>
+      <Hobbies data={data.allContentfulHobbies.nodes}></Hobbies>
     </Layout>
   </ParallaxProvider>
 )
@@ -171,19 +200,23 @@ export const pageQuery = graphql`
       menus
     }
     allContentfulExperiences(sort: { fields: [startYear], order: DESC }) {
-      edges {
-        node {
-          id
-          startYear
-          title
-          period
-          icon
-          description {
-            childMarkdownRemark {
-              html
-            }
+      nodes {
+        id
+        startYear
+        title
+        period
+        icon
+        description {
+          childMarkdownRemark {
+            html
           }
         }
+      }
+    }
+    allContentfulHobbies(sort: { order: ASC, fields: position }) {
+      nodes {
+        icon
+        name
       }
     }
   }

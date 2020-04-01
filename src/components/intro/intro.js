@@ -1,38 +1,42 @@
 import React from 'react'
 import Img from 'gatsby-image'
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import style from './intro.module.scss'
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import Separator from '../separator/separator'
 import Button from '../button/button'
 import { Parallax } from 'react-scroll-parallax'
+import OnVisible from 'react-on-visible'
 
 const Intro = props => {
   return (
     <section data-section="intro">
       <div className={style.intro}>
-        <FontAwesomeIcon icon={['fab', 'angellist']} size="4x" />
+        <OnVisible visibleClassName={style.animateIcon}>
+          <FontAwesomeIcon icon={['fab', 'angellist']} size="4x" />
+        </OnVisible>
 
-        <div className={style.zoomIn}>
+        <OnVisible visibleClassName={style.zoomIn} className={style.header}>
           <span className={style.name}>{props.data.name}</span>
 
-          <ul className={style.subData}>
+          <ul className={style.subTitle}>
             {props.data.bannerList.map((item, index) => {
               return <li key={index}>{item}</li>
             })}
           </ul>
 
           <h1>{props.data.designation}</h1>
-        </div>
+        </OnVisible>
 
-        <div className={style.zoomIn}>
+        <OnVisible visibleClassName={style.zoomIn}>
           <Separator></Separator>
-        </div>
+        </OnVisible>
 
-        <div className={style.fadeInUp}>
+        <OnVisible visibleClassName={style.fadeInUp}>
           <Button label="En savoir plus..."></Button>
-        </div>
+        </OnVisible>
 
         <Parallax className={style.background} y={[-50, 50]}>
           <img src={props.data.bannerImage.fluid.src} />

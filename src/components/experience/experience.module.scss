@@ -13,7 +13,7 @@
     background: $primary-color;
   }
 
-  .animate-icon :global {
+  .bounce-in :global {
     visibility: visible;
     animation-name: bounceIn;
     animation-duration: 0.5s;
@@ -52,7 +52,7 @@
     }
   }
 
-  .animate-content :global {
+  .bounce-in-right :global {
     visibility: visible;
     animation-name: bounceInRight;
     animation-duration: 1s;

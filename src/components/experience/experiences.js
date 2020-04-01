@@ -16,7 +16,7 @@ const Experiences = props => {
 
         <div className={style.list}>
           {props.data.map((item, index) => {
-            return <Experience data={item.node} key={index}></Experience>
+            return <Experience data={item} key={index}></Experience>
           })}
         </div>
       </div>
