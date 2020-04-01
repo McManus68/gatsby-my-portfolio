@@ -61,6 +61,10 @@
     font: 2.5rem $secondary-font;
   }
 
+  h1 {
+    text-align: center;
+  }
+
   .fade-in-up :global {
     display: flex;
     margin-top: 2rem;

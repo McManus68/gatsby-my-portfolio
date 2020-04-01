@@ -7,9 +7,9 @@ import OnVisible from 'react-on-visible'
 
 const Hobbie = props => {
   return (
-    <OnVisible visibleClassName={style.bounceIn} className={style.hobbie}>
+    <OnVisible visibleClassName={style.pulse} className={style.hobbie}>
       <FontAwesomeIcon icon={props.data.icon} />
-      <span>{props.data.name}</span>
+      <h3>{props.data.name}</h3>
     </OnVisible>
   )
 }
