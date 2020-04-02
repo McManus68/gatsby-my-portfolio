@@ -3,12 +3,8 @@
 .hobbies {
   background: $secondary-bg-color;
   color: $secondary-text-color;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 6rem 1rem;
 
-  .list {
+  .items {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;

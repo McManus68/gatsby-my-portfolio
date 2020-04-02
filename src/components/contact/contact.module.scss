@@ -3,15 +3,11 @@
 .contact {
   background: $secondary-bg-color;
   color: $secondary-text-color;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 6rem 3rem;
 
   .form {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 90%;
   }
 
   label {

@@ -1,12 +1,8 @@
 @import '../../styles/_variables';
 
 .about-me {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   background: $primary-bg-color;
   color: $primary-text-color;
-  padding: 6rem 1rem;
 
   .content {
     display: flex;

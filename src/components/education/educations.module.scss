@@ -1,14 +1,10 @@
 @import '../../styles/_variables';
 
 .educations {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   color: $primary-text-color;
   background: $primary-bg-color;
-  padding: 6rem 1rem;
 
-  .list {
+  .items {
     margin-top: 2rem;
     position: relative;
     width: 100%;
