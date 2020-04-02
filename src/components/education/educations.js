@@ -1,21 +1,21 @@
 import React from 'react'
 
-import style from './trainings.module.scss'
+import style from './educations.module.scss'
 
 import Separator from '../separator/separator'
-import Training from './training'
+import Education from './education'
 
-const Trainings = props => {
+const Educations = props => {
   return (
-    <section data-section="trainings">
-      <div className={style.trainings}>
+    <section data-section="educations">
+      <div className={style.educations}>
         <h2>Training</h2>
 
         <Separator></Separator>
 
         <div className={style.list}>
           {props.data.map((item, index) => {
-            return <Training data={item} key={index}></Training>
+            return <Education data={item} key={index}></Education>
           })}
         </div>
       </div>
@@ -23,4 +23,4 @@ const Trainings = props => {
   )
 }
 
-export default Trainings
+export default Educations

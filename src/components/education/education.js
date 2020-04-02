@@ -1,13 +1,13 @@
 import React from 'react'
 
-import style from './training.module.scss'
+import style from './education.module.scss'
 
 import OnVisible from 'react-on-visible'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-const Training = props => {
+const Education = props => {
   return (
-    <div className={style.training}>
+    <div className={style.education}>
       <OnVisible visibleClassName={style.bounceIn} className={style.icon}>
         <FontAwesomeIcon icon={props.data.icon} />
       </OnVisible>
@@ -24,4 +24,4 @@ const Training = props => {
   )
 }
 
-export default Training
+export default Education
