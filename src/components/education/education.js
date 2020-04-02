@@ -3,14 +3,12 @@ import React from 'react'
 import style from './education.module.scss'
 
 import OnVisible from 'react-on-visible'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import PortfolioDiamondIcon from '../portfolio-diamond-icon/portfolio-diamond-icon'
 
 const Education = props => {
   return (
     <div className={style.education}>
-      <OnVisible visibleClassName={style.bounceIn} className={style.icon}>
-        <FontAwesomeIcon icon={props.data.icon} />
-      </OnVisible>
+      <PortfolioDiamondIcon icon={props.data.icon}></PortfolioDiamondIcon>
 
       <OnVisible
         visibleClassName={style.bounceInRight}
