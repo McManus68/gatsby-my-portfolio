@@ -3,7 +3,7 @@ import React from 'react'
 import style from './contact.module.scss'
 
 import Button from '../button/button'
-import PortfolioSection from '../portfolio-section/portfolio-section'
+import Section from '../section/section'
 
 export default class Contact extends React.Component {
   constructor(props) {
@@ -18,7 +18,7 @@ export default class Contact extends React.Component {
     const { status } = this.state
     return (
       <section data-section="contact" className={style.contact}>
-        <PortfolioSection title="Contact">
+        <Section title="Contact">
           <form
             className={style.form}
             onSubmit={this.submitForm}
@@ -47,7 +47,7 @@ export default class Contact extends React.Component {
             {status === 'SUCCESS' && <p>Thanks!</p>}
             {status === 'ERROR' && <p>Ooops! There was an error.</p>}
           </form>
-        </PortfolioSection>
+        </Section>
       </section>
     )
   }

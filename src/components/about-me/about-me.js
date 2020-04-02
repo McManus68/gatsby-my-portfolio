@@ -2,12 +2,12 @@ import React from 'react'
 
 import style from './about-me.module.scss'
 
-import PortfolioSection from '../portfolio-section/portfolio-section'
+import Section from '../section/section'
 
 const AboutMe = props => {
   return (
     <section data-section="about-me" className={style.aboutMe}>
-      <PortfolioSection title="About me">
+      <Section title="About me">
         <div className={style.content}>
           <div className={style.photo}>
             <img src={props.data.photo.fluid.src} />
@@ -23,7 +23,7 @@ const AboutMe = props => {
             />
           </div>
         </div>
-      </PortfolioSection>
+      </Section>
     </section>
   )
 }

@@ -3,12 +3,12 @@ import React from 'react'
 import style from './experience.module.scss'
 
 import OnVisible from 'react-on-visible'
-import PortfolioDiamondIcon from '../portfolio-diamond-icon/portfolio-diamond-icon'
+import DiamondIcon from '../diamond-icon/diamond-icon'
 
 const Experience = props => {
   return (
     <div className={style.experience}>
-      <PortfolioDiamondIcon icon={props.data.icon}></PortfolioDiamondIcon>
+      <DiamondIcon icon={props.data.icon} />
 
       <OnVisible
         visibleClassName={style.bounceInRight}
