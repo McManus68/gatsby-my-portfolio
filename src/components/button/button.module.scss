@@ -20,6 +20,10 @@
     text-decoration: none;
   }
 
+  &:focus {
+    outline: none;
+  }
+
   span {
     color: $secondary-text-color;
   }

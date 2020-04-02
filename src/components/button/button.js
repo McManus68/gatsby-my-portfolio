@@ -4,9 +4,9 @@ import styles from './button.module.scss'
 
 const Button = props => {
   return (
-    <a className={styles.button}>
+    <button className={styles.button}>
       <span>{props.label}</span>
-    </a>
+    </button>
   )
 }
 

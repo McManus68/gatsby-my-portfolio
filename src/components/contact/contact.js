@@ -53,6 +53,7 @@ export default class Contact extends React.Component {
   }
 
   submitForm(ev) {
+    console.log('pwet')
     ev.preventDefault()
     const form = ev.target
     const data = new FormData(form)
