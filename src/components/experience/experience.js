@@ -1,6 +1,6 @@
 import React from 'react'
 
-import style from './experiences.module.scss'
+import style from './experience.module.scss'
 
 import Section from '../section/section'
 import TimeLine from '../timeline/timeline'
