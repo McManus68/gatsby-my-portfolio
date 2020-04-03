@@ -8,8 +8,8 @@ import { ParallaxProvider } from 'react-scroll-parallax'
 
 import Intro from '../components/intro/intro'
 import AboutMe from '../components/about-me/about-me'
-import Experiences from '../components/experience/experiences'
-import Educations from '../components/education/educations'
+import Experience from '../components/experience/experience'
+import Education from '../components/education/education'
 import Hobbies from '../components/hobbie/hobbies'
 import Contact from '../components/contact/contact'
 
@@ -27,9 +27,9 @@ const IndexPage = ({ data }) => (
       />
       <Intro data={data.contentfulAboutMe}></Intro>
       <AboutMe data={data.contentfulAboutMe}></AboutMe>
-      <Experiences data={data.allContentfulExperiences.nodes}></Experiences>
+      <Experience data={data.allContentfulExperiences.nodes}></Experience>
       <Hobbies data={data.allContentfulHobbies.nodes}></Hobbies>
-      <Educations data={data.allContentfulEducation.nodes}></Educations>
+      <Education data={data.allContentfulEducation.nodes}></Education>
       <Contact data={data.contentfulAboutMe}></Contact>
     </Layout>
   </ParallaxProvider>
@@ -147,7 +147,11 @@ export const pageQuery = graphql`
         title
         period
         icon
-        description
+        description {
+          childMarkdownRemark {
+            html
+          }
+        }
       }
     }
   }

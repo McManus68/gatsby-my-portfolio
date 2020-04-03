@@ -1,0 +1,17 @@
+.timeline {
+  margin-top: 5rem;
+  position: relative;
+  width: 100%;
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 40px;
+    bottom: 0;
+    width: 2px;
+    border: 1px solid;
+    border-bottom: none;
+    transform: translateX(-50%);
+  }
+}

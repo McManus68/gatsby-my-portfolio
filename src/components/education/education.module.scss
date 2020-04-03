@@ -1,44 +1,24 @@
 @import '../../styles/_variables';
 
 .education {
-  padding: 0 0 0 50%;
-  position: relative;
+  color: $primary-text-color;
+  background: $primary-bg-color;
 
-  &:nth-child(2n) {
-    padding: 0 50% 0 0;
-    text-align: right;
-  }
+  .items {
+    margin-top: 2rem;
+    position: relative;
+    width: 100%;
 
-  &:hover div[class*='diamond-icon--']:before {
-    background: $primary-color;
-  }
-
-  .bounce-in-right :global {
-    visibility: visible;
-    animation-name: bounceInRight;
-    animation-duration: 1s;
-  }
-
-  .content {
-    padding: 28px 0 20px 60px;
-
-    .date {
-      font-weight: bold;
-      margin: 0 0 1rem;
+    &:before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 40px;
+      bottom: 0;
+      width: 2px;
+      border: 1px solid;
+      border-bottom: none;
+      transform: translateX(-50%);
     }
-
-    h4 {
-      margin-bottom: 15px;
-    }
-
-    p {
-      font-style: normal;
-      line-height: 1.5;
-    }
-  }
-
-  &:nth-child(2n) .content {
-    padding-left: 0;
-    padding-right: 60px;
   }
 }

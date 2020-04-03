@@ -1,28 +1,17 @@
 import React from 'react'
 
-import style from './experience.module.scss'
+import style from './experiences.module.scss'
 
-import OnVisible from 'react-on-visible'
-import DiamondIcon from '../diamond-icon/diamond-icon'
+import Section from '../section/section'
+import TimeLine from '../timeline/timeline'
 
 const Experience = props => {
   return (
-    <div className={style.experience}>
-      <DiamondIcon icon={props.data.icon} />
-
-      <OnVisible
-        visibleClassName={style.bounceInRight}
-        className={style.content}
-      >
-        <div className={style.date}>{props.data.period}</div>
-        <h4>{props.data.title}</h4>
-        <span
-          dangerouslySetInnerHTML={{
-            __html: props.data.description.childMarkdownRemark.html,
-          }}
-        />
-      </OnVisible>
-    </div>
+    <section data-section="experience" className={style.experience}>
+      <Section title="Experience">
+        <TimeLine data={props.data} />
+      </Section>
+    </section>
   )
 }
 

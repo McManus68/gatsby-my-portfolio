@@ -1,44 +1,6 @@
 @import '../../styles/_variables';
 
 .experience {
-  padding: 0 0 0 50%;
-  position: relative;
-
-  &:nth-child(2n) {
-    padding: 0 50% 0 0;
-    text-align: right;
-  }
-
-  &:hover div[class*='diamond-icon--']:before {
-    background: $primary-color;
-  }
-
-  .bounce-in-right :global {
-    visibility: visible;
-    animation-name: bounceInRight;
-    animation-duration: 1s;
-  }
-
-  .content {
-    padding: 28px 0 20px 60px;
-
-    .date {
-      font-weight: bold;
-      margin: 0 0 1rem;
-    }
-
-    h4 {
-      margin-bottom: 15px;
-    }
-
-    p {
-      font-style: normal;
-      line-height: 1.5;
-    }
-  }
-
-  &:nth-child(2n) .content {
-    padding-left: 0;
-    padding-right: 60px;
-  }
+  color: $primary-text-color;
+  background: white;
 }

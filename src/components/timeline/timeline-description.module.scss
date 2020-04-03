@@ -1,0 +1,23 @@
+.timeline-description {
+  padding: 28px 0 20px 60px;
+
+  .date {
+    font-weight: bold;
+    margin: 0 0 1rem;
+  }
+
+  h4 {
+    margin-bottom: 15px;
+  }
+
+  p {
+    font-style: normal;
+    line-height: 1.5;
+  }
+}
+
+.bounce-in-right :global {
+  visibility: visible;
+  animation-name: bounceInRight;
+  animation-duration: 1s;
+}

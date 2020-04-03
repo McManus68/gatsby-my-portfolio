@@ -1,24 +1,17 @@
 import React from 'react'
 
-import style from './education.module.scss'
+import style from './educations.module.scss'
 
-import OnVisible from 'react-on-visible'
-import DiamondIcon from '../diamond-icon/diamond-icon'
+import Section from '../section/section'
+import TimeLine from '../timeline/timeline'
 
 const Education = props => {
   return (
-    <div className={style.education}>
-      <DiamondIcon icon={props.data.icon} />
-
-      <OnVisible
-        visibleClassName={style.bounceInRight}
-        className={style.content}
-      >
-        <div className={style.date}>{props.data.period}</div>
-        <h4>{props.data.title}</h4>
-        <span>{props.data.description}</span>
-      </OnVisible>
-    </div>
+    <section data-section="education" className={style.education}>
+      <Section title="Education">
+        <TimeLine data={props.data} />
+      </Section>
+    </section>
   )
 }
 
