@@ -4,9 +4,7 @@ import style from './contact-form.module.scss'
 import Button from '../button/button'
 
 const ContactForm = props => {
-  let [status, setStatus] = useState({
-    status: '',
-  })
+  let [status, setStatus] = useState('')
 
   let submitForm = ev => {
     ev.preventDefault()

@@ -1,3 +1,5 @@
+@import '../../styles/_variables';
+
 .timeline-icon {
   position: absolute;
   display: block;
@@ -35,4 +37,8 @@
   visibility: visible;
   animation-name: bounceIn;
   animation-duration: 0.5s;
+}
+
+.timeline-icon.active:before {
+  background: $primary-color;
 }

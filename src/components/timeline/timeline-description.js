@@ -8,7 +8,7 @@ const TimelineDescription = props => {
   return (
     <OnVisible
       visibleClassName={style.bounceInRight}
-      className={style.timelineDescription}
+      className={`${style.timelineDescription} ${props.odd ? style.odd : ''}`}
     >
       <div className={style.date}>{props.data.period}</div>
       <h4>{props.data.title}</h4>

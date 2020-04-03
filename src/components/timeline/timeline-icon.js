@@ -7,7 +7,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const TimelineIcon = props => {
   return (
-    <OnVisible visibleClassName={style.bounceIn} className={style.timelineIcon}>
+    <OnVisible
+      visibleClassName={style.bounceIn}
+      className={`${style.timelineIcon} ${props.active ? style.active : ''}`}
+    >
       <FontAwesomeIcon icon={props.icon} />
     </OnVisible>
   )
