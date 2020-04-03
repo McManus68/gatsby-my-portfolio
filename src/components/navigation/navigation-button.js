@@ -6,7 +6,7 @@ const NavigationButton = props => {
   return (
     <div
       className={`${style.navigationButton} ${props.visible ? style.visible : ''}`}
-      onClick={props.callback}
+      onClick={() => props.callback(!props.visible)}
     >
       <div className={style.line}></div>
       <div className={style.line}></div>

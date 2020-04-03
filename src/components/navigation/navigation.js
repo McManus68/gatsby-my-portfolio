@@ -9,14 +9,6 @@ const Navigation = props => {
   let [selected, setSelected] = useState('')
   let [visible, setVisible] = useState(false)
 
-  function handleSelect(e) {
-    setSelected(e)
-  }
-
-  function handleVisible() {
-    setVisible(!visible)
-  }
-
   const items = [
     { id: 'intro', title: 'Accueil' },
     { id: 'about-me', title: 'Présentation' },
@@ -37,13 +29,13 @@ const Navigation = props => {
                 key={i}
                 title={item.title}
                 active={selected === item.id}
-                callback={handleSelect}
+                callback={setSelected}
               />
             )
           })}
         </ul>
       </nav>
-      <NavigationButton callback={handleVisible} visible={visible} />
+      <NavigationButton callback={setVisible} visible={visible} />
     </div>
   )
 }
