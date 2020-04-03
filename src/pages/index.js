@@ -4,8 +4,6 @@ import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 
-import { ParallaxProvider } from 'react-scroll-parallax'
-
 import Intro from '../components/intro/intro'
 import AboutMe from '../components/about-me/about-me'
 import Experience from '../components/experience/experience'
@@ -19,20 +17,18 @@ import { initIcons } from '../components/fa'
 initIcons()
 
 const IndexPage = ({ data }) => (
-  <ParallaxProvider>
-    <Layout header="home">
-      <SEO
-        title={data.contentfulAboutMe.designation}
-        keywords={[`Rohit Gupta`, `Frontend Developer`, `Developer`]}
-      />
-      <Intro data={data.contentfulAboutMe}></Intro>
-      <AboutMe data={data.contentfulAboutMe}></AboutMe>
-      <Experience data={data.allContentfulExperiences.nodes}></Experience>
-      <Hobbies data={data.allContentfulHobbies.nodes}></Hobbies>
-      <Education data={data.allContentfulEducation.nodes}></Education>
-      <Contact data={data.contentfulAboutMe}></Contact>
-    </Layout>
-  </ParallaxProvider>
+  <Layout header="home">
+    <SEO
+      title={data.contentfulAboutMe.designation}
+      keywords={[`Rohit Gupta`, `Frontend Developer`, `Developer`]}
+    />
+    <Intro data={data.contentfulAboutMe}></Intro>
+    <AboutMe data={data.contentfulAboutMe}></AboutMe>
+    <Experience data={data.allContentfulExperiences.nodes}></Experience>
+    <Hobbies data={data.allContentfulHobbies.nodes}></Hobbies>
+    <Education data={data.allContentfulEducation.nodes}></Education>
+    <Contact data={data.contentfulAboutMe}></Contact>
+  </Layout>
 )
 
 export default IndexPage

@@ -6,7 +6,7 @@ import NavigationItem from './navigation-item'
 import NavigationButton from './navigation-button'
 
 const Navigation = props => {
-  let [selected, setSelected] = useState('')
+  let [selected, setSelected] = useState('intro')
   let [visible, setVisible] = useState(false)
 
   const items = [
