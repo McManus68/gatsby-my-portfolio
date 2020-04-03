@@ -4,7 +4,6 @@ import style from './contact.module.scss'
 
 import Button from '../button/button'
 import Section from '../section/section'
-import DiamondIcon from '../diamond-icon/diamond-icon'
 
 const Contact = props => {
   let [status, setStatus] = useState({
@@ -40,17 +39,17 @@ const Contact = props => {
           action="https://formspree.io/xgelendk"
           method="POST"
         >
-          <label> Votre nom: </label>
+          <label htmlFor="name"> Votre nom: </label>
           <span className={style.formItem}>
             <input type="text" name="name" />
           </span>
 
-          <label> Votre adresse de messagerie: </label>
+          <label htmlFor="email"> Votre adresse de messagerie: </label>
           <span className={style.formItem}>
             <input type="email" name="email" />
           </span>
 
-          <label> Votre message: </label>
+          <label htmlFor="message"> Votre message: </label>
           <span className={style.formItem + ' ' + style.textarea}>
             <textarea name="message" />
           </span>

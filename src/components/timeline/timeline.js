@@ -7,8 +7,8 @@ import TimelineItem from './timeline-item'
 const Timeline = props => {
   return (
     <div className={style.timeline}>
-      {props.data.map(item => {
-        return <TimelineItem data={item} />
+      {props.data.map((item, key) => {
+        return <TimelineItem data={item} key={key} />
       })}
     </div>
   )

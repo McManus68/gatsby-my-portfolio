@@ -10,7 +10,7 @@ const AboutMe = props => {
       <Section title="About me">
         <div className={style.content}>
           <div className={style.photo}>
-            <img src={props.data.photo.fluid.src} />
+            <img src={props.data.photo.fluid.src} alt="Me" />
           </div>
 
           <div className={style.description}>

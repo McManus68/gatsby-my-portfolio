@@ -1,5 +1,4 @@
 import React from 'react'
-import Img from 'gatsby-image'
 
 import style from './intro.module.scss'
 
@@ -39,7 +38,7 @@ const Intro = props => {
         </OnVisible>
 
         <Parallax className={style.background} y={[-50, 50]}>
-          <img src={props.data.bannerImage.fluid.src} />
+          <img src={props.data.bannerImage.fluid.src} alt="Cover" />
         </Parallax>
       </div>
     </section>
