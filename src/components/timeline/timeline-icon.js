@@ -1,16 +1,16 @@
 import React from 'react'
 
-import style from './diamond-icon.module.scss'
+import style from './timeline-icon.module.scss'
 
 import OnVisible from 'react-on-visible'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-const DiamondIcon = props => {
+const Timelinecon = props => {
   return (
-    <OnVisible visibleClassName={style.bounceIn} className={style.diamondIcon}>
+    <OnVisible visibleClassName={style.bounceIn} className={style.timelineIcon}>
       <FontAwesomeIcon icon={props.icon} />
     </OnVisible>
   )
 }
 
-export default DiamondIcon
+export default Timelinecon

@@ -3,4 +3,8 @@
 .contact {
   background: $secondary-bg-color;
   color: $secondary-text-color;
+
+  .contact-header {
+    display: flex;
+  }
 }
