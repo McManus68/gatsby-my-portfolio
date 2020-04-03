@@ -6,7 +6,7 @@ import Section from '../section/section'
 
 const AboutMe = props => {
   return (
-    <section data-section="about-me" className={style.aboutMe}>
+    <section data-section="about-me" id="about-me" className={style.aboutMe}>
       <Section title="About me">
         <div className={style.content}>
           <div className={style.photo}>

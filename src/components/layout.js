@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 
 import Footer from './footer/footer'
+import Navigation from './navigation/navigation'
 
 import '../styles/index.scss'
 
@@ -28,6 +29,7 @@ const Layout = ({ children, header }) => (
     `}
     render={data => (
       <>
+        <Navigation />
         <div>
           <main id="home">{children}</main>
         </div>

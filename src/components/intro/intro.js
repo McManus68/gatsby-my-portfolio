@@ -11,7 +11,7 @@ import OnVisible from 'react-on-visible'
 
 const Intro = props => {
   return (
-    <section data-section="intro">
+    <section data-section="intro" id="intro">
       <div className={style.intro}>
         <OnVisible visibleClassName={style.animateIcon}>
           <FontAwesomeIcon icon={['fab', 'angellist']} size="4x" />

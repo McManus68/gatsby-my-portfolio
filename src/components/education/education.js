@@ -7,7 +7,11 @@ import TimeLine from '../timeline/timeline'
 
 const Education = props => {
   return (
-    <section data-section="education" className={style.education}>
+    <section
+      data-section="education"
+      id="education"
+      className={style.education}
+    >
       <Section title="Education">
         <TimeLine data={props.data} />
       </Section>

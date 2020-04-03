@@ -7,7 +7,7 @@ import Section from '../section/section'
 
 const Hobbies = props => {
   return (
-    <section data-section={props.name} className={style.hobbies}>
+    <section data-section="hobbies" id="hobbies" className={style.hobbies}>
       <Section title="Loisirs">
         <div className={style.items}>
           {props.data.map((item, index) => {

@@ -1,0 +1,51 @@
+.item {
+  position: relative;
+  padding: 0;
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    width: 8px;
+    height: 8px;
+    margin: -6px 0 0;
+    border: 2px solid currentColor;
+    border-radius: 50%;
+    opacity: 0;
+    transition: 0.3s;
+    transform: translateX(-10px);
+  }
+
+  &:hover:before {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  a {
+    position: relative;
+    display: block;
+    padding: 10px 30px;
+    color: currentColor;
+    text-decoration: none;
+    z-index: 5;
+    transition: 0.3s;
+    cursor: pointer;
+
+    &:hover {
+      transform: translateX(10px);
+    }
+  }
+}
+
+.item.active {
+  &:before {
+    opacity: 1;
+    transform: translateX(0px);
+    background: currentColor;
+  }
+
+  a {
+    transform: translateX(10px);
+  }
+}
