@@ -1,17 +1,16 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 
-import Layout from '../components/layout'
-import SEO from '../components/seo'
+import Layout from '../components/utils/layout'
+import SEO from '../components/utils/seo'
+import { initIcons } from '../components/utils/fa'
 
-import Intro from '../components/intro/intro'
-import AboutMe from '../components/about-me/about-me'
-import Experience from '../components/experience/experience'
-import Education from '../components/education/education'
-import Hobbies from '../components/hobbie/hobbies'
-import Contact from '../components/contact/contact'
-
-import { initIcons } from '../components/fa'
+import Intro from '../components/section/intro/intro'
+import AboutMe from '../components/section/about-me/about-me'
+import Experience from '../components/section/experience/experience'
+import Education from '../components/section/education/education'
+import Hobbies from '../components/section/hobbie/hobbies'
+import Contact from '../components/section/contact/contact'
 
 // Initialize Font Awesone icons
 initIcons()

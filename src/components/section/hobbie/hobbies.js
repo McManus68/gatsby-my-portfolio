@@ -3,7 +3,7 @@ import React from 'react'
 import style from './hobbies.module.scss'
 
 import Hobbie from './hobbie'
-import Section from '../section/section'
+import Section from '../../ui/section/section'
 
 const Hobbies = props => {
   return (

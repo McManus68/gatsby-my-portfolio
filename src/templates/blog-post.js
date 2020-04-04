@@ -4,8 +4,8 @@ import Img from 'gatsby-image'
 import moment from 'moment'
 import { DiscussionEmbed } from 'disqus-react'
 
-import Layout from '../components/layout'
-import SEO from '../components/seo'
+import Layout from '../components/utils/layout'
+import SEO from '../components/utils/seo'
 
 export default class blogPost extends Component {
   render() {
@@ -20,12 +20,7 @@ export default class blogPost extends Component {
       <Layout>
         <SEO
           title={data.title}
-          keywords={[
-            `Rohit Gupta`,
-            `Frontend Developer`,
-            `Developer`,
-            `${data.title}`,
-          ]}
+          keywords={[`Rohit Gupta`, `Frontend Developer`, `Developer`, `${data.title}`]}
         />
         <div className="site-container blog-post">
           <div className="container">
@@ -38,8 +33,7 @@ export default class blogPost extends Component {
             <div className="details">
               <h1 className="title">{data.title}</h1>
               <span className="date">
-                <i class="fas fa-calendar-alt"></i>{' '}
-                {moment(data.createdAt).format('LL')}
+                <i class="fas fa-calendar-alt"></i> {moment(data.createdAt).format('LL')}
               </span>
               <div
                 dangerouslySetInnerHTML={{
@@ -47,10 +41,7 @@ export default class blogPost extends Component {
                 }}
               />
             </div>
-            <DiscussionEmbed
-              shortname={disqusShortname}
-              config={disqusConfig}
-            />
+            <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
           </div>
         </div>
       </Layout>

@@ -3,7 +3,7 @@ import React from 'react'
 import style from './contact.module.scss'
 
 import ContactForm from './contact-form'
-import Section from '../section/section'
+import Section from '../../ui/section/section'
 
 const Contact = props => {
   return (

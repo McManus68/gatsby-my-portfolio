@@ -2,10 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 
-import Footer from './footer/footer'
-import Navigation from './navigation/navigation'
+import Footer from '../section/footer/footer'
+import Navigation from '../ui/navigation/navigation'
 
-import '../styles/index.scss'
+import '../../styles/index.scss'
 
 if (typeof window !== 'undefined') {
   require('smooth-scroll')('a[href*="#"]')

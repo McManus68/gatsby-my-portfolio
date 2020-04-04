@@ -3,11 +3,11 @@ import React from 'react'
 import style from './intro.module.scss'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
-import Separator from '../separator/separator'
-import Button from '../button/button'
 import { Parallax } from 'react-parallax'
 import OnVisible from 'react-on-visible'
+
+import Separator from '../../ui/separator/separator'
+import Button from '../../ui/button/button'
 
 const Intro = props => {
   return (

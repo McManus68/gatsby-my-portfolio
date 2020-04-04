@@ -2,7 +2,7 @@ import React from 'react'
 
 import style from './about-me.module.scss'
 
-import Section from '../section/section'
+import Section from '../../ui/section/section'
 
 const AboutMe = props => {
   return (

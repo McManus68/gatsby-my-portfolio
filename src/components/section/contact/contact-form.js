@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 
 import style from './contact-form.module.scss'
-import Button from '../button/button'
+
+import Button from '../../ui/button/button'
 
 const ContactForm = props => {
   let [status, setStatus] = useState('')
