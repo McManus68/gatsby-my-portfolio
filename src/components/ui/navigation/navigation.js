@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 
 import style from './navigation.module.scss'
 
+import Scrollspy from 'react-scrollspy'
+
 import NavigationItem from './navigation-item'
 import NavigationButton from './navigation-button'
 
@@ -9,6 +11,9 @@ const Navigation = props => {
   let [selected, setSelected] = useState('intro')
   let [visible, setVisible] = useState(false)
 
+  function handleScroll(e) {
+    setSelected(e.id)
+  }
   const items = [
     { id: 'intro', title: 'Accueil' },
     { id: 'about-me', title: 'Présentation' },
@@ -21,7 +26,10 @@ const Navigation = props => {
   return (
     <div className={style.navigation}>
       <nav className={visible ? style.visible : ''}>
-        <ul>
+        <Scrollspy
+          items={['intro', 'about-me', 'experience', 'hobbies', 'education', 'contact']}
+          onUpdate={handleScroll}
+        >
           {items.map(function(item, i) {
             return (
               <NavigationItem
@@ -33,7 +41,7 @@ const Navigation = props => {
               />
             )
           })}
-        </ul>
+        </Scrollspy>
       </nav>
       <NavigationButton callback={setVisible} visible={visible} />
     </div>

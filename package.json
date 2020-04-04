@@ -30,6 +30,7 @@
     "react-helmet": "^5.2.1",
     "react-on-visible": "^1.6.0",
     "react-parallax": "^3.0.3",
+    "react-scrollspy": "^3.4.2",
     "react-share": "^4.1.0",
     "react-slick": "^0.25.2",
     "smooth-scroll": "^16.1.3"
