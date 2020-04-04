@@ -15,7 +15,7 @@ const Layout = ({ children, header }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
-        contentfulSiteInformation {
+        site: contentfulSiteInformation {
           siteName
           siteDescription
           logo {
@@ -23,17 +23,23 @@ const Layout = ({ children, header }) => (
               url
             }
           }
-          menus
+        }
+        menu: allContentfulMenu(sort: { order: ASC, fields: position }) {
+          nodes {
+            position
+            name
+            title
+          }
         }
       }
     `}
     render={data => (
       <>
-        <Navigation />
+        <Navigation menu={data.menu.nodes} />
         <div>
           <main id="home">{children}</main>
         </div>
-        <Footer siteName={data.contentfulSiteInformation.siteName} />
+        <Footer siteName={data.site.siteName} />
       </>
     )}
   />

@@ -7,11 +7,9 @@ import TimeLine from '../../ui/timeline/timeline'
 
 const Education = props => {
   return (
-    <section data-section="education" id="education" className={style.education}>
-      <Section title="Education">
-        <TimeLine data={props.data} />
-      </Section>
-    </section>
+    <Section section={props.section} className={style.education}>
+      <TimeLine data={props.data} />
+    </Section>
   )
 }
 

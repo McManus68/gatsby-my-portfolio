@@ -5,7 +5,11 @@ import style from './navigation-item.module.scss'
 const NavigationItem = props => {
   return (
     <li className={`${style.item} ${props.active ? style.active : ''}`}>
-      <a href={'#' + props.id} data-nav-section={props.id} onClick={() => props.callback(props.id)}>
+      <a
+        href={'#' + props.name}
+        data-nav-section={props.name}
+        onClick={() => props.callback(props.name)}
+      >
         {props.title}{' '}
       </a>
     </li>

@@ -7,15 +7,13 @@ import Section from '../../ui/section/section'
 
 const Hobbies = props => {
   return (
-    <section data-section="hobbies" id="hobbies" className={style.hobbies}>
-      <Section title="Loisirs">
-        <div className={style.items}>
-          {props.data.map((item, index) => {
-            return <Hobbie data={item} key={index}></Hobbie>
-          })}
-        </div>
-      </Section>
-    </section>
+    <Section section={props.section} className={style.hobbies}>
+      <div className={style.items}>
+        {props.data.map((item, index) => {
+          return <Hobbie data={item} key={index}></Hobbie>
+        })}
+      </div>
+    </Section>
   )
 }
 

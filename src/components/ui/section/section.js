@@ -6,11 +6,13 @@ import Separator from '../separator/separator'
 
 const Section = props => {
   return (
-    <div className={style.section}>
-      <h2>{props.title}</h2>
-      <Separator />
-      {props.children}
-    </div>
+    <section data-section={props.section.name} id={props.section.name} className={props.className}>
+      <div className={style.section}>
+        <h2>{props.section.title}</h2>
+        <Separator />
+        {props.children}
+      </div>
+    </section>
   )
 }
 

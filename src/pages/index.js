@@ -5,12 +5,7 @@ import Layout from '../components/utils/layout'
 import SEO from '../components/utils/seo'
 import { initIcons } from '../components/utils/fa'
 
-import Intro from '../components/section/intro/intro'
-import AboutMe from '../components/section/about-me/about-me'
-import Experience from '../components/section/experience/experience'
-import Education from '../components/section/education/education'
-import Hobbies from '../components/section/hobbie/hobbies'
-import Contact from '../components/section/contact/contact'
+import Factory from '../components/section/factory/factory'
 
 // Initialize Font Awesone icons
 initIcons()
@@ -21,12 +16,10 @@ const IndexPage = ({ data }) => (
       title={data.me.designation}
       keywords={[`Rohit Gupta`, `Frontend Developer`, `Developer`]}
     />
-    <Intro data={data.me}></Intro>
-    <AboutMe data={data.me}></AboutMe>
-    <Experience data={data.experience.nodes}></Experience>
-    <Hobbies data={data.hobbie.nodes}></Hobbies>
-    <Education data={data.education.nodes}></Education>
-    <Contact data={data.me}></Contact>
+
+    {data.menu.nodes.map(function(item, key) {
+      return <Factory component={item} data={data} key={key} />
+    })}
   </Layout>
 )
 
@@ -112,8 +105,12 @@ export const pageQuery = graphql`
         }
       }
     }
-    contentfulSiteInformation {
-      menus
+    menu: allContentfulMenu(sort: { order: ASC, fields: position }) {
+      nodes {
+        position
+        name
+        title
+      }
     }
     experience: allContentfulExperiences(sort: { fields: [startYear], order: DESC }) {
       nodes {

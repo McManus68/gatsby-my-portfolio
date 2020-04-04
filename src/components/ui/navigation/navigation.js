@@ -14,29 +14,23 @@ const Navigation = props => {
   function handleScroll(e) {
     setSelected(e.id)
   }
-  const items = [
-    { id: 'intro', title: 'Accueil' },
-    { id: 'about-me', title: 'Présentation' },
-    { id: 'experience', title: 'Experiences' },
-    { id: 'hobbies', title: 'Loisirs' },
-    { id: 'education', title: 'Education' },
-    { id: 'contact', title: 'Contact' },
-  ]
 
   return (
     <div className={style.navigation}>
       <nav className={visible ? style.visible : ''}>
         <Scrollspy
-          items={['intro', 'about-me', 'experience', 'hobbies', 'education', 'contact']}
+          items={props.menu.map(function(item) {
+            return item.name
+          })}
           onUpdate={handleScroll}
         >
-          {items.map(function(item, i) {
+          {props.menu.map(function(item, i) {
             return (
               <NavigationItem
-                id={item.id}
+                name={item.name}
                 key={i}
                 title={item.title}
-                active={selected === item.id}
+                active={selected === item.name}
                 callback={setSelected}
               />
             )

@@ -11,7 +11,7 @@ import Button from '../../ui/button/button'
 
 const Intro = props => {
   return (
-    <section data-section="intro" id="intro">
+    <section data-section={props.section.name} id={props.section.name}>
       <Parallax
         bgImage={props.data.bannerImage.fluid.src}
         className={style.background}
