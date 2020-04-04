@@ -18,15 +18,15 @@ initIcons()
 const IndexPage = ({ data }) => (
   <Layout header="home">
     <SEO
-      title={data.contentfulAboutMe.designation}
+      title={data.me.designation}
       keywords={[`Rohit Gupta`, `Frontend Developer`, `Developer`]}
     />
-    <Intro data={data.contentfulAboutMe}></Intro>
-    <AboutMe data={data.contentfulAboutMe}></AboutMe>
-    <Experience data={data.allContentfulExperiences.nodes}></Experience>
-    <Hobbies data={data.allContentfulHobbies.nodes}></Hobbies>
-    <Education data={data.allContentfulEducation.nodes}></Education>
-    <Contact data={data.contentfulAboutMe}></Contact>
+    <Intro data={data.me}></Intro>
+    <AboutMe data={data.me}></AboutMe>
+    <Experience data={data.experience.nodes}></Experience>
+    <Hobbies data={data.hobbie.nodes}></Hobbies>
+    <Education data={data.education.nodes}></Education>
+    <Contact data={data.me}></Contact>
   </Layout>
 )
 
@@ -34,7 +34,7 @@ export default IndexPage
 
 export const pageQuery = graphql`
   query AboutQuery {
-    contentfulAboutMe {
+    me: contentfulAboutMe {
       name
       photo {
         file {
@@ -79,7 +79,7 @@ export const pageQuery = graphql`
       }
       bannerList
     }
-    allContentfulBlogs(limit: 5) {
+    blog: allContentfulBlogs(limit: 5) {
       edges {
         node {
           title
@@ -115,7 +115,7 @@ export const pageQuery = graphql`
     contentfulSiteInformation {
       menus
     }
-    allContentfulExperiences(sort: { fields: [startYear], order: DESC }) {
+    experience: allContentfulExperiences(sort: { fields: [startYear], order: DESC }) {
       nodes {
         id
         startYear
@@ -129,13 +129,13 @@ export const pageQuery = graphql`
         }
       }
     }
-    allContentfulHobbies(sort: { order: ASC, fields: position }) {
+    hobbie: allContentfulHobbies(sort: { order: ASC, fields: position }) {
       nodes {
         icon
         name
       }
     }
-    allContentfulEducation(sort: { fields: [startYear], order: DESC }) {
+    education: allContentfulEducation(sort: { fields: [startYear], order: DESC }) {
       nodes {
         id
         startYear
