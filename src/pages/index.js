@@ -11,6 +11,7 @@ import Footer from '../components/section/footer/footer'
 import Navigation from '../components/ui/navigation/navigation'
 
 import { useTranslation } from 'react-i18next'
+import LocalePicker from '../components/ui/locale-picker/locale-picker'
 
 const IndexPage = ({ data }) => {
   const { t, i18n } = useTranslation()
@@ -34,12 +35,9 @@ const IndexPage = ({ data }) => {
     setLocale(locale)
   }
 
-  console.log(localeData)
   return (
     <div>
-      <span onClick={() => switchLang('en')}>EN </span>
-      <span onClick={() => switchLang('fr')}> FR</span>
-
+      <LocalePicker locale={locale} callback={switchLang} />
       <SEO
         title={localeData.me.designation}
         keywords={[`Rohit Gupta`, `Frontend Developer`, `Developer`]}

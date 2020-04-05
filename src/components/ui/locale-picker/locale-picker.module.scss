@@ -1,0 +1,12 @@
+.locale-picker {
+  position: fixed;
+  top: 30px;
+  left: 40px;
+  z-index: 15;
+  cursor: pointer;
+
+  .flag {
+    width: 16px;
+    height: 16px;
+  }
+}
