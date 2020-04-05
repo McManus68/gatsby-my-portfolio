@@ -7,7 +7,11 @@ import TimelineDescription from './timeline-description'
 
 const TimelineItem = props => {
   return (
-    <div className={style.timelineItem} onMouseEnter={() => props.callback(props.id)}>
+    <div
+      aria-hidden="true"
+      className={style.timelineItem}
+      onMouseEnter={() => props.callback(props.id)}
+    >
       <TimelineIcon icon={props.data.icon} active={props.active === props.id} />
       <TimelineDescription data={props.data} odd={props.id % 2 !== 0} />
     </div>

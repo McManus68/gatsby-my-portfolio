@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next'
 import Button from '../../ui/button/button'
 
 const ContactForm = props => {
-  const { t, i18n } = useTranslation()
+  const { t } = useTranslation()
 
   let [status, setStatus] = useState('')
 

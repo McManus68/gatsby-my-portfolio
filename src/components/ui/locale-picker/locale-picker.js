@@ -8,12 +8,12 @@ import en from '../../../images/en.png'
 const LocalePicker = props => {
   console.log(props.locale)
   return (
-    <div className={style.localePicker}>
-      <img
-        src={props.locale === 'fr' ? en : fr}
-        onClick={() => (props.locale === 'fr' ? props.callback('en') : props.callback('fr'))}
-        className={style.flag}
-      ></img>
+    <div
+      className={style.localePicker}
+      aria-hidden="true"
+      onClick={() => (props.locale === 'fr' ? props.callback('en') : props.callback('fr'))}
+    >
+      <img alt={props.locale} src={props.locale === 'fr' ? en : fr} className={style.flag}></img>
     </div>
   )
 }

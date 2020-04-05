@@ -14,7 +14,7 @@ import { useTranslation } from 'react-i18next'
 import LocalePicker from '../components/ui/locale-picker/locale-picker'
 
 const IndexPage = ({ data }) => {
-  const { t, i18n } = useTranslation()
+  const { i18n } = useTranslation()
 
   let [locale, setLocale] = useState('en')
 
