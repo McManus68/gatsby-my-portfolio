@@ -8,7 +8,7 @@ const { spaceId, accessToken } = process.env
 
 module.exports = {
   siteMetadata: {
-    title: `Emmanuel Tarriy`,
+    title: `Emmanuel Tarrou`,
     description: `Personal Site`,
     author: `@etarrou`,
   },

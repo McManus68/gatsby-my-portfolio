@@ -18,21 +18,19 @@ import {
 
 import { faAngellist } from '@fortawesome/free-brands-svg-icons'
 
-export function initIcons() {
-  library.add(
-    faCoffee,
-    faFilm,
-    faGlobeAmericas,
-    faGolfBall,
-    faTableTennis,
-    faLeaf,
-    faTrain,
-    faQrcode,
-    faBookMedical,
-    faUserNinja,
-    faAngellist,
-    faWineGlass,
-    faBookOpen,
-    faGraduationCap
-  )
-}
+library.add(
+  faCoffee,
+  faFilm,
+  faGlobeAmericas,
+  faGolfBall,
+  faTableTennis,
+  faLeaf,
+  faTrain,
+  faQrcode,
+  faBookMedical,
+  faUserNinja,
+  faAngellist,
+  faWineGlass,
+  faBookOpen,
+  faGraduationCap
+)

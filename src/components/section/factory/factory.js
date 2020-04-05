@@ -14,15 +14,15 @@ const Factory = props => {
     case 'about-me':
       return <AboutMe data={props.data.me} section={props.component}></AboutMe>
     case 'experience':
-      return <Experience data={props.data.experience.nodes} section={props.component}></Experience>
+      return <Experience data={props.data.experience} section={props.component}></Experience>
     case 'hobbie':
-      return <Hobbies data={props.data.hobbie.nodes} section={props.component}></Hobbies>
+      return <Hobbies data={props.data.hobbie} section={props.component}></Hobbies>
     case 'education':
-      return <Education data={props.data.education.nodes} section={props.component}></Education>
+      return <Education data={props.data.education} section={props.component}></Education>
     case 'contact':
       return <Contact data={props.data.me} section={props.component}></Contact>
     default:
-      return <a>No component for {props.component.name}</a>
+      return <span>No component for {props.component.name}</span>
   }
 }
 

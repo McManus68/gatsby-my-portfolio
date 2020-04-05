@@ -2,9 +2,13 @@ import React, { useState } from 'react'
 
 import style from './contact-form.module.scss'
 
+import { useTranslation } from 'react-i18next'
+
 import Button from '../../ui/button/button'
 
 const ContactForm = props => {
+  const { t, i18n } = useTranslation()
+
   let [status, setStatus] = useState('')
 
   let submitForm = ev => {
@@ -38,7 +42,7 @@ const ContactForm = props => {
         <input type="text" name="name" />
       </span>
 
-      <label htmlFor="email"> Votre adresse de messagerie: </label>
+      <label htmlFor="email">{t('email')}</label>
       <span className={style.formItem}>
         <input type="email" name="email" />
       </span>

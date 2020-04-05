@@ -1,120 +1,124 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { graphql } from 'gatsby'
 
-import Layout from '../components/utils/layout'
+import '../styles/index.scss'
+import '../components/utils/i18n'
+import '../components/utils/fa'
+
 import SEO from '../components/utils/seo'
-import { initIcons } from '../components/utils/fa'
-
 import Factory from '../components/section/factory/factory'
+import Footer from '../components/section/footer/footer'
+import Navigation from '../components/ui/navigation/navigation'
 
-// Initialize Font Awesone icons
-initIcons()
+import { useTranslation } from 'react-i18next'
 
-const IndexPage = ({ data }) => (
-  <Layout header="home">
-    <SEO
-      title={data.me.designation}
-      keywords={[`Rohit Gupta`, `Frontend Developer`, `Developer`]}
-    />
+const IndexPage = ({ data }) => {
+  const { t, i18n } = useTranslation()
 
-    {data.menu.nodes.map(function(item, key) {
-      return <Factory component={item} data={data} key={key} />
-    })}
-  </Layout>
-)
+  let [locale, setLocale] = useState('en')
+
+  let localeData = {
+    menu: data.menu.nodes.filter(isCurrentLocale),
+    experience: data.experience.nodes.filter(isCurrentLocale),
+    education: data.education.nodes.filter(isCurrentLocale),
+    hobbie: data.hobbie.nodes.filter(isCurrentLocale),
+    me: data.me.nodes.find(isCurrentLocale),
+  }
+
+  function isCurrentLocale(item) {
+    return item.node_locale === locale
+  }
+
+  function switchLang(locale) {
+    i18n.changeLanguage(locale)
+    setLocale(locale)
+  }
+
+  console.log(localeData)
+  return (
+    <div>
+      <span onClick={() => switchLang('en')}>EN </span>
+      <span onClick={() => switchLang('fr')}> FR</span>
+
+      <SEO
+        title={localeData.me.designation}
+        keywords={[`Rohit Gupta`, `Frontend Developer`, `Developer`]}
+      />
+      <Navigation menu={localeData.menu} />
+
+      {localeData.menu.map(function(item, key) {
+        return <Factory component={item} data={localeData} key={key} />
+      })}
+      <Footer siteName={data.site.siteName} />
+    </div>
+  )
+}
 
 export default IndexPage
 
 export const pageQuery = graphql`
   query AboutQuery {
-    me: contentfulAboutMe {
-      name
-      photo {
-        file {
-          url
-        }
-        fluid {
-          base64
-          aspectRatio
-          src
-          srcSet
-          srcWebp
-          srcSetWebp
-          sizes
-        }
-      }
-      designation
-      age
-      facebook
-      github
-      gmail
-      id
-      instagram
-      linkdin
-      twitter
-      location
-      descriptionTitle
-      description {
-        childMarkdownRemark {
-          html
-        }
-      }
-      bannerImage {
-        fluid(maxWidth: 1500) {
-          base64
-          aspectRatio
-          src
-          srcSet
-          srcWebp
-          srcSetWebp
-          sizes
-        }
-      }
-      bannerList
-    }
-    blog: allContentfulBlogs(limit: 5) {
-      edges {
-        node {
-          title
-          slug
-          featureImage {
-            fluid(maxWidth: 600) {
-              base64
-              aspectRatio
-              src
-              srcSet
-              srcWebp
-              srcSetWebp
-              sizes
-            }
+    me: allContentfulAboutMe {
+      nodes {
+        name
+        node_locale
+        photo {
+          file {
+            url
           }
-          createdAt
+          fluid {
+            base64
+            aspectRatio
+            src
+            srcSet
+            srcWebp
+            srcSetWebp
+            sizes
+          }
         }
-      }
-    }
-    contentfulPhotos {
-      photos {
-        fluid(maxWidth: 600) {
-          base64
-          aspectRatio
-          src
-          srcSet
-          srcWebp
-          srcSetWebp
-          sizes
+        designation
+        age
+        facebook
+        github
+        gmail
+        id
+        instagram
+        linkdin
+        twitter
+        location
+        descriptionTitle
+        description {
+          childMarkdownRemark {
+            html
+          }
         }
+        bannerImage {
+          fluid(maxWidth: 1500) {
+            base64
+            aspectRatio
+            src
+            srcSet
+            srcWebp
+            srcSetWebp
+            sizes
+          }
+        }
+        bannerList
       }
     }
     menu: allContentfulMenu(sort: { order: ASC, fields: position }) {
       nodes {
         position
+        node_locale
         name
         title
+        node_locale
       }
     }
     experience: allContentfulExperiences(sort: { fields: [startYear], order: DESC }) {
       nodes {
         id
+        node_locale
         startYear
         title
         period
@@ -130,10 +134,12 @@ export const pageQuery = graphql`
       nodes {
         icon
         name
+        node_locale
       }
     }
     education: allContentfulEducation(sort: { fields: [startYear], order: DESC }) {
       nodes {
+        node_locale
         id
         startYear
         title
@@ -143,6 +149,15 @@ export const pageQuery = graphql`
           childMarkdownRemark {
             html
           }
+        }
+      }
+    }
+    site: contentfulSiteInformation {
+      siteName
+      siteDescription
+      logo {
+        file {
+          url
         }
       }
     }
