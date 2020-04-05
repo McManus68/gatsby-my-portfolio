@@ -1,6 +1,6 @@
 .locale-picker {
   position: fixed;
-  top: 30px;
+  top: 50px;
   left: 40px;
   z-index: 15;
   cursor: pointer;
@@ -8,5 +8,11 @@
   .flag {
     width: 16px;
     height: 16px;
+    transition: 0.2s;
+
+    &:hover {
+      width: 18px;
+      height: 18px;
+    }
   }
 }
