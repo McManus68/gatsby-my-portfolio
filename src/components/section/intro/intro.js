@@ -2,6 +2,7 @@ import React from 'react'
 
 import style from './intro.module.scss'
 
+import { useTranslation } from 'react-i18next'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Parallax } from 'react-parallax'
 import OnVisible from 'react-on-visible'
@@ -10,6 +11,8 @@ import Separator from '../../ui/separator/separator'
 import Button from '../../ui/button/button'
 
 const Intro = props => {
+  const { t } = useTranslation()
+
   return (
     <section data-section={props.section.name} id={props.section.name}>
       <Parallax
@@ -39,7 +42,7 @@ const Intro = props => {
           </OnVisible>
 
           <OnVisible visibleClassName={style.fadeInUp}>
-            <Button label="En savoir plus..."></Button>
+            <Button label={t('intro.button')}></Button>
           </OnVisible>
         </div>
       </Parallax>

@@ -1,3 +1,13 @@
 {
-  "email": "coucou le moineau"
+  "intro": {
+    "button": "En savoir plus..."
+  },
+  "contact": {
+    "name": "Votre nom:",
+    "email": "Votre adresse de messagerie:",
+    "message": "Votre message:",
+    "send": "Envoyer",
+    "success": "Votre message a été envoyé avec succès !",
+    "error": "Une erreur s'est produite lors de l'envoi de votre message"
+  }
 }

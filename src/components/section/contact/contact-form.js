@@ -37,23 +37,23 @@ const ContactForm = props => {
       action="https://formspree.io/xgelendk"
       method="POST"
     >
-      <label htmlFor="name"> Votre nom: </label>
+      <label htmlFor="name">{t('contact.name')}</label>
       <span className={style.formItem}>
         <input type="text" name="name" />
       </span>
 
-      <label htmlFor="email">{t('email')}</label>
+      <label htmlFor="email">{t('contact.email')}</label>
       <span className={style.formItem}>
         <input type="email" name="email" />
       </span>
 
-      <label htmlFor="message"> Votre message: </label>
+      <label htmlFor="message">{t('contact.message')}</label>
       <span className={style.formItem + ' ' + style.textarea}>
         <textarea name="message" />
       </span>
 
       <p className={style.buttonContainer}>
-        <Button label="Envoyer"></Button>
+        <Button label={t('contact.send')}></Button>
       </p>
 
       {status === 'SUCCESS' && <p>Thanks!</p>}

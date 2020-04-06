@@ -6,7 +6,6 @@ import fr from '../../../assets/images/fr.png'
 import en from '../../../assets/images/en.png'
 
 const LocalePicker = props => {
-  console.log(props.locale)
   return (
     <div
       className={style.localePicker}
