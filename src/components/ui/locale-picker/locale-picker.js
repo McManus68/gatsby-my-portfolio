@@ -2,8 +2,8 @@ import React from 'react'
 
 import style from './locale-picker.module.scss'
 
-import fr from '../../../images/fr.png'
-import en from '../../../images/en.png'
+import fr from '../../../assets/images/fr.png'
+import en from '../../../assets/images/en.png'
 
 const LocalePicker = props => {
   console.log(props.locale)

@@ -1,7 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
-import Helmet from "react-helmet";
-import { StaticQuery, graphql } from "gatsby";
+import React from 'react'
+import PropTypes from 'prop-types'
+import Helmet from 'react-helmet'
+import { StaticQuery, graphql } from 'gatsby'
 
 function SEO({ description, lang, meta, keywords, title, data }) {
   return (
@@ -11,82 +11,82 @@ function SEO({ description, lang, meta, keywords, title, data }) {
         return (
           <Helmet
             htmlAttributes={{
-              lang
+              lang,
             }}
             title={title}
-            titleTemplate={`%s | ${data.contentfulSiteInformation.siteName}`}
+            titleTemplate={`%s | ${data.site.siteName}`}
             meta={[
               {
                 name: `description`,
-                content: data.contentfulSiteInformation.siteDescription
+                content: data.site.siteDescription,
               },
               {
                 property: `og:title`,
-                content: title
+                content: title,
               },
               {
                 property: `og:description`,
-                content: data.contentfulSiteInformation.siteDescription
+                content: data.site.siteDescription,
               },
               {
                 property: `og:type`,
-                content: `website`
+                content: `website`,
               },
               {
                 name: `twitter:card`,
-                content: `summary`
+                content: `summary`,
               },
               {
                 name: `twitter:creator`,
-                content: data.contentfulSiteInformation.twiteerHandle
+                content: data.site.twiteerHandle,
               },
               {
                 name: `twitter:title`,
-                content: title
+                content: title,
               },
               {
                 name: `twitter:description`,
-                content: data.contentfulSiteInformation.siteDescription
-              }
+                content: data.site.siteDescription,
+              },
             ]
               .concat(
                 keywords.length > 0
                   ? {
                       name: `keywords`,
-                      content: keywords.join(`, `)
+                      content: keywords.join(`, `),
                     }
                   : []
               )
               .concat(meta)}
           />
-        );
+        )
       }}
     />
-  );
+  )
 }
 
 SEO.defaultProps = {
   lang: `en`,
   meta: [],
-  keywords: []
-};
+  keywords: [],
+}
 
 SEO.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.array,
   keywords: PropTypes.arrayOf(PropTypes.string),
-  title: PropTypes.string.isRequired
-};
+  title: PropTypes.string.isRequired,
+}
 
-export default SEO;
+export default SEO
 
 const detailsQuery = graphql`
   query DefaultSEOQuery {
-    contentfulSiteInformation {
+    site: contentfulSite {
       siteName
       siteDescription
       twiteerHandle
     }
   }
-`;
+`

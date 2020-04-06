@@ -150,7 +150,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    site: contentfulSiteInformation {
+    site: contentfulSite {
       siteName
       siteDescription
       logo {
