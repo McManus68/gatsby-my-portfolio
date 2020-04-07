@@ -17,7 +17,7 @@ const Factory = props => {
     case 'experience':
       return <Experience data={props.data.experience} section={props.component}></Experience>
     case 'interest':
-      return <Interest data={props.data.hobbie} section={props.component}></Interest>
+      return <Interest data={props.data.interest} section={props.component}></Interest>
     case 'education':
       return <Education data={props.data.education} section={props.component}></Education>
     case 'contact':

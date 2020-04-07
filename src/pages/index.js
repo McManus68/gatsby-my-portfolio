@@ -22,7 +22,7 @@ const IndexPage = ({ data }) => {
     menu: data.menu.nodes.filter(isCurrentLocale),
     experience: data.experience.nodes.filter(isCurrentLocale),
     education: data.education.nodes.filter(isCurrentLocale),
-    hobbie: data.hobbie.nodes.filter(isCurrentLocale),
+    interest: data.interest.nodes.filter(isCurrentLocale),
     me: data.me.nodes.find(isCurrentLocale),
     site: data.site.nodes.find(isCurrentLocale),
     skill: data.skill.nodes,
@@ -127,7 +127,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    hobbie: allContentfulHobbies(sort: { order: ASC, fields: position }) {
+    interest: allContentfulInterests(sort: { order: ASC, fields: position }) {
       nodes {
         icon
         name
