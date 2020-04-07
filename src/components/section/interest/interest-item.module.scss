@@ -1,6 +1,6 @@
 @import '../../../styles/_variables';
 
-.hobbie {
+.interest-item {
   display: flex;
   flex-direction: column;
   margin: 1rem;
@@ -14,7 +14,7 @@
 
   h3 {
     margin-top: 2rem;
-    color: $secondary-text-color;
+    color: $primary-text-color;
   }
 }
 

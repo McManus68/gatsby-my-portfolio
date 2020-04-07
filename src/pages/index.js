@@ -18,12 +18,15 @@ const IndexPage = ({ data }) => {
 
   let [locale, setLocale] = useState('en')
 
+  console.log(data)
+
   let localeData = {
     menu: data.menu.nodes.filter(isCurrentLocale),
     experience: data.experience.nodes.filter(isCurrentLocale),
     education: data.education.nodes.filter(isCurrentLocale),
     hobbie: data.hobbie.nodes.filter(isCurrentLocale),
     me: data.me.nodes.find(isCurrentLocale),
+    skill: data.skill.nodes,
   }
 
   function isCurrentLocale(item) {
@@ -147,6 +150,20 @@ export const pageQuery = graphql`
           childMarkdownRemark {
             html
           }
+        }
+      }
+    }
+    skill: allContentfulSkills(filter: { node_locale: { eq: "en" } }) {
+      nodes {
+        level
+        name
+        type
+        node_locale
+        logo {
+          fluid {
+            src
+          }
+          title
         }
       }
     }

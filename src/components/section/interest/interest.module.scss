@@ -1,0 +1,15 @@
+@import '../../../styles/_variables';
+
+.interest {
+  color: $primary-text-color;
+  background: white;
+
+  .items {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 4rem;
+    width: 100%;
+  }
+}
