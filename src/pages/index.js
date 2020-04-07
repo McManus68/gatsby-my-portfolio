@@ -166,7 +166,7 @@ export const pageQuery = graphql`
     site: allContentfulSite {
       nodes {
         node_locale
-        name
+        title
         twitterUsername
         url
         description

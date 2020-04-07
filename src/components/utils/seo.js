@@ -10,7 +10,7 @@ const SEO = ({ title, description, image, article }) => {
   console.log(site)
 
   const seo = {
-    title: title || site.name,
+    title: title || site.title,
     description: description || site.description,
     image: `${site.url}${image || site.image.fluid.src}`,
     url: `${site.url}${pathname}`,
@@ -48,7 +48,7 @@ SEO.defaultProps = {
 const query = graphql`
   query SEO {
     site: contentfulSite(node_locale: { eq: "fr" }) {
-      name
+      title
       twitterUsername
       url
       description
