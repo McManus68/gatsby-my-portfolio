@@ -1,3 +1,5 @@
+@import '../../../styles/_variables';
+
 .timeline-item {
   padding: 0 0 0 50%;
   position: relative;
@@ -5,5 +7,17 @@
   &:nth-child(2n) {
     padding: 0 50% 0 0;
     text-align: right;
+  }
+}
+
+@media only screen and (max-width: $medium-device) {
+  .timeline-item {
+    padding: 0 0 20px;
+    text-align: left;
+
+    &:nth-child(2n) {
+      padding: 0 0 20px;
+      text-align: left;
+    }
   }
 }

@@ -10,7 +10,7 @@
     font-size: 1.4rem;
     margin: 0 auto;
     color: $primary-color;
-    border-bottom: 4px double $primary-color;
+    border-bottom: 2px groove $primary-color;
     text-align: center;
     &::first-letter {
       text-transform: uppercase;
@@ -22,7 +22,7 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
     width: 100%;
   }
 }

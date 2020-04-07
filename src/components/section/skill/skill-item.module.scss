@@ -3,16 +3,20 @@
 .skill-item {
   display: flex;
   flex-direction: column;
-  margin: 1rem;
   align-items: center;
+  padding: 1rem;
 
   img {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
+    transition: 3s;
+    &:hover {
+      transform: rotate(360deg);
+    }
   }
 
   span {
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin: 1rem 0;
   }
 }
