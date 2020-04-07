@@ -6,7 +6,7 @@ const Footer = props => {
   return (
     <div className={style.footer} id="footer">
       <div className="container">
-        <span>{props.siteName}</span>
+        <span>{props.me.name}</span>
       </div>
     </div>
   )

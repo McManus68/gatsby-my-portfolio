@@ -18,14 +18,13 @@ const IndexPage = ({ data }) => {
 
   let [locale, setLocale] = useState('en')
 
-  console.log(data)
-
   let localeData = {
     menu: data.menu.nodes.filter(isCurrentLocale),
     experience: data.experience.nodes.filter(isCurrentLocale),
     education: data.education.nodes.filter(isCurrentLocale),
     hobbie: data.hobbie.nodes.filter(isCurrentLocale),
     me: data.me.nodes.find(isCurrentLocale),
+    site: data.site.nodes.find(isCurrentLocale),
     skill: data.skill.nodes,
   }
 
@@ -41,16 +40,13 @@ const IndexPage = ({ data }) => {
   return (
     <div>
       <LocalePicker locale={locale} callback={switchLang} />
-      <SEO
-        title={localeData.me.designation}
-        keywords={[`Rohit Gupta`, `Frontend Developer`, `Developer`]}
-      />
+      <SEO title={localeData.site.name} />
       <Navigation menu={localeData.menu} />
 
       {localeData.menu.map(function(item, key) {
         return <Factory component={item} data={localeData} key={key} />
       })}
-      <Footer siteName={data.site.siteName} />
+      <Footer me={localeData.me} site={localeData.site} />
     </div>
   )
 }
@@ -167,12 +163,17 @@ export const pageQuery = graphql`
         }
       }
     }
-    site: contentfulSite {
-      siteName
-      siteDescription
-      logo {
-        file {
-          url
+    site: allContentfulSite {
+      nodes {
+        node_locale
+        name
+        twitterUsername
+        url
+        description
+        image {
+          fluid {
+            src
+          }
         }
       }
     }

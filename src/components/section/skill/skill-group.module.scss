@@ -2,16 +2,21 @@
 
 .skill-group {
   display: flex;
-  flex-direction: column;
-  margin-top: 2rem;
+  flex-direction: row;
   width: 100%;
+  border: 1px solid white;
+  border-top: none;
+  border-right: none;
+  border-radius: 10px;
+  margin-bottom: 1rem;
 
   .group-name {
     font-size: 1.4rem;
-    margin: 0 auto;
-    color: $primary-color;
-    border-bottom: 2px groove $primary-color;
-    text-align: center;
+    color: white;
+    padding: 1rem;
+    writing-mode: vertical-lr;
+    text-transform: uppercase;
+    text-orientation: upright;
     &::first-letter {
       text-transform: uppercase;
     }
