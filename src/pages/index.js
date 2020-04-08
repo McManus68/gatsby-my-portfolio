@@ -12,7 +12,6 @@ import Footer from '../components/section/footer/footer'
 import Navigation from '../components/ui/navigation/navigation'
 
 import { useTranslation } from 'react-i18next'
-import LocalePicker from '../components/ui/locale-picker/locale-picker'
 
 const IndexPage = ({ data }) => {
   const { i18n } = useTranslation()
@@ -40,9 +39,8 @@ const IndexPage = ({ data }) => {
 
   return (
     <div>
-      <LocalePicker locale={locale} callback={switchLang} />
       <SEO title={localeData.site.name} />
-      <Navigation menu={localeData.menu} />
+      <Navigation menu={localeData.menu} locale={locale} callback={switchLang} />
 
       {localeData.menu.map(function(item, key) {
         return <Factory component={item} data={localeData} key={key} />

@@ -1,18 +1,19 @@
 .locale-picker {
   position: fixed;
-  top: 50px;
-  left: 40px;
+  top: 20px;
+  right: 20px;
   z-index: 15;
-  cursor: pointer;
 
   .flag {
+    opacity: 0.4;
+    transition: 0.3s;
+    margin-right: 0.5rem;
     width: 16px;
     height: 16px;
-    transition: 0.2s;
+    cursor: pointer;
+  }
 
-    &:hover {
-      width: 18px;
-      height: 18px;
-    }
+  .selected {
+    opacity: 1;
   }
 }

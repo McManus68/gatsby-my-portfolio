@@ -9,9 +9,9 @@ const Skill = props => {
   const groups = ['backend', 'frontend', 'devops']
   return (
     <Section section={props.section} className={style.skill}>
-      {groups.map(group => {
+      {groups.map((group, key) => {
         let groupData = props.data.filter(item => item.type === group)
-        return <SkillGroup data={groupData} group={group}></SkillGroup>
+        return <SkillGroup data={groupData} group={group} key={key}></SkillGroup>
       })}
     </Section>
   )

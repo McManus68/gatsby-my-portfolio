@@ -4,6 +4,7 @@ import style from './navigation.module.scss'
 
 import Scrollspy from 'react-scrollspy'
 
+import LocalePicker from '../locale-picker/locale-picker'
 import NavigationItem from './navigation-item'
 import NavigationButton from './navigation-button'
 
@@ -15,9 +16,12 @@ const Navigation = props => {
     setSelected(e.id)
   }
 
+  console.log(props)
+
   return (
     <div className={style.navigation}>
       <nav className={visible ? style.visible : ''}>
+        <LocalePicker locale={props.locale} callback={props.callback} />
         <Scrollspy
           items={props.menu.map(function(item) {
             return item.name
