@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { graphql } from 'gatsby'
 
 import '../styles/index.scss'
+
 import '../components/utils/i18n'
 import '../components/utils/fa'
 

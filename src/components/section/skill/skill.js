@@ -11,7 +11,6 @@ const Skill = props => {
     <Section section={props.section} className={style.skill}>
       {groups.map(group => {
         let groupData = props.data.filter(item => item.type === group)
-        console.log(groupData)
         return <SkillGroup data={groupData} group={group}></SkillGroup>
       })}
     </Section>

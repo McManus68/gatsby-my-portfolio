@@ -1,15 +1,14 @@
 import React from 'react'
 
 import style from './skill-item.module.scss'
-
-import OnVisible from 'react-on-visible'
+import ReactTooltip from 'react-tooltip'
 
 const SkillItem = props => {
   return (
-    <OnVisible visibleClassName={style.pulse} className={style.skillItem}>
-      <img src={props.data.logo.fluid.src} alt={props.data.logo.title} />
-      <span>{props.data.name}</span>
-    </OnVisible>
+    <div className={style.skillItem}>
+      <img src={props.data.logo.fluid.src} alt={props.data.logo.title} data-tip={props.data.name} />
+      <ReactTooltip place="top" type="success" effect="float" />
+    </div>
   )
 }
 
