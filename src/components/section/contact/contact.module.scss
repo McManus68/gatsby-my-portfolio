@@ -1,6 +1,24 @@
 @import '../../../styles/_variables';
 
 .contact {
-  background: $secondary-bg-color;
   color: $secondary-text-color;
+  z-index: 3;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 2rem;
+}
+
+.background {
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(14, 33, 44, 0.7);
+    z-index: 2;
+  }
 }

@@ -12,9 +12,14 @@
     margin-bottom: 15px;
   }
 
-  p {
-    font-style: normal;
-    line-height: 1.5;
+  ul {
+    padding: 0;
+    li {
+      font-style: normal;
+      line-height: 1.5;
+      margin-bottom: 1rem;
+      text-align: left;
+    }
   }
 }
 
@@ -30,7 +35,8 @@
 }
 
 @media only screen and (max-width: $medium-device) {
-  .timeline-description {
+  .timeline-description,
+  .timeline-description.odd {
     padding: 0;
     text-align: left;
   }
