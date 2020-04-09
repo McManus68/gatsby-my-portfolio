@@ -8,6 +8,8 @@ import LocalePicker from '../locale-picker/locale-picker'
 import NavigationItem from './navigation-item'
 import NavigationButton from './navigation-button'
 
+import logo from '../../../assets/images/logo.png'
+
 const Navigation = props => {
   let [selected, setSelected] = useState('intro')
   let [visible, setVisible] = useState(false)
@@ -16,12 +18,12 @@ const Navigation = props => {
     setSelected(e.id)
   }
 
-  console.log(props)
-
   return (
     <div className={style.navigation}>
       <nav className={visible ? style.visible : ''}>
         <LocalePicker locale={props.locale} callback={props.callback} />
+        <img alt="logo" className={style.logo} src={logo}></img>
+
         <Scrollspy
           items={props.menu.map(function(item) {
             return item.name

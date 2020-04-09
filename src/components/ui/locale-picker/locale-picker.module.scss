@@ -1,8 +1,6 @@
 .locale-picker {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 15;
+  padding: 1rem;
+  text-align: right;
 
   .flag {
     opacity: 0.4;

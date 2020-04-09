@@ -8,6 +8,8 @@
   z-index: 50;
 
   nav {
+    display: flex;
+    flex-direction: column;
     position: absolute;
     background-color: $secondary-bg-color;
     color: $secondary-text-color;
@@ -20,10 +22,15 @@
     transition: 0.3s;
     transform: translate(110%, 0);
 
+    .logo {
+      width: 100px;
+      margin: 0 auto;
+    }
+
     ul {
       transition-delay: 0.3s;
       margin: 0;
-      padding: 80px 0 0;
+      padding: 50px 0 0;
       list-style: none;
       font-weight: bold;
       font-style: italic;

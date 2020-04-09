@@ -8,7 +8,7 @@ import { Parallax } from 'react-parallax'
 import OnVisible from 'react-on-visible'
 
 import Separator from '../../ui/separator/separator'
-import Button from '../../ui/button/button'
+import MyParticles from '../../ui/particles/particles'
 
 const Intro = props => {
   const { t } = useTranslation()
@@ -42,10 +42,14 @@ const Intro = props => {
           </OnVisible>
 
           <OnVisible visibleClassName={style.fadeInUp}>
-            <Button label={t('intro.button')}></Button>
+            <a href="#about-me" className={style.knowMore}>
+              <span>{t('intro.button')}</span>
+            </a>
           </OnVisible>
         </div>
       </Parallax>
+
+      <MyParticles />
     </section>
   )
 }
