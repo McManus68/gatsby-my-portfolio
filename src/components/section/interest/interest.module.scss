@@ -1,8 +1,8 @@
 @import '../../../styles/_variables';
 
 .interest {
-  color: $primary-text-color;
-  background: white;
+  color: $secondary-text-color;
+  background: $secondary-bg-color;
 
   .items {
     display: flex;

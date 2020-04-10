@@ -8,3 +8,12 @@
     height: 80px;
   }
 }
+
+@media only screen and (max-width: $large-device) {
+  .skill-item {
+    img {
+      width: 60px;
+      height: 60px;
+    }
+  }
+}

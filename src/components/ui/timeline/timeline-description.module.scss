@@ -12,13 +12,16 @@
     margin-bottom: 15px;
   }
 
+  span {
+    text-align: left;
+  }
+
   ul {
     padding: 0;
     li {
       font-style: normal;
       line-height: 1.5;
       margin-bottom: 1rem;
-      text-align: left;
     }
   }
 }
@@ -38,6 +41,5 @@
   .timeline-description,
   .timeline-description.odd {
     padding: 0;
-    text-align: left;
   }
 }

@@ -3,22 +3,16 @@
 .education {
   color: $primary-text-color;
   background: $primary-bg-color;
+}
 
-  .items {
-    margin-top: 2rem;
-    position: relative;
-    width: 100%;
+@media only screen and (max-width: $medium-device) {
+  .education {
+    div[class*='module--timeline-description'] {
+      text-align: center;
 
-    &:before {
-      content: '';
-      position: absolute;
-      left: 50%;
-      top: 40px;
-      bottom: 0;
-      width: 2px;
-      border: 1px solid;
-      border-bottom: none;
-      transform: translateX(-50%);
+      span {
+        text-align: center;
+      }
     }
   }
 }
