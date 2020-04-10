@@ -28,7 +28,8 @@
     }
 
     ul {
-      transition-delay: 0.3s;
+      transition: 0.6s;
+      transform: translate(110%, 0);
       margin: 0;
       padding: 50px 0 0;
       list-style: none;
@@ -37,13 +38,17 @@
       font-size: 0.8rem;
       text-transform: uppercase;
       letter-spacing: 2px;
-      transition: 0.6s;
     }
   }
 
-  .visible {
+  nav.visible {
     box-shadow: -3px 0 5px rgba(0, 0, 0, 0.2);
     transition-delay: 0.2s;
     transform: translate(0, 0);
+
+    ul {
+      transition-delay: 0.3s;
+      transform: translate(0, 0);
+    }
   }
 }
