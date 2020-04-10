@@ -3,14 +3,19 @@
 .education {
   color: $primary-text-color;
   background: $primary-bg-color;
+
+  div[class*='timeline-description-module--odd'] {
+    text-align: right;
+  }
 }
 
 @media only screen and (max-width: $medium-device) {
   .education {
-    div[class*='module--timeline-description'] {
+    div[class*='timeline-description'] {
       text-align: center;
-
-      span {
+      padding-right: 0;
+      div[class*='timeline-description-module--date'],
+      h4 {
         text-align: center;
       }
     }

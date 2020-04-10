@@ -45,6 +45,11 @@ h4 {
   margin: 0;
 }
 
+.techno :global {
+  color: rgb(27, 54, 143);
+  font-style: italic;
+}
+
 @media only screen and (max-width: $large-device) {
   html {
     font-size: 14px;
