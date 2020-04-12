@@ -15,11 +15,9 @@
     box-sizing: border-box;
     width: 100%;
     font-size: 1.2rem;
+    color: #41b883;
     &::first-letter {
       text-transform: uppercase;
-    }
-    &::after {
-      @include title-border-style;
     }
   }
 
