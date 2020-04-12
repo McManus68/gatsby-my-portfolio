@@ -59,4 +59,12 @@
       transform: translate(0, 0);
     }
   }
+
+  nav.disable-transitions,
+  nav.visible.disable-transitions {
+    transition: 0s;
+    ul {
+      transition: 0s;
+    }
+  }
 }

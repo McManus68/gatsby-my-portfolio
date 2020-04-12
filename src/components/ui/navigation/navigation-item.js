@@ -10,7 +10,7 @@ const NavigationItem = props => {
         data-nav-section={props.name}
         onClick={() => props.callback(props.name)}
       >
-        {props.title}{' '}
+        {props.title}
       </a>
     </li>
   )

@@ -7,7 +7,7 @@ const NavigationButton = props => {
     <span
       aria-hidden="true"
       className={`${style.navigationButton} ${props.visible ? style.visible : ''}`}
-      onClick={() => props.callback(!props.visible)}
+      onClick={props.callback}
     >
       <div className={style.line}></div>
       <div className={style.line}></div>

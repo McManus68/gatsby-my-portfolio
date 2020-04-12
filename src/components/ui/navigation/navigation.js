@@ -14,17 +14,32 @@ import logo from '../../../assets/images/logo.png'
 const Navigation = props => {
   let [selected, setSelected] = useState('intro')
   let [visible, setVisible] = useState(false)
+  let [switchingTheme, setSwitchingTheme] = useState(false)
 
   function handleScroll(e) {
     setSelected(e.id)
   }
 
+  function handleSwitchTheme(e) {
+    setSwitchingTheme(true)
+    props.switchTheme()
+  }
+
+  function handleVisibility(e) {
+    setSwitchingTheme(false)
+    setVisible(!visible)
+  }
+
   return (
     <div className={style.navigation}>
-      <nav className={visible ? style.visible : ''}>
+      <nav
+        className={`${switchingTheme ? style.disableTransitions : ''} ${
+          visible ? style.visible : ''
+        }`}
+      >
         <img alt="logo" className={style.logo} src={logo}></img>
         <div className={style.header}>
-          <StylePicker style={props.style} callback={props.switchTheme} />
+          <StylePicker style={props.style} callback={handleSwitchTheme} />
           <LocalePicker locale={props.locale} callback={props.switchLang} />
         </div>
 
@@ -47,7 +62,7 @@ const Navigation = props => {
           })}
         </Scrollspy>
       </nav>
-      <NavigationButton callback={setVisible} visible={visible} />
+      <NavigationButton callback={handleVisibility} visible={visible} />
     </div>
   )
 }
