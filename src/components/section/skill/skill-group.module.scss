@@ -1,5 +1,4 @@
 @import '../../../styles/_variables';
-@import '../../../styles/common';
 
 .skill-group {
   display: flex;
@@ -8,20 +7,6 @@
   align-items: center;
   margin: 2rem 0 0 0;
   width: 100%;
-
-  .group-name {
-    padding: 0.5rem;
-    text-align: center;
-    box-sizing: border-box;
-    width: 100%;
-    font-size: 1.2rem;
-    &::first-letter {
-      text-transform: uppercase;
-    }
-    &::after {
-      @extend .border-title;
-    }
-  }
 
   .items {
     display: flex;

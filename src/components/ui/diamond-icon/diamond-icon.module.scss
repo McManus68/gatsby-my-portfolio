@@ -1,32 +1,16 @@
+@import '../../../styles/_variables';
+@import '../../../styles/_common';
+
 .diamond-icon {
-  position: relative;
-  display: block;
-  width: 70px;
-  height: 70px;
-  line-height: 70px;
-  left: 50%;
-  top: 0;
-  margin: 0 0 0 -35px;
-  color: black;
-  text-align: center;
+  @include diamond-style(currentColor, $primary-color);
 
-  &:before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: 60px;
-    height: 60px;
-    border: 4px double;
-    box-sizing: border-box;
-    transition: 0.3s;
-    transform: translate(-50%, -50%) rotate(45deg);
-    background: #fff;
-  }
-
-  svg {
-    z-index: 5;
-    font-size: 1rem;
+  .title {
     position: relative;
+    display: block;
+    font-size: 0.8rem;
+
+    &::first-letter {
+      text-transform: uppercase;
+    }
   }
 }

@@ -1,6 +1,6 @@
 @import './_variables';
 
-.button-style {
+@mixin button-style {
   background: none;
   border: 4px double;
   color: $primary-color;
@@ -29,11 +29,42 @@
   }
 }
 
-.border-title {
+@mixin title-border-style {
   content: '';
   display: block;
   margin: 0 auto;
   width: 4rem;
   padding-top: 0.5rem;
   border-bottom: 2px solid $primary-color;
+}
+
+@mixin diamond-style($color: $primary-text-color, $bg: #fff) {
+  position: relative;
+  display: block;
+  width: 70px;
+  height: 70px;
+  line-height: 70px;
+  margin-top: 1rem;
+  text-align: center;
+  color: $color;
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 60px;
+    height: 60px;
+    border: 4px double;
+    box-sizing: border-box;
+    transition: 0.3s;
+    transform: translate(-50%, -50%) rotate(45deg);
+    background: $bg;
+  }
+
+  svg {
+    z-index: 5;
+    font-size: 1rem;
+    position: relative;
+  }
 }

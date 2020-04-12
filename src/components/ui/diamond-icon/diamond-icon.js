@@ -7,7 +7,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 const DiamondIcon = props => {
   return (
     <div className={style.diamondIcon}>
-      <FontAwesomeIcon icon={props.icon} />
+      {props.icon ? <FontAwesomeIcon icon={props.icon} /> : null}
+      {props.title ? <span className={style.title}>{props.title}</span> : null}
     </div>
   )
 }
