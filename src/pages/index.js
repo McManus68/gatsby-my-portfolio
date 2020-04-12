@@ -126,6 +126,12 @@ export const pageQuery = graphql`
         title
         period
         icon
+        image {
+          fluid {
+            src
+          }
+          title
+        }
         description {
           childMarkdownRemark {
             html
