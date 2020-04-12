@@ -1,9 +1,6 @@
 @import '../../../styles/_variables';
 
 .education {
-  color: $secondary-text-color;
-  background: $secondary-bg-color;
-
   div[class*='timeline-description-module--odd'] {
     text-align: right;
   }

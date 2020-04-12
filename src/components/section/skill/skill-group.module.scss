@@ -2,22 +2,34 @@
 
 .skill-group {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  flex-wrap: wrap;
+  flex-direction: column;
+  overflow-x: auto;
   align-items: center;
-  margin: 3rem 0;
+  margin: 2rem 0 0 0;
   width: 100%;
+  background: #c9d4d8;
+  border-radius: 10px;
+  border: 1px solid $secondary-bg-color;
 
   .group-name {
-    font-size: 1.4rem;
+    padding: 0.5rem;
+    text-align: center;
+    color: $secondary-text-color;
+    background: $secondary-bg-color;
+    box-sizing: border-box;
+    width: 100%;
+    font-size: 1rem;
     &::first-letter {
       text-transform: uppercase;
     }
   }
 
-  img {
-    width: 80px;
-    height: 80px;
+  .items {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 0 0.5rem;
   }
 }

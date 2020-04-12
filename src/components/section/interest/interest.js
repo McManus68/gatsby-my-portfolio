@@ -7,7 +7,7 @@ import Section from '../../ui/section/section'
 
 const Interest = props => {
   return (
-    <Section section={props.section} className={style.interest}>
+    <Section section={props.section} className={style.interest + ' ' + props.bg}>
       <div className={style.items}>
         {props.data.map((item, index) => {
           return <InterestItem data={item} key={index}></InterestItem>

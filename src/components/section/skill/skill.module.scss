@@ -1,9 +1,6 @@
 @import '../../../styles/_variables';
 
 .skill {
-  background: $primary-bg-color;
-  color: $primary-text-color;
-
   .items {
     display: flex;
     flex-wrap: wrap;

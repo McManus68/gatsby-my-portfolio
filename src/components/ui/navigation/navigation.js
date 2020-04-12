@@ -21,8 +21,10 @@ const Navigation = props => {
   return (
     <div className={style.navigation}>
       <nav className={visible ? style.visible : ''}>
-        <LocalePicker locale={props.locale} callback={props.callback} />
         <img alt="logo" className={style.logo} src={logo}></img>
+        <div className={style.header}>
+          <LocalePicker locale={props.locale} callback={props.callback} />
+        </div>
 
         <Scrollspy
           items={props.menu.map(function(item) {

@@ -7,7 +7,7 @@ import TimeLine from '../../ui/timeline/timeline'
 
 const Experience = props => {
   return (
-    <Section section={props.section} className={style.experience}>
+    <Section section={props.section} className={style.experience + ' ' + props.bg}>
       <TimeLine data={props.data} />
     </Section>
   )

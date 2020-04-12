@@ -1,13 +1,20 @@
 import React from 'react'
 
 import style from './skill-item.module.scss'
-import ReactTooltip from 'react-tooltip'
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const SkillItem = props => {
+  var elements = []
+  for (var i = 0; i < props.data.level; i++) {
+    elements.push(<FontAwesomeIcon icon={['fa', 'star']} key={i} />)
+  }
+
   return (
     <div className={style.skillItem} data-tip={props.data.name}>
       <img src={props.data.logo.fluid.src} alt={props.data.logo.title} />
-      <ReactTooltip place="top" type="success" effect="float" />
+      <span>{props.data.name} </span>
+      <div className={style.star}>{elements}</div>
     </div>
   )
 }

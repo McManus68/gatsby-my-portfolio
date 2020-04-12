@@ -38,12 +38,19 @@ const IndexPage = ({ data }) => {
   }
 
   return (
-    <div>
+    <div className="theme2">
       <SEO title={localeData.site.name} />
       <Navigation menu={localeData.menu} locale={locale} callback={switchLang} />
 
       {localeData.menu.map(function(item, key) {
-        return <Factory component={item} data={localeData} key={key} />
+        return (
+          <Factory
+            component={item}
+            data={localeData}
+            key={key}
+            bg={key % 2 !== 0 ? 'bg1' : 'bg2'}
+          />
+        )
       })}
       <Footer me={localeData.me} site={localeData.site} />
     </div>

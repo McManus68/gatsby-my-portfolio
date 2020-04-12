@@ -14,6 +14,9 @@ import {
   faWineGlass,
   faBookOpen,
   faGraduationCap,
+  faStar,
+  faFillDrip,
+  faPalette,
 } from '@fortawesome/free-solid-svg-icons'
 
 import { faAngellist } from '@fortawesome/free-brands-svg-icons'
@@ -32,5 +35,8 @@ library.add(
   faAngellist,
   faWineGlass,
   faBookOpen,
-  faGraduationCap
+  faGraduationCap,
+  faStar,
+  faFillDrip,
+  faPalette
 )

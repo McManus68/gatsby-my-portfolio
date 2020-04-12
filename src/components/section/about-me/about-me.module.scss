@@ -1,9 +1,6 @@
 @import '../../../styles/_variables';
 
 .about-me {
-  background: $primary-bg-color;
-  color: $primary-text-color;
-
   .content {
     display: flex;
     flex-direction: row;
@@ -33,7 +30,6 @@
       }
 
       p {
-        font-size: 1.2rem;
         line-height: 1.5;
         margin: 0 0 2rem;
       }

@@ -1,9 +1,6 @@
 @import '../../../styles/_variables';
 
 .interest {
-  color: $primary-text-color;
-  background: $primary-bg-color;
-
   .items {
     display: flex;
     flex-wrap: wrap;
