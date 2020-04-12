@@ -15,9 +15,7 @@ const TimelineItem = props => {
     >
       <TimelineIcon icon={props.data.icon} active={props.active === props.id} />
       <TimelineDescription data={props.data} odd={props.id % 2 !== 0} />
-      {props.data.image ? (
-        <TimelineImage image={props.data.image} odd={props.id % 2 !== 0} />
-      ) : null}
+      <TimelineImage image={props.data.image} />
     </div>
   )
 }
