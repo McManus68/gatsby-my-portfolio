@@ -8,7 +8,7 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  color: $secondary-text-color;
+  color: white;
   z-index: 8;
 
   .animate-icon :global {
@@ -72,7 +72,7 @@
         width: 6px;
         height: 6px;
         display: inline-block;
-        background: $secondary-text-color;
+        background: white;
         position: absolute;
         top: 50%;
         margin-top: -3px;

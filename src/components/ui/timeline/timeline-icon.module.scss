@@ -2,7 +2,7 @@
 @import '../../../styles/_common';
 
 .timeline-icon {
-  @include diamond-style(currentColor, $secondary-text-color);
+  @include diamond-style($primary-text-color, $secondary-text-color);
   position: absolute;
   left: 50%;
   top: 0;

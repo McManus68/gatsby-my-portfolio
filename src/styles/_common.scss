@@ -25,7 +25,7 @@
   }
 
   span {
-    color: $secondary-text-color;
+    color: white;
   }
 }
 
@@ -46,7 +46,6 @@
   line-height: 70px;
   margin-top: 1rem;
   text-align: center;
-  color: $color;
 
   &:before {
     content: '';
@@ -63,6 +62,7 @@
   }
 
   svg {
+    color: $primary-text-color;
     z-index: 5;
     font-size: 1rem;
     position: relative;
