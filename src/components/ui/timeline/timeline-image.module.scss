@@ -3,9 +3,13 @@
   flex-basis: 0;
   align-self: center;
   text-align: center;
+  width: 100%;
 
   img {
-    width: 90%;
+    width: 80%;
     height: auto;
+    border: solid 1px #ccc;
+    box-shadow: 1px 1px 5px #999;
+    margin: 1rem;
   }
 }

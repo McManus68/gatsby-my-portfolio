@@ -15,8 +15,9 @@ import { useTranslation } from 'react-i18next'
 
 const IndexPage = ({ data }) => {
   const { i18n } = useTranslation()
-
+  const themesCount = 2
   let [locale, setLocale] = useState('en')
+  let [theme, setTheme] = useState(1)
 
   let localeData = {
     menu: data.menu.nodes.filter(isCurrentLocale),
@@ -37,11 +38,20 @@ const IndexPage = ({ data }) => {
     setLocale(locale)
   }
 
-  return (
-    <div className="theme2">
-      <SEO title={localeData.site.name} />
-      <Navigation menu={localeData.menu} locale={locale} callback={switchLang} />
+  function switchTheme() {
+    console.log(theme)
+    theme < themesCount ? setTheme(theme + 1) : setTheme(1)
+  }
 
+  return (
+    <main className={'theme-' + theme}>
+      <SEO title={localeData.site.name} />
+      <Navigation
+        menu={localeData.menu}
+        locale={locale}
+        switchLang={switchLang}
+        switchTheme={switchTheme}
+      />
       {localeData.menu.map(function(item, key) {
         return (
           <Factory
@@ -53,7 +63,7 @@ const IndexPage = ({ data }) => {
         )
       })}
       <Footer me={localeData.me} site={localeData.site} />
-    </div>
+    </main>
   )
 }
 

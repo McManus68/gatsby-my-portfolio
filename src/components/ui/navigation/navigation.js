@@ -5,6 +5,7 @@ import style from './navigation.module.scss'
 import Scrollspy from 'react-scrollspy'
 
 import LocalePicker from '../locale-picker/locale-picker'
+import StylePicker from '../style-picker/style-picker'
 import NavigationItem from './navigation-item'
 import NavigationButton from './navigation-button'
 
@@ -23,7 +24,8 @@ const Navigation = props => {
       <nav className={visible ? style.visible : ''}>
         <img alt="logo" className={style.logo} src={logo}></img>
         <div className={style.header}>
-          <LocalePicker locale={props.locale} callback={props.callback} />
+          <StylePicker style={props.style} callback={props.switchTheme} />
+          <LocalePicker locale={props.locale} callback={props.switchLang} />
         </div>
 
         <Scrollspy

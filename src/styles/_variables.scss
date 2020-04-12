@@ -1,17 +1,46 @@
+:root {
+  .theme-1 {
+    --first-color: #fb544d;
+    --first-color-darker: #fa241b;
+    --second-color: #2e2bf8;
+    --third-color: #948c1c;
+    --first-text-color: #000;
+    --second-text-color: #fff;
+    --first-bg-color: #e3ebee;
+    --second-bg-color: #fafafa;
+    --nav-bg-color: #1b1f2b;
+  }
+  .theme-2 {
+    --first-color: #488cff;
+    --first-color-darker: #2629c5;
+    --second-color: #2c662e;
+    --third-color: #7c1b67;
+    --first-text-color: #000;
+    --second-text-color: #fff;
+    --first-bg-color: #2a2e30;
+    --second-bg-color: #746f6f;
+    --nav-bg-color: #1b1f2b;
+  }
+}
+
+// Fonts
 $primary-font: 'Josefin Sans', sans-serif;
 $secondary-font: Nothing You Could Do, cursive;
 
-$primary-text-color: #000000;
-$secondary-text-color: #fff;
-
-$primary-color: #fb544d;
-$primary-darker-color: #fa241b;
-$primary-lighter-color: #ee928f;
-
-$primary-bg-color: #e3ebee;
-$secondary-bg-color: #fafafa;
-$nav-bg-color: #1b1f2b;
-
+// Devices widths
 $small-device: 400px;
 $medium-device: 768px;
 $large-device: 992px;
+
+// Colors
+$primary-text-color: var(--first-text-color);
+$secondary-text-color: var(--second-text-color);
+
+$primary-color: var(--first-color);
+$primary-darker-color: var(--first-color-darker);
+$secondary-color: var(--second-color);
+$third-color: var(--third-color);
+
+$primary-bg-color: var(--first-bg-color);
+$secondary-bg-color: var(--second-bg-color);
+$nav-bg-color: var(--nav-bg-color);
