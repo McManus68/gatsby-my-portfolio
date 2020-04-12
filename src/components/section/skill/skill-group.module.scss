@@ -1,4 +1,5 @@
 @import '../../../styles/_variables';
+@import '../../../styles/common';
 
 .skill-group {
   display: flex;
@@ -7,10 +8,6 @@
   align-items: center;
   margin: 2rem 0 0 0;
   width: 100%;
-  background: #d2dde0;
-  border-radius: 10px;
-  border: 1px solid $primary-text-color;
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
 
   .group-name {
     padding: 0.5rem;
@@ -20,6 +17,9 @@
     font-size: 1.2rem;
     &::first-letter {
       text-transform: uppercase;
+    }
+    &::after {
+      @extend .border-title;
     }
   }
 
