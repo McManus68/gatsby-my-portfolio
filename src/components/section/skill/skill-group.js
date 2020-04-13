@@ -13,10 +13,10 @@ const SkillGroup = props => {
 
   return (
     <div className={style.skillGroup}>
-      <span className={style.groupName}>{props.group} </span>
+      <span className={`${style.groupName} ${props.group}`}>{props.group} </span>
       <div className={style.items}>
         {skills.map((item, index) => {
-          return <SkillItem data={item} key={index} />
+          return <SkillItem data={item} group={props.group} key={index} />
         })}
       </div>
     </div>

@@ -4,18 +4,13 @@
 .skill-group {
   display: flex;
   flex-direction: column;
-  overflow-x: auto;
   align-items: center;
   margin: 2rem 0 0 0;
   width: 100%;
 
   .group-name {
     padding: 0.5rem;
-    text-align: center;
-    box-sizing: border-box;
-    width: 100%;
     font-size: 1.2rem;
-    color: #41b883;
     &::first-letter {
       text-transform: uppercase;
     }

@@ -80,3 +80,30 @@ h4 {
   background: $secondary-bg-color;
   color: $primary-text-color;
 }
+
+.frontend {
+  color: var(--frontend-color);
+}
+
+.backend {
+  color: var(--backend-color);
+}
+
+.devops {
+  color: var(--devops-color);
+}
+
+.item-frontend {
+  background: var(--card-bg-color)
+    linear-gradient(135deg, var(--frontend-color) 10px, rgba(0, 0, 0, 0.01) 0);
+}
+
+.item-backend {
+  background: var(--card-bg-color)
+    linear-gradient(135deg, var(--backend-color) 10px, rgba(0, 0, 0, 0.01) 0);
+}
+
+.item-devops {
+  background: var(--card-bg-color)
+    linear-gradient(135deg, var(--devops-color) 10px, rgba(0, 0, 0, 0.01) 0);
+}
