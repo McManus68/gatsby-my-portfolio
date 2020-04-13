@@ -2,7 +2,7 @@
 @import '../../../styles/_common';
 
 .diamond-icon {
-  @include diamond-style(currentColor, $primary-color);
+  @include diamond-style(currentColor, var(--first-color));
 
   .title {
     position: relative;

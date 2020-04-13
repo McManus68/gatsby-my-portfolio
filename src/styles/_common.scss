@@ -3,7 +3,7 @@
 @mixin button-style {
   background: none;
   border: 4px double;
-  color: $primary-color;
+  color: var(--first-color);
   padding: 18px 35px;
   text-decoration: none;
   letter-spacing: 2px;
@@ -16,7 +16,7 @@
   font: italic bold 1em Roboto Mono, serif;
 
   &:hover {
-    background: $primary-darker-color;
+    background: var(--first-color-darker);
     text-decoration: none;
   }
 
@@ -35,10 +35,10 @@
   margin: 0 auto;
   width: 4rem;
   padding-top: 0.5rem;
-  border-bottom: 2px solid $primary-color;
+  border-bottom: 2px solid var(--first-color);
 }
 
-@mixin diamond-style($color: $primary-text-color, $bg: #fff) {
+@mixin diamond-style($color: var(--first-text-color), $bg: #fff) {
   position: relative;
   display: block;
   width: 70px;
@@ -62,7 +62,7 @@
   }
 
   svg {
-    color: $primary-text-color;
+    color: var(--first-text-color);
     z-index: 5;
     font-size: 1rem;
     position: relative;

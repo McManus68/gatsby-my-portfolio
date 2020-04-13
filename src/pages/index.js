@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { graphql } from 'gatsby'
 
-import '../styles/index.scss'
+import '../styles/main.scss'
 
 import '../components/utils/i18n'
 import '../components/utils/fa'
@@ -39,7 +39,6 @@ const IndexPage = ({ data }) => {
   }
 
   function switchTheme() {
-    console.log(theme)
     theme < themesCount ? setTheme(theme + 1) : setTheme(1)
   }
 

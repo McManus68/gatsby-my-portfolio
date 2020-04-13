@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,400i,600,700,700i&display=swap');
+
+@font-face {
+  font-family: 'loveloline_bold';
+  src: url('./fonts/Lovelo-LineBold.woff');
+}
+
+:root {
+  --first-font: 'Josefin Sans', sans-serif;
+  --second-font: loveloline_bold;
+  --third-font: Nothing You Could Do, cursive;
+  
+  .theme-1 {
+    --first-color: #fb544d;
+    --first-color-darker: #fa241b;
+    --second-color: #2e2bf8;
+    --third-color: #948c1c;
+    --first-text-color: #000;
+    --second-text-color: #fff;
+    --first-bg-color: #e3ebee;
+    --second-bg-color: #fafafa;
+    --nav-bg-color: #1b1f2b;
+    --card-bg-color: #232735;
+    --backend-color: #61dafb;
+    --frontend-color: #41b883;
+    --devops-color: #f7df1e;
+  }
+  .theme-2 {
+    --first-color: #488cff;
+    --first-color-darker: #2629c5;
+    --second-color: #db33b1;
+    --third-color: #23b944;
+    --first-text-color: #fff;
+    --second-text-color: #000;
+    --first-bg-color: #110909;
+    --second-bg-color: #02130b;
+    --nav-bg-color: #fafafa;
+    --card-bg-color: #232735;
+    --backend-color: #61dafb;
+    --frontend-color: #41b883;
+    --devops-color: #f7df1e;
+  }
+}

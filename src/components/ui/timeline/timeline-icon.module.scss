@@ -2,7 +2,7 @@
 @import '../../../styles/_common';
 
 .timeline-icon {
-  @include diamond-style($primary-text-color, $secondary-text-color);
+  @include diamond-style(var(--first-text-color), var(--second-text-color));
   position: absolute;
   left: 50%;
   top: 0;
@@ -16,7 +16,7 @@
 }
 
 .timeline-icon.active:before {
-  background: $primary-color;
+  background: var(--first-color);
 }
 
 @media only screen and (max-width: $medium-device) {
