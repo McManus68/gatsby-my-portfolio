@@ -5,9 +5,8 @@ import style from './intro.module.scss'
 import { useTranslation } from 'react-i18next'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Parallax } from 'react-parallax'
+import { AnchorLink } from 'gatsby-plugin-anchor-links'
 import OnVisible from 'react-on-visible'
-import { HashLink as Link } from 'react-router-hash-link'
-
 import Separator from '../../ui/separator/separator'
 import MyParticles from '../../ui/particles/particles'
 
@@ -43,9 +42,9 @@ const Intro = props => {
           </OnVisible>
 
           <OnVisible visibleClassName={style.fadeInUp}>
-            <Link to={'#about-me'} className={style.knowMore}>
+            <AnchorLink to="/#about-me" className={style.knowMore}>
               <span>{t('intro.button')}</span>
-            </Link>
+            </AnchorLink>
           </OnVisible>
         </div>
       </Parallax>

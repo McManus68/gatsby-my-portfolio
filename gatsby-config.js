@@ -52,5 +52,6 @@ module.exports = {
         path: `${__dirname}/src/`,
       },
     },
+    `gatsby-plugin-anchor-links`,
   ],
 }

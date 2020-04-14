@@ -10,7 +10,6 @@ import SEO from '../components/utils/seo'
 import Factory from '../components/section/factory/factory'
 import Footer from '../components/section/footer/footer'
 import Navigation from '../components/ui/navigation/navigation'
-import { BrowserRouter as Router } from 'react-router-dom'
 
 import { useTranslation } from 'react-i18next'
 
@@ -51,19 +50,17 @@ const IndexPage = ({ data }) => {
 
   return (
     <main className={'theme-' + theme}>
-      <Router>
-        <SEO title={localeData.site.name} />
-        <Navigation
-          menu={localeData.menu}
-          locale={locale}
-          switchLang={switchLang}
-          switchTheme={switchTheme}
-        />
-        {localeData.menu.map(function(item, key) {
-          return <Factory component={item} data={localeData} key={key} />
-        })}
-        <Footer me={localeData.me} site={localeData.site} />
-      </Router>
+      <SEO title={localeData.site.name} />
+      <Navigation
+        menu={localeData.menu}
+        locale={locale}
+        switchLang={switchLang}
+        switchTheme={switchTheme}
+      />
+      {localeData.menu.map(function(item, key) {
+        return <Factory component={item} data={localeData} key={key} />
+      })}
+      <Footer me={localeData.me} site={localeData.site} />
     </main>
   )
 }
