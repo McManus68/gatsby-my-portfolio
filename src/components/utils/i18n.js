@@ -18,7 +18,7 @@ i18n
         translation: translationFr,
       },
     },
-    debug: true,
+    debug: false,
 
     interpolation: {
       escapeValue: false, // not needed for react!!

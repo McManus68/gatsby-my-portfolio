@@ -14,7 +14,7 @@ const TimelineDescription = props => {
         <h4>{props.data.title}</h4>
       </div>
       <span
-        class={style.content}
+        className={style.content}
         dangerouslySetInnerHTML={{
           __html: props.data.description.childMarkdownRemark.html,
         }}
