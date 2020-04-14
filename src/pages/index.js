@@ -16,7 +16,7 @@ import { useTranslation } from 'react-i18next'
 
 const IndexPage = ({ data }) => {
   const { i18n } = useTranslation()
-  const themesCount = 3
+  const themesCount = 4
   const [locale, setLocale] = useState(i18n.language)
   const [theme, setTheme] = useState(1)
 

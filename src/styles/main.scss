@@ -63,24 +63,21 @@ h4 {
 }
 
 main section {
+  color: var(--first-text-color);
   background-color: var(--first-bg-color);
+}
+
+main section:nth-child(2n) {
+  color: var(--second-text-color);
+  background-color: var(--second-bg-color);
 }
 
 main section div[class*='arrow'] {
   border-top: solid 30px var(--first-bg-color);
 }
 
-main section:nth-child(2n) {
-  background-color: var(--second-bg-color);
-}
-
 main section:nth-child(2n) div[class*='arrow'] {
   border-top: solid 30px var(--second-bg-color);
-}
-
-main section:nth-last-child(1),
-main section:first-child {
-  clip-path: none;
 }
 
 .frontend {

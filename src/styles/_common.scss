@@ -38,7 +38,7 @@
   border-bottom: 2px solid var(--first-color);
 }
 
-@mixin diamond-style($color: var(--first-text-color), $bg: var(--second-text-color)) {
+@mixin diamond-style($color: var(--first-text-color), $bg: var(--reverse-text-color)) {
   position: relative;
   display: block;
   width: 70px;
@@ -54,7 +54,7 @@
     top: 50%;
     width: 60px;
     height: 60px;
-    border: 4px double;
+    border: 4px double $color;
     box-sizing: border-box;
     transition: 0.3s;
     transform: translate(-50%, -50%) rotate(45deg);

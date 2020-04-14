@@ -14,7 +14,7 @@ const SkillItem = props => {
     <div className={`${style.skillItem} ${'item-' + props.group}`} data-tip={props.data.name}>
       <img src={props.data.logo.fluid.src} alt={props.data.logo.title} />
       <span>{props.data.name} </span>
-      <div className={style.star}>{elements}</div>
+      <div className={`${style.star} ${props.group}`}>{elements}</div>
     </div>
   )
 }
