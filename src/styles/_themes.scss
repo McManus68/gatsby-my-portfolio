@@ -17,13 +17,14 @@
     --third-color: #948c1c;
     --first-text-color: #000;
     --second-text-color: #fff;
-    --first-bg-color: #e3ebee;
+    --first-bg-color: #f2fbff;
     --second-bg-color: #fafafa;
     --nav-bg-color: #1b1f2b;
-    --card-bg-color: #232735;
-    --backend-color: #61dafb;
-    --frontend-color: #41b883;
-    --devops-color: #f7df1e;
+    --card-bg-color: #d3e3ea;
+    --backend-color: #529356;
+    --frontend-color: #22667c;
+    --devops-color: #995712;
+    color: var(--first-text-color);
   }
   .theme-2 {
     --first-color: #488cff;
@@ -39,5 +40,22 @@
     --backend-color: #61dafb;
     --frontend-color: #41b883;
     --devops-color: #f7df1e;
-  }
+    color: var(--first-text-color);
+  }    
+  .theme-3 {
+    --first-color: #fc5185;
+    --first-color-darker: #f22965;
+    --second-color: #43dde6;
+    --third-color: #23b944;
+    --first-text-color: #fff;
+    --second-text-color: #000;
+    --first-bg-color: #364f6b;
+    --second-bg-color: #3f5d7c;
+    --nav-bg-color: #f0f0f0;
+    --card-bg-color: #364759;
+    --backend-color: #61dafb;
+    --frontend-color: #41b883;
+    --devops-color: #f7df1e;
+    color: var(--first-text-color);
+  }  
 }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { graphql } from 'gatsby'
 
 import '../styles/main.scss'
@@ -10,58 +10,60 @@ import SEO from '../components/utils/seo'
 import Factory from '../components/section/factory/factory'
 import Footer from '../components/section/footer/footer'
 import Navigation from '../components/ui/navigation/navigation'
+import { BrowserRouter as Router } from 'react-router-dom'
 
 import { useTranslation } from 'react-i18next'
 
 const IndexPage = ({ data }) => {
   const { i18n } = useTranslation()
-  const themesCount = 2
-  let [locale, setLocale] = useState('en')
-  let [theme, setTheme] = useState(1)
+  const themesCount = 3
+  const [locale, setLocale] = useState(i18n.language)
+  const [theme, setTheme] = useState(1)
 
-  let localeData = {
-    menu: data.menu.nodes.filter(isCurrentLocale),
-    experience: data.experience.nodes.filter(isCurrentLocale),
-    education: data.education.nodes.filter(isCurrentLocale),
-    interest: data.interest.nodes.filter(isCurrentLocale),
-    me: data.me.nodes.find(isCurrentLocale),
-    site: data.site.nodes.find(isCurrentLocale),
-    skill: data.skill.nodes,
+  /**
+  Initiliaze data from current language
+   */
+  const getLocalizedData = function() {
+    const isLocale = item => item.node_locale === locale
+    return {
+      menu: data.menu.nodes.filter(isLocale),
+      experience: data.experience.nodes.filter(isLocale),
+      education: data.education.nodes.filter(isLocale),
+      interest: data.interest.nodes.filter(isLocale),
+      me: data.me.nodes.find(isLocale),
+      site: data.site.nodes.find(isLocale),
+      skill: data.skill.nodes,
+    }
   }
 
-  function isCurrentLocale(item) {
-    return item.node_locale === locale
+  let localeData = getLocalizedData()
+
+  const switchLang = function(newLocale) {
+    if (newLocale !== locale) {
+      i18n.changeLanguage(newLocale)
+      setLocale(newLocale)
+    }
   }
 
-  function switchLang(locale) {
-    i18n.changeLanguage(locale)
-    setLocale(locale)
-  }
-
-  function switchTheme() {
+  const switchTheme = function() {
     theme < themesCount ? setTheme(theme + 1) : setTheme(1)
   }
 
   return (
     <main className={'theme-' + theme}>
-      <SEO title={localeData.site.name} />
-      <Navigation
-        menu={localeData.menu}
-        locale={locale}
-        switchLang={switchLang}
-        switchTheme={switchTheme}
-      />
-      {localeData.menu.map(function(item, key) {
-        return (
-          <Factory
-            component={item}
-            data={localeData}
-            key={key}
-            bg={key % 2 !== 0 ? 'bg1' : 'bg2'}
-          />
-        )
-      })}
-      <Footer me={localeData.me} site={localeData.site} />
+      <Router>
+        <SEO title={localeData.site.name} />
+        <Navigation
+          menu={localeData.menu}
+          locale={locale}
+          switchLang={switchLang}
+          switchTheme={switchTheme}
+        />
+        {localeData.menu.map(function(item, key) {
+          return <Factory component={item} data={localeData} key={key} />
+        })}
+        <Footer me={localeData.me} site={localeData.site} />
+      </Router>
     </main>
   )
 }
@@ -141,6 +143,15 @@ export const pageQuery = graphql`
           }
           title
         }
+        country {
+          name
+          icon {
+            title
+            file {
+              url
+            }
+          }
+        }
         description {
           childMarkdownRemark {
             html
@@ -166,6 +177,15 @@ export const pageQuery = graphql`
         description {
           childMarkdownRemark {
             html
+          }
+        }
+        country {
+          name
+          icon {
+            title
+            file {
+              url
+            }
           }
         }
       }

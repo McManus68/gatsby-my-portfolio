@@ -6,6 +6,7 @@ import { useTranslation } from 'react-i18next'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Parallax } from 'react-parallax'
 import OnVisible from 'react-on-visible'
+import { HashLink as Link } from 'react-router-hash-link'
 
 import Separator from '../../ui/separator/separator'
 import MyParticles from '../../ui/particles/particles'
@@ -42,9 +43,9 @@ const Intro = props => {
           </OnVisible>
 
           <OnVisible visibleClassName={style.fadeInUp}>
-            <a href="#about-me" className={style.knowMore}>
+            <Link to={'#about-me'} className={style.knowMore}>
               <span>{t('intro.button')}</span>
-            </a>
+            </Link>
           </OnVisible>
         </div>
       </Parallax>

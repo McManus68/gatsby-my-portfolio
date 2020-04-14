@@ -13,14 +13,14 @@ const LocalePicker = props => {
         onClick={() => props.callback('fr')}
         alt="fr"
         src={fr}
-        className={`${style.flag} ${props.locale === 'fr' ? style.selected : ''}`}
+        className={`${style.flag} ${props.locale === 'fr' ? style.highlight : ''}`}
       ></img>
       <img
         aria-hidden="true"
         onClick={() => props.callback('en')}
         alt="en"
         src={en}
-        className={`${style.flag} ${props.locale === 'en' ? style.selected : ''}`}
+        className={`${style.flag} ${props.locale === 'en' ? style.highlight : ''}`}
       ></img>
     </div>
   )

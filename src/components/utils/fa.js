@@ -17,6 +17,7 @@ import {
   faStar,
   faFillDrip,
   faPalette,
+  faCarAlt,
 } from '@fortawesome/free-solid-svg-icons'
 
 import { faAngellist } from '@fortawesome/free-brands-svg-icons'
@@ -38,5 +39,6 @@ library.add(
   faGraduationCap,
   faStar,
   faFillDrip,
-  faPalette
+  faPalette,
+  faCarAlt
 )

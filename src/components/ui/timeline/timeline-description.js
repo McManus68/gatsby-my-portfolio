@@ -6,7 +6,11 @@ const TimelineDescription = props => {
   return (
     <div className={`${style.timelineDescription} ${props.odd ? style.odd : ''}`}>
       <div className={style.header}>
-        <div className={style.date}>{props.data.period}</div>
+        <div className={style.subHeader}>
+          <span className={style.date}> {props.data.period} </span>
+          <img alt={props.data.country.icon.title} src={props.data.country.icon.file.url}></img>
+        </div>
+
         <h4>{props.data.title}</h4>
       </div>
       <span

@@ -14,22 +14,21 @@ body {
 html {
   font-size: 16px;
   scroll-behavior: smooth;
-  color: var(--first-text-color);
 }
 
-h1 {
-  font: 4rem var(--second-font);
+h1,
+h2 {
   letter-spacing: 0.3rem;
   text-transform: uppercase;
   margin: 0;
+}
+h1 {
+  font: 4rem var(--second-font);
 }
 
 h2 {
-  font: 4rem/1.2 var(--second-font); 
-  letter-spacing: 0.3rem;
-  text-transform: uppercase;
+  font: 4rem/1.2 var(--second-font);
   margin: 0;
-  margin-bottom: 1rem;
 }
 
 h3 {
@@ -41,7 +40,7 @@ h4 {
   margin: 0;
 }
 
-.techno :global {
+.techno {
   color: var(--second-color);
   font-style: italic;
 }
@@ -57,23 +56,18 @@ h4 {
     font-size: 14px;
   }
 
-  h1 {
-    font-size: 3rem;
-  }
-
+  h1,
   h2 {
     font-size: 3rem;
   }
 }
 
-.bg1 {
+main section {
   background: var(--first-bg-color);
-  color: var(--first-text-color);
 }
 
-.bg2 {
+main section:nth-child(2n) {
   background: var(--second-bg-color);
-  color: var(--first-text-color);
 }
 
 .frontend {

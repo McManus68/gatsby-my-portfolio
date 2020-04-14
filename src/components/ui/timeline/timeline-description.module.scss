@@ -8,9 +8,22 @@
 
   .header {
     margin-left: 2.5rem;
-    .date {
-      font-weight: bold;
+
+    .sub-header {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
       margin: 0 0 1rem;
+
+      .date {
+        font-weight: bold;
+        margin-right: 0.3rem;
+      }
+
+      img {
+        width: 16px;
+        height: auto;
+      }
     }
 
     h4 {
@@ -48,6 +61,10 @@
   .header {
     margin-right: 2.5rem;
     text-align: right;
+
+    .sub-header {
+      justify-content: flex-end;
+    }
   }
 
   ul li::before {
@@ -63,6 +80,10 @@
     .header {
       text-align: center;
       margin: 0;
+
+      .sub-header {
+        justify-content: center;
+      }
     }
 
     &:nth-child(2n) ul li::before {
