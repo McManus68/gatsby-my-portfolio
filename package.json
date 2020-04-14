@@ -1,9 +1,9 @@
 {
-  "name": "rohit-gupta",
+  "name": "emmanuel-tarrou",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "A simple starter to build a Portfolio",
   "version": "0.1.0",
-  "author": "Rohit Gupta <rohitguptab33@gmail.com>",
+  "author": "Emmanuel Tarrou <emmanuel.tarrou34@gmail.com>",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.28",
     "@fortawesome/free-brands-svg-icons": "^5.13.0",
@@ -31,12 +31,11 @@
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-helmet": "^5.2.1",
+    "react-helmet": "^6.0.0",
     "react-i18next": "^11.3.4",
     "react-on-visible": "^1.6.0",
     "react-parallax": "^3.0.3",
     "react-particles-js": "^3.0.3",
-    "react-router": "^5.1.2",
     "react-router-hash-link": "^1.2.2",
     "react-scrollspy": "^3.4.2",
     "react-share": "^4.1.0",
@@ -45,7 +44,7 @@
     "smooth-scroll": "^16.1.3"
   },
   "devDependencies": {
-    "prettier": "^1.19.1"
+    "prettier": "^2.0.4"
   },
   "keywords": [
     "gatsby"

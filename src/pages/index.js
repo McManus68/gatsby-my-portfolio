@@ -16,7 +16,7 @@ import { useTranslation } from 'react-i18next'
 const IndexPage = ({ data }) => {
   const { i18n } = useTranslation()
   const themesCount = 4
-  const [locale, setLocale] = useState(i18n.language)
+  const [locale, setLocale] = useState(i18n.language.substr(0, 2))
   const [theme, setTheme] = useState(1)
 
   /**
@@ -50,7 +50,7 @@ const IndexPage = ({ data }) => {
 
   return (
     <main className={'theme-' + theme}>
-      <SEO title={localeData.site.name} />
+      <SEO title={localeData.site.title} />
       <Navigation
         menu={localeData.menu}
         locale={locale}

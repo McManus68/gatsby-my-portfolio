@@ -26,6 +26,7 @@ const Navigation = props => {
   }
 
   function handleVisibility(e) {
+    console.log('handleVisiblite')
     setSwitchingTheme(false)
     setVisible(!visible)
   }
