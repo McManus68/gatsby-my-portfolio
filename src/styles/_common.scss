@@ -38,7 +38,7 @@
   border-bottom: 2px solid var(--first-color);
 }
 
-@mixin diamond-style($color: var(--first-text-color), $bg: #fff) {
+@mixin diamond-style($color: var(--first-text-color), $bg: var(--second-text-color)) {
   position: relative;
   display: block;
   width: 70px;
@@ -62,7 +62,7 @@
   }
 
   svg {
-    color: var(--first-text-color);
+    color: $color;
     z-index: 5;
     font-size: 1rem;
     position: relative;

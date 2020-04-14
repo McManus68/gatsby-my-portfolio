@@ -12,6 +12,7 @@ const Section = props => {
         <Separator />
         {props.children}
       </div>
+      <div className={style.arrow}></div>
     </section>
   )
 }

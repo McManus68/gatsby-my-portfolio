@@ -7,6 +7,18 @@
   padding: 4rem 2rem;
 }
 
+.arrow {
+  position: absolute;
+  display: inline-block;
+  height: 0;
+  left: 50%;
+  margin-left: -30px;
+  width: 0;
+  border-top: 30px solid inherit;
+  border-right: 30px solid transparent;
+  border-left: 30px solid transparent;
+}
+
 @media only screen and (max-width: $medium-device) {
   .section {
     padding: 3rem 1rem;

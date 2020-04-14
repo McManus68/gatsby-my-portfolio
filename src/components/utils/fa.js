@@ -18,6 +18,9 @@ import {
   faFillDrip,
   faPalette,
   faCarAlt,
+  faDatabase,
+  faPaintRoller,
+  faTools,
 } from '@fortawesome/free-solid-svg-icons'
 
 import { faAngellist } from '@fortawesome/free-brands-svg-icons'
@@ -40,5 +43,8 @@ library.add(
   faStar,
   faFillDrip,
   faPalette,
-  faCarAlt
+  faCarAlt,
+  faDatabase,
+  faPaintRoller,
+  faTools
 )
