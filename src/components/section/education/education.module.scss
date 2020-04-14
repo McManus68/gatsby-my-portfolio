@@ -6,15 +6,11 @@
   }
 }
 
-@media only screen and (max-width: var(--medium-device)) {
+@media only screen and (max-width: $medium-device) {
   .education {
-    div[class*='timeline-description'] {
+    div[class*='timeline-description-module--odd'],
+    div[class*='timeline-description-module'] {
       text-align: center;
-      padding-right: 0;
-      div[class*='timeline-description-module--date'],
-      h4 {
-        text-align: center;
-      }
     }
   }
 }
