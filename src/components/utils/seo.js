@@ -48,7 +48,6 @@ const query = graphql`
   query SEO {
     site: contentfulSite(node_locale: { eq: "fr" }) {
       title
-      twitterUsername
       url
       description
       image {

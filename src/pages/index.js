@@ -208,7 +208,6 @@ export const pageQuery = graphql`
       nodes {
         node_locale
         title
-        twitterUsername
         url
         description
         image {
