@@ -6,12 +6,24 @@ import { useTranslation } from 'react-i18next'
 
 import Button from '../../ui/button/button'
 
-const ContactForm = props => {
+import Snackbar from '@bit/mui-org.material-ui.snackbar'
+import IconButton from '@bit/mui-org.material-ui.icon-button'
+import CloseIcon from '@bit/mui-org.material-ui-icons.close'
+
+const ContactForm = (props) => {
   const { t } = useTranslation()
 
-  let [status, setStatus] = useState('')
+  const [status, setStatus] = useState('')
+  const [open, setOpen] = useState(false)
 
-  let submitForm = ev => {
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return
+    }
+    setOpen(false)
+  }
+
+  const submitForm = function (ev) {
     ev.preventDefault()
     const form = ev.target
     const data = new FormData(form)
@@ -20,11 +32,12 @@ const ContactForm = props => {
     xhr.setRequestHeader('Accept', 'application/json')
     xhr.onreadystatechange = () => {
       if (xhr.readyState !== XMLHttpRequest.DONE) return
+      setOpen(true)
       if (xhr.status === 200) {
         form.reset()
-        setStatus('SUCCESS')
+        setStatus('success')
       } else {
-        setStatus('ERROR')
+        setStatus('error')
       }
     }
     xhr.send(data)
@@ -56,8 +69,22 @@ const ContactForm = props => {
         <Button label={t('contact.send')}></Button>
       </p>
 
-      {status === 'SUCCESS' && <p>Thanks!</p>}
-      {status === 'ERROR' && <p>Ooops! There was an error.</p>}
+      <Snackbar
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+        open={open}
+        ContentProps={{
+          'aria-describedby': 'message-id',
+          className: status === 'success' ? style.success : style.error,
+        }}
+        autoHideDuration={4000}
+        onClose={handleClose}
+        message={<span>{t('contact.' + status)}</span>}
+        action={[
+          <IconButton key="close" aria-label="close" color="inherit" onClick={handleClose}>
+            <CloseIcon />
+          </IconButton>,
+        ]}
+      />
     </form>
   )
 }

@@ -5,6 +5,9 @@
   "version": "0.1.0",
   "author": "Emmanuel Tarrou <emmanuel.tarrou34@gmail.com>",
   "dependencies": {
+    "@bit/mui-org.material-ui-icons.close": "^3.9.2",
+    "@bit/mui-org.material-ui.icon-button": "^4.5.2",
+    "@bit/mui-org.material-ui.snackbar": "^4.5.2",
     "@fortawesome/fontawesome-svg-core": "^1.2.28",
     "@fortawesome/free-brands-svg-icons": "^5.13.0",
     "@fortawesome/free-solid-svg-icons": "^5.13.0",
