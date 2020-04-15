@@ -5,7 +5,7 @@ import style from './skill-group.module.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import SkillItem from './skill-item'
 
-const SkillGroup = props => {
+const SkillGroup = (props) => {
   const skills = props.data.sort((a, b) => {
     if (a.level < b.level) return 1
     if (a.level > b.level) return -1
@@ -14,7 +14,7 @@ const SkillGroup = props => {
 
   const icons = new Map()
   icons.set('backend', 'database')
-  icons.set('frontend', 'paint-roller')
+  icons.set('frontend', 'palette')
   icons.set('devops', 'tools')
 
   return (

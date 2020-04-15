@@ -4,7 +4,7 @@ import style from './skill-item.module.scss'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-const SkillItem = props => {
+const SkillItem = (props) => {
   var elements = []
   for (var i = 0; i < props.data.level; i++) {
     elements.push(<FontAwesomeIcon icon={['fa', 'star']} key={i} />)
@@ -12,7 +12,7 @@ const SkillItem = props => {
 
   return (
     <div className={`${style.skillItem} ${'item-' + props.group}`} data-tip={props.data.name}>
-      <img src={props.data.logo.fluid.src} alt={props.data.logo.title} />
+      <img src={props.data.logo.fixed.src} alt={props.data.logo.title} />
       <span>{props.data.name} </span>
       <div className={`${style.star} ${props.group}`}>{elements}</div>
     </div>

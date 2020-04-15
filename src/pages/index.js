@@ -22,8 +22,8 @@ const IndexPage = ({ data }) => {
   /**
   Initiliaze data from current language
    */
-  const getLocalizedData = function() {
-    const isLocale = item => item.node_locale === locale
+  const getLocalizedData = function () {
+    const isLocale = (item) => item.node_locale === locale
     return {
       menu: data.menu.nodes.filter(isLocale),
       experience: data.experience.nodes.filter(isLocale),
@@ -37,14 +37,14 @@ const IndexPage = ({ data }) => {
 
   let localeData = getLocalizedData()
 
-  const switchLang = function(newLocale) {
+  const switchLang = function (newLocale) {
     if (newLocale !== locale) {
       i18n.changeLanguage(newLocale)
       setLocale(newLocale)
     }
   }
 
-  const switchTheme = function() {
+  const switchTheme = function () {
     theme < themesCount ? setTheme(theme + 1) : setTheme(1)
   }
 
@@ -57,7 +57,7 @@ const IndexPage = ({ data }) => {
         switchLang={switchLang}
         switchTheme={switchTheme}
       />
-      {localeData.menu.map(function(item, key) {
+      {localeData.menu.map(function (item, key) {
         return <Factory component={item} data={localeData} key={key} />
       })}
       <Footer me={localeData.me} site={localeData.site} />
@@ -74,18 +74,10 @@ export const pageQuery = graphql`
         name
         node_locale
         photo {
-          file {
-            url
-          }
-          fluid {
-            base64
-            aspectRatio
+          fixed(width: 200, height: 200, quality: 100) {
             src
-            srcSet
-            srcWebp
-            srcSetWebp
-            sizes
           }
+          title
         }
         designation
         age
@@ -135,8 +127,8 @@ export const pageQuery = graphql`
         period
         icon
         image {
-          fluid {
-            src
+          file {
+            url
           }
           title
         }
@@ -194,7 +186,7 @@ export const pageQuery = graphql`
         type
         node_locale
         logo {
-          fluid {
+          fixed(width: 32, height: 32, quality: 100) {
             src
           }
           title

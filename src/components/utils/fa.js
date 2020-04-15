@@ -19,7 +19,6 @@ import {
   faPalette,
   faCarAlt,
   faDatabase,
-  faPaintRoller,
   faTools,
 } from '@fortawesome/free-solid-svg-icons'
 
@@ -45,6 +44,5 @@ library.add(
   faPalette,
   faCarAlt,
   faDatabase,
-  faPaintRoller,
   faTools
 )
