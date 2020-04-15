@@ -6,10 +6,6 @@ import { useTranslation } from 'react-i18next'
 
 import Button from '../../ui/button/button'
 
-import Snackbar from '@bit/mui-org.material-ui.snackbar'
-import IconButton from '@bit/mui-org.material-ui.icon-button'
-import CloseIcon from '@bit/mui-org.material-ui-icons.close'
-
 const ContactForm = (props) => {
   const { t } = useTranslation()
 
@@ -68,23 +64,6 @@ const ContactForm = (props) => {
       <p className={style.buttonContainer}>
         <Button label={t('contact.send')}></Button>
       </p>
-
-      <Snackbar
-        anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
-        open={open}
-        ContentProps={{
-          'aria-describedby': 'message-id',
-          className: status === 'success' ? style.success : style.error,
-        }}
-        autoHideDuration={4000}
-        onClose={handleClose}
-        message={<span>{t('contact.' + status)}</span>}
-        action={[
-          <IconButton key="close" aria-label="close" color="inherit" onClick={handleClose}>
-            <CloseIcon />
-          </IconButton>,
-        ]}
-      />
     </form>
   )
 }
