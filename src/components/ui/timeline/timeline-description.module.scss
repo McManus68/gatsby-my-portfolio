@@ -2,6 +2,7 @@
 
 .timeline-description {
   padding: 28px 0 20px 110px;
+  line-height: 1.5;
   text-align: left;
   flex-grow: 1;
   flex-basis: 0;
@@ -31,7 +32,6 @@
       margin: 3rem 0;
       li {
         font-style: normal;
-        line-height: 1.5;
         margin-bottom: 1rem;
         list-style: none;
         padding-left: 1.5rem;

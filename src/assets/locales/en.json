@@ -8,7 +8,7 @@
     "message": "Your message:",
     "send": "Send",
     "success": "Your message has been sent successfully !",
-    "error": "An error occurend while sending your message"
+    "error": "An error occurend while sending your message !"
   },
   "footer": {
     "copyright": "Created by {{who}} , © 2020"

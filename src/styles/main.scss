@@ -9,6 +9,7 @@
 
 body {
   margin: 0;
+  background-color: var(--footer-color);
 }
 
 html {
@@ -82,6 +83,12 @@ main section div[class*='arrow'] {
 
 main section:nth-child(2n) div[class*='arrow'] {
   border-top: solid 30px var(--second-bg-color);
+}
+
+.separator {
+  @include title-border-style;
+  margin: 2rem auto;
+  border-bottom: 2px dashed var(--first-text-color);
 }
 
 .frontend {

@@ -8,7 +8,7 @@
     "message": "Votre message:",
     "send": "Envoyer",
     "success": "Votre message a été envoyé avec succès !",
-    "error": "Une erreur s'est produite lors de l'envoi de votre message"
+    "error": "Une erreur s'est produite lors de l'envoi de votre message !"
   },
   "footer": {
     "copyright": "Crée par {{who}} , © 2020"
