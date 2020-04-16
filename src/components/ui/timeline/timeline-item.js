@@ -6,7 +6,7 @@ import TimelineIcon from './timeline-icon'
 import TimelineDescription from './timeline-description'
 import TimelineImage from './timeline-image'
 
-const TimelineItem = props => {
+const TimelineItem = (props) => {
   return (
     <div
       aria-hidden="true"

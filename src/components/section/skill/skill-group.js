@@ -2,7 +2,6 @@ import React from 'react'
 
 import style from './skill-group.module.scss'
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import SkillItem from './skill-item'
 
 const SkillGroup = (props) => {
@@ -19,10 +18,7 @@ const SkillGroup = (props) => {
 
   return (
     <div className={style.skillGroup}>
-      <span className={`${style.groupName} ${props.group}`}>
-        <FontAwesomeIcon icon={icons.get(props.group)} />
-        {props.group}
-      </span>
+      <span className={`${style.groupName} ${props.group}`}>{props.group}</span>
       <div className={style.items}>
         {skills.map((item, index) => {
           return <SkillItem data={item} group={props.group} key={index} />

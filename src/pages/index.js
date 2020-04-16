@@ -96,14 +96,8 @@ export const pageQuery = graphql`
           }
         }
         bannerImage {
-          fluid(maxWidth: 1500) {
-            base64
-            aspectRatio
+          fluid(maxWidth: 2000) {
             src
-            srcSet
-            srcWebp
-            srcSetWebp
-            sizes
           }
         }
         bannerList

@@ -6,6 +6,7 @@
     display: flex;
     flex-direction: row;
     width: 100%;
+    max-width: 1200px;
     margin-top: 3rem;
 
     .photo {
@@ -27,11 +28,7 @@
       flex-grow: 3;
 
       h3 {
-        text-align: center;
-
-        &::after {
-          @include title-border-style;
-        }
+        text-align: left;
       }
 
       p {
@@ -46,6 +43,11 @@
   .about-me {
     .content {
       flex-direction: column;
+    }
+
+    .description h3,
+    span {
+      text-align: center !important;
     }
   }
 }

@@ -4,7 +4,7 @@ import style from './particles.module.scss'
 
 import Particles from 'react-particles-js'
 
-const MyParticles = props => {
+const MyParticles = (props) => {
   return (
     <Particles
       className={style.particles}
@@ -32,30 +32,6 @@ const MyParticles = props => {
             speed: 1,
             direction: 'top',
             out_mode: 'out',
-          },
-        },
-        interactivity: {
-          events: {
-            onhover: {
-              enable: true,
-              mode: 'bubble',
-            },
-            onclick: {
-              enable: true,
-              mode: 'repulse',
-            },
-          },
-          modes: {
-            bubble: {
-              distance: 250,
-              duration: 2,
-              size: 0,
-              opacity: 0,
-            },
-            repulse: {
-              distance: 400,
-              duration: 4,
-            },
           },
         },
       }}

@@ -2,7 +2,7 @@ import React from 'react'
 
 import style from './timeline-description.module.scss'
 
-const TimelineDescription = props => {
+const TimelineDescription = (props) => {
   return (
     <div className={`${style.timelineDescription} ${props.odd ? style.odd : ''}`}>
       <div className={style.header}>

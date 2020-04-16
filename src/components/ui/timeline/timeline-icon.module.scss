@@ -15,8 +15,13 @@
   animation-duration: 0.5s;
 }
 
-.timeline-icon.active:before {
-  background: var(--first-color);
+.timeline-icon.active {
+  &:before {
+    background: var(--first-color);
+  }
+  svg {
+    color: var(--reverse-text-color);
+  }
 }
 
 @media only screen and (max-width: $medium-device) {
