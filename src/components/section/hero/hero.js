@@ -13,13 +13,9 @@ import MyParticles from '../../ui/particles/particles'
 const Hero = (props) => {
   const { t } = useTranslation()
 
+  console.log('draw hero')
   return (
     <section data-section={props.section.name} id={props.section.name}>
-      {/*<Parallax
-        bgImage={props.data.bannerImage.fluid.src}
-        className={style.background}
-        strength={100}
-      >*/}
       <div className={style.intro}>
         <OnVisible visibleClassName={style.animateIcon}>
           <FontAwesomeIcon icon={['fab', 'angellist']} size="4x" />
@@ -46,8 +42,6 @@ const Hero = (props) => {
           </AnchorLink>
         </OnVisible>
       </div>
-      {/* </Parallax> */}
-
       <MyParticles />
     </section>
   )

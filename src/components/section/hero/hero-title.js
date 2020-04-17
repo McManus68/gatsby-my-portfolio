@@ -11,7 +11,7 @@ const HeroTitle = (props) => {
             className={style.letter}
             key={index}
             style={{
-              'animation-delay': `${index * 0.1 + 2}s`,
+              animationDelay: `${index * 0.1 + 2}s`,
             }}
           >
             {char}
