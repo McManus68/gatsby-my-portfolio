@@ -42,6 +42,7 @@ const Hero = (props) => {
           </AnchorLink>
         </OnVisible>
       </div>
+      <MyParticles />
     </section>
   )
 }
