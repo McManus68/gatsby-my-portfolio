@@ -2,6 +2,8 @@ import React from 'react'
 
 import style from './timeline-description.module.scss'
 
+import TimelineImage from './timeline-image'
+
 const TimelineDescription = (props) => {
   return (
     <div className={`${style.timelineDescription} ${props.odd ? style.odd : ''}`}>
@@ -19,6 +21,8 @@ const TimelineDescription = (props) => {
           __html: props.data.description.childMarkdownRemark.html,
         }}
       />
+
+      {props.data.image ? <TimelineImage image={props.data.image} /> : null}
     </div>
   )
 }

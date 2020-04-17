@@ -10,6 +10,9 @@
     "success": "Votre message a été envoyé avec succès !",
     "error": "Une erreur s'est produite lors de l'envoi de votre message !"
   },
+  "timeline": {
+    "seeMore": "Voir une illustration..."
+  },
   "footer": {
     "copyright": "Crée par {{who}} , © 2020"
   }

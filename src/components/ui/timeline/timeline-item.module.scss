@@ -2,12 +2,8 @@
 
 .timeline-item {
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row;
   position: relative;
-
-  &:nth-child(2n) {
-    flex-direction: row;
-  }
 }
 
 @media only screen and (max-width: $medium-device) {

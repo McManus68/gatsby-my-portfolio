@@ -4,7 +4,6 @@ import style from './timeline-item.module.scss'
 
 import TimelineIcon from './timeline-icon'
 import TimelineDescription from './timeline-description'
-import TimelineImage from './timeline-image'
 
 const TimelineItem = (props) => {
   return (
@@ -15,7 +14,6 @@ const TimelineItem = (props) => {
     >
       <TimelineIcon icon={props.data.icon} active={props.active === props.id} />
       <TimelineDescription data={props.data} odd={props.id % 2 !== 0} />
-      <TimelineImage image={props.data.image} />
     </div>
   )
 }

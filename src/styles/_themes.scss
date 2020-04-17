@@ -11,7 +11,7 @@
   --backend-color: #340fb8;
   --frontend-color: #169e61;
   --devops-color: #9b7b13;
-  --footer-color: #333;
+  --nav-bg-color: #1b1f2b;
 
   .theme-1 {
     --first-color: #fb544d;
@@ -21,7 +21,6 @@
     --reverse-text-color: #fff;
     --first-bg-color: #e8e8e8;
     --second-bg-color: #fafafa;
-    --nav-bg-color: #1b1f2b;
     --nav-text-color: #fff;
     --card-bg-color: #fafafa;
     color: var(--first-text-color);
@@ -34,38 +33,40 @@
     --second-text-color: #fff;
     --reverse-text-color: #fff;
     --first-bg-color: #fafafa;
-    --second-bg-color: #020101;
+    --second-bg-color: #030207;
     --nav-bg-color: #fafafa;
     --nav-text-color: #000;
-    --card-bg-color: #fff;
+    --card-bg-color: #f3ebeb;
     color: var(--first-text-color);
     background-color: var(--first-bg-color);
   }
   .theme-3 {
     --first-color: #00ba8c;
     --first-color-darker: #00a77e;
-    --first-text-color: #000;
-    --second-text-color: #fff;
-    --reverse-text-color: #fff;
-    --first-bg-color: #fffdf4;
-    --second-bg-color: #19000d;
-    --nav-bg-color: #1b1f2b;
-    --nav-text-color: #fff;
-    --card-bg-color: #fafafa;
+    --first-text-color: #fff;
+    --second-text-color: #000;
+    --reverse-text-color: #000;
+    --first-bg-color: #030102;
+    --second-bg-color: #fffdf4;
+    --nav-bg-color: #fafafa;
+    --nav-text-color: #000;
+    --card-bg-color: #070205;
+    --backend-color: #488cff;
+    --devops-color: #f9ff21;
     color: var(--first-text-color);
     background-color: var(--first-bg-color);
   }
   .theme-4 {
-    --first-color: #f9ff21;
-    --first-color-darker: #b0b600;
-    --first-text-color: #fff;
-    --second-text-color: #fff;
-    --reverse-text-color: #000;
-    --first-bg-color: #071e3d;
-    --second-bg-color: #000000;
+    --first-color: #dc0073;
+    --first-color-darker: rgb(168, 8, 91);
+    --first-text-color: #000;
+    --second-text-color: #000;
+    --reverse-text-color: #fff;
+    --first-bg-color: #e7f6fc;
+    --second-bg-color: #fafafa;
     --nav-bg-color: #000;
     --nav-text-color: #fff;
-    --card-bg-color: #04152b;
+    --card-bg-color: #fafafa;
     --devops-color: #d16004;
     color: var(--first-text-color);
     background-color: var(--first-bg-color);

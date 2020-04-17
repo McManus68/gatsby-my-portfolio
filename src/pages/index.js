@@ -124,6 +124,9 @@ export const pageQuery = graphql`
           file {
             url
           }
+          fixed(width: 120) {
+            src
+          }
           title
         }
         country {
