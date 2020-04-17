@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Intro from '../intro/intro'
+import Hero from '../hero/hero'
 import AboutMe from '../about-me/about-me'
 import Experience from '../experience/experience'
 import Education from '../education/education'
@@ -8,10 +8,10 @@ import Interest from '../interest/interest'
 import Contact from '../contact/contact'
 import Skill from '../skill/skill'
 
-const Factory = props => {
+const Factory = (props) => {
   switch (props.component.name) {
-    case 'intro':
-      return <Intro data={props.data.me} section={props.component} />
+    case 'hero':
+      return <Hero data={props.data.me} section={props.component} />
     case 'about-me':
       return <AboutMe data={props.data.me} section={props.component} />
     case 'experience':

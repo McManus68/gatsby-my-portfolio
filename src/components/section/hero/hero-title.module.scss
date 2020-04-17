@@ -1,0 +1,14 @@
+.hero-title {
+  display: flex;
+  margin: 1rem 0;
+  span {
+    margin-right: 0.3rem;
+    min-width: 1rem;
+    text-transform: uppercase;
+    font: 4rem var(--second-font);
+  }
+}
+
+.letter :global {
+  animation: 15s linear normal infinite glow;
+}

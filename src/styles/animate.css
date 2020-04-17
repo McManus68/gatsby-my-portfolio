@@ -8,6 +8,19 @@
  * Copyright (c) 2019 Daniel Eden
  */
 
+@keyframes glow {
+  0% {
+    text-shadow: none;
+    transform: translate3d(0, 0, 0);
+  }
+  10% {
+    text-shadow: 8px 8px 15px var(--first-color);
+  }
+  20% {
+    text-shadow: none;
+  }
+}
+
 @-webkit-keyframes bounce {
   from,
   20%,

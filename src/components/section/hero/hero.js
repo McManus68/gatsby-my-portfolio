@@ -1,15 +1,16 @@
 import React from 'react'
 
-import style from './intro.module.scss'
+import style from './hero.module.scss'
 
 import { useTranslation } from 'react-i18next'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { AnchorLink } from 'gatsby-plugin-anchor-links'
 import OnVisible from 'react-on-visible'
+import HeroTitle from './hero-title'
 import Separator from '../../ui/separator/separator'
 import MyParticles from '../../ui/particles/particles'
 
-const Intro = (props) => {
+const Hero = (props) => {
   const { t } = useTranslation()
 
   return (
@@ -26,14 +27,13 @@ const Intro = (props) => {
 
         <OnVisible visibleClassName={style.zoomIn} className={style.header}>
           <span className={style.name}>{props.data.name}</span>
-
           <ul className={style.subTitle}>
             {props.data.bannerList.map((item, index) => {
               return <li key={index}>{item}</li>
             })}
           </ul>
 
-          <h1>{props.data.designation}</h1>
+          <HeroTitle designation={props.data.designation} />
         </OnVisible>
 
         <OnVisible visibleClassName={style.zoomIn}>
@@ -53,4 +53,4 @@ const Intro = (props) => {
   )
 }
 
-export default Intro
+export default Hero
