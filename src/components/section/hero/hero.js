@@ -12,8 +12,6 @@ import MyParticles from '../../ui/particles/particles'
 
 const Hero = (props) => {
   const { t } = useTranslation()
-
-  console.log('draw hero')
   return (
     <section data-section={props.section.name} id={props.section.name}>
       <div className={style.intro}>

@@ -1,0 +1,38 @@
+.skill-chart :global {
+  .link {
+    line {
+      stroke: #696969;
+    }
+
+    line.separator {
+      stroke: #fff;
+      stroke-width: 2px;
+    }
+  }
+
+  .node {
+    circle {
+      fill: var(--second-bg-color);
+    }
+
+    text {
+      font: 10px sans-serif;
+      pointer-events: none;
+    }
+
+    .frontend {
+      stroke: var(--frontend-color);
+      stroke-width: 4px;
+    }
+
+    .backend {
+      stroke: var(--backend-color);
+      stroke-width: 4px;
+    }
+
+    .devops {
+      stroke: var(--devops-color);
+      stroke-width: 4px;
+    }
+  }
+}

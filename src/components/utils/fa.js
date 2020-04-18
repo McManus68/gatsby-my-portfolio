@@ -20,6 +20,10 @@ import {
   faCarAlt,
   faDatabase,
   faTools,
+  faSortAlphaDownAlt,
+  faSortAlphaUpAlt,
+  faThList,
+  faProjectDiagram,
 } from '@fortawesome/free-solid-svg-icons'
 
 import { faAngellist } from '@fortawesome/free-brands-svg-icons'
@@ -44,5 +48,9 @@ library.add(
   faPalette,
   faCarAlt,
   faDatabase,
-  faTools
+  faTools,
+  faSortAlphaDownAlt,
+  faSortAlphaUpAlt,
+  faThList,
+  faProjectDiagram
 )

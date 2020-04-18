@@ -1,8 +1,11 @@
 .skill {
-  .items {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    margin-top: 4rem;
+  .display-type {
+    align-self: flex-end;
+    margin-right: 2rem;
+    cursor: pointer;
+
+    &:hover {
+      color: var(--first-color);
+    }
   }
 }
