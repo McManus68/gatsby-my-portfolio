@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react'
+import React, { Component, useLayoutEffect, useState } from 'react'
 
 import * as d3 from 'd3'
 
@@ -7,11 +7,36 @@ import style from './skill-chart.module.scss'
 import avatar from '../../../assets/images/avatar.png'
 
 class SkillChart extends Component {
+  state = { width: window.innerWidth, height: window.innerHeight }
+
   componentDidMount() {
+    window.addEventListener('resize', this.updateDimensions)
+    console.log(this.state)
     this.drawChart()
   }
 
+  redraw
+  updateDimensions = () => {
+    this.setState({ width: window.innerWidth, height: window.innerHeight })
+    clearTimeout(this.redraw)
+    this.redraw = setTimeout(this.drawChart, 1000)
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateDimensions)
+  }
+
+  showWindowDimensions(props) {
+    const [width, height] = this.useWindowSize()
+    return (
+      <span>
+        Window size: {width} x {height}
+      </span>
+    )
+  }
+
   drawChart() {
+    console.log('drawchart', this.props)
     // All nodes
     let graphNodes = [...this.props.data]
 
@@ -65,11 +90,15 @@ class SkillChart extends Component {
     // Root node for Links and Nodes
     var link = svg.append('g').attr('class', 'link').selectAll('line')
     var node = svg.append('g').attr('class', 'node').selectAll('circle')
-    var tooltip = svg.append('div').style('opacity', 0).attr('class', 'tooltip')
+    var tooltip = d3
+      .select(this.refs.chart)
+      .append('div')
+      .style('opacity', 0)
+      .attr('class', 'tooltip')
 
     link = link.data(graphLinks).enter().append('line')
 
-    var node = node.data(graphNodes).enter().append('g').call(drag)
+    node = node.data(graphNodes).enter().append('g').call(drag)
 
     // Add a tooltip div. Here I define the general feature of the tooltip: stuff that do not depend on the data point.
     // Its opacity is set to 0: we don't see it by default.
@@ -82,9 +111,9 @@ class SkillChart extends Component {
 
     var mousemove = function (d) {
       tooltip
-        .html('The exact value of<br>the Ground Living area is: ' + d.GrLivArea)
-        .style('left', d3.mouse(this)[0] + 90 + 'px') // It is important to put the +90: other wise the tooltip is exactly where the point is an it creates a weird effect
-        .style('top', d3.mouse(this)[1] + 'px')
+        .html(d.name)
+        .style('left', d3.event.pageX + 10 + 'px') // It is important to put the +90: other wise the tooltip is exactly where the point is an it creates a weird effect
+        .style('top', d3.event.pageY - 10 + 'px')
     }
 
     // A function that change this tooltip when the leaves a point: just need to set opacity to 0 again
@@ -110,6 +139,12 @@ class SkillChart extends Component {
           default:
             return d.type
         }
+      })
+
+    // Add mouse listeners on techno nodes to display a tooltip
+    node
+      .filter(function (d) {
+        return d.type !== 'root' && d.type !== 'group'
       })
       .on('mouseover', mouseover)
       .on('mousemove', mousemove)

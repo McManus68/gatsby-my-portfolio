@@ -1,6 +1,11 @@
+@import '../../../styles/_variables';
+
 .hero-title {
   display: flex;
+  flex-wrap: wrap;
   margin: 1rem 0;
+  justify-content: center;
+
   span {
     margin-right: 0.3rem;
     min-width: 1rem;
@@ -11,4 +16,12 @@
 
 .letter :global {
   animation: 15s linear normal infinite glow;
+}
+
+@media only screen and (max-width: $medium-device) {
+  .hero-title {
+    span {
+      font-size: 2rem;
+    }
+  }
 }
