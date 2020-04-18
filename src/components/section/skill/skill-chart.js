@@ -40,14 +40,12 @@ const SkillChart = (props) => {
   }
 
   const drawChart = () => {
-    let width = window.innerWidth - 30
-    width = width > 1000 ? 1000 : width
-    let height = window.innerHeight
-    height = height > 600 ? 600 : height
+    let width = window.innerWidth - 50 > 1000 ? 1000 : window.innerWidth - 50
+    let height = window.innerHeight > 600 ? 600 : window.innerHeight
 
     console.log('Dimension = ', width, height)
 
-    const ticked = function () {
+    const ticked = () => {
       link
         .attr('x1', function (d) {
           return d.source.x
@@ -67,21 +65,36 @@ const SkillChart = (props) => {
       })
     }
 
-    const dragstarted = function (d) {
+    /* Graph Listeners */
+    const dragstarted = (d) => {
       if (!d3.event.active) simulation.alphaTarget(0.3).restart()
       d.fx = d.x
       d.fy = d.y
     }
 
-    const dragged = function (d) {
+    const dragged = (d) => {
       d.fx = d3.event.x
       d.fy = d3.event.y
     }
 
-    const dragended = function (d) {
+    const dragended = (d) => {
       if (!d3.event.active) simulation.alphaTarget(0)
       d.fx = null
       d.fy = null
+    }
+
+    const mouseover = (d) => {
+      tooltip.style('opacity', 1)
+    }
+
+    const mousemove = (d) => {
+      tooltip
+        .html(d.name)
+        .style('left', d3.event.pageX + 10 + 'px') // It is important to put the +90: other wise the tooltip is exactly where the point is an it creates a weird effect
+        .style('top', d3.event.pageY - 10 + 'px')
+    }
+    const mouseleave = (d) => {
+      tooltip.transition().duration(200).style('opacity', 0)
     }
 
     // Clean old Graph
@@ -111,29 +124,7 @@ const SkillChart = (props) => {
       .attr('class', 'tooltip')
 
     link = link.data(data.links).enter().append('line')
-
     node = node.data(data.nodes).enter().append('g').call(drag)
-
-    // Add a tooltip div. Here I define the general feature of the tooltip: stuff that do not depend on the data point.
-    // Its opacity is set to 0: we don't see it by default.
-
-    // A function that change this tooltip when the user hover a point.
-    // Its opacity is set to 1: we can now see it. Plus it set the text and position of tooltip depending on the datapoint (d)
-    const mouseover = function (d) {
-      tooltip.style('opacity', 1)
-    }
-
-    const mousemove = function (d) {
-      tooltip
-        .html(d.name)
-        .style('left', d3.event.pageX + 10 + 'px') // It is important to put the +90: other wise the tooltip is exactly where the point is an it creates a weird effect
-        .style('top', d3.event.pageY - 10 + 'px')
-    }
-
-    // A function that change this tooltip when the leaves a point: just need to set opacity to 0 again
-    const mouseleave = function (d) {
-      tooltip.transition().duration(200).style('opacity', 0)
-    }
 
     // Draw all nodes excepts the root node
     node
