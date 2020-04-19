@@ -5,11 +5,11 @@ import style from './interest-item.module.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import OnVisible from 'react-on-visible'
 
-const InterestItem = props => {
+const InterestItem = (props) => {
   return (
     <OnVisible visibleClassName={style.pulse} className={style.interestItem}>
-      <FontAwesomeIcon icon={props.data.icon} />
-      <h3>{props.data.name}</h3>
+      <FontAwesomeIcon icon={props.interest.icon} />
+      <h3>{props.interest.name}</h3>
     </OnVisible>
   )
 }

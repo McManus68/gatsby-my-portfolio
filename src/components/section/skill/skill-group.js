@@ -5,23 +5,12 @@ import style from './skill-group.module.scss'
 import SkillItem from './skill-item'
 
 const SkillGroup = (props) => {
-  const skills = props.data.sort((a, b) => {
-    if (a.level < b.level) return 1
-    if (a.level > b.level) return -1
-    return 0
-  })
-
-  const icons = new Map()
-  icons.set('backend', 'database')
-  icons.set('frontend', 'palette')
-  icons.set('devops', 'tools')
-
   return (
     <div className={style.skillGroup}>
-      <span className={`${style.groupName} ${props.group}`}>{props.group}</span>
+      <span className={`${style.groupName} ${props.category}`}>{props.category}</span>
       <div className={style.items}>
-        {skills.map((item, index) => {
-          return <SkillItem data={item} group={props.group} key={index} />
+        {props.skills.map((item, index) => {
+          return <SkillItem skill={item} category={props.category} key={index} />
         })}
       </div>
     </div>

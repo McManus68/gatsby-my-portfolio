@@ -40,8 +40,8 @@ const SkillChart = (props) => {
   }
 
   const drawChart = () => {
-    let width = window.innerWidth - 50 > 1000 ? 1000 : window.innerWidth - 50
-    let height = window.innerHeight > 600 ? 600 : window.innerHeight
+    let width = window.innerWidth - 50 > 1200 ? 1200 : window.innerWidth - 50
+    let height = window.innerHeight > 800 ? 800 : window.innerHeight
 
     console.log('Dimension = ', width, height)
 
@@ -109,7 +109,7 @@ const SkillChart = (props) => {
     var simulation = d3
       .forceSimulation()
       .force('link', d3.forceLink())
-      .force('charge', d3.forceManyBody().strength(-200))
+      .force('charge', d3.forceManyBody().strength(-80))
       .force('center', d3.forceCenter(width / 2, height / 2))
       .on('tick', ticked)
       .stop()
@@ -138,7 +138,7 @@ const SkillChart = (props) => {
       .attr('class', function (d) {
         switch (d.type) {
           case 'group':
-            return d.name
+            return d.code
           case 'root':
             return 'root'
           default:
@@ -149,7 +149,7 @@ const SkillChart = (props) => {
     // Add mouse listeners on techno nodes to display a tooltip
     node
       .filter(function (d) {
-        return d.type !== 'root' && d.type !== 'group'
+        return d.type === 'skill'
       })
       .on('mouseover', mouseover)
       .on('mousemove', mousemove)
@@ -175,12 +175,12 @@ const SkillChart = (props) => {
       })
       .append('text')
       .attr('class', function (d) {
-        return d.name
+        return d.code
       })
       .attr('dy', '.35em')
       .attr('text-anchor', 'middle')
       .text(function (d) {
-        return d.name
+        return d.code
       })
 
     // Add the icon for the technos nodes

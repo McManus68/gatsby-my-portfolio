@@ -15,15 +15,21 @@ const Factory = (props) => {
     case 'about-me':
       return <AboutMe data={props.data.me} section={props.component} />
     case 'experience':
-      return <Experience data={props.data.experience} section={props.component} />
+      return <Experience experiences={props.data.experiences} section={props.component} />
     case 'interest':
-      return <Interest data={props.data.interest} section={props.component} />
+      return <Interest interests={props.data.interests} section={props.component} />
     case 'education':
-      return <Education data={props.data.education} section={props.component} />
+      return <Education educations={props.data.educations} section={props.component} />
     case 'contact':
       return <Contact data={props.data.me} section={props.component} />
     case 'skill':
-      return <Skill data={props.data.skill} section={props.component} />
+      return (
+        <Skill
+          skills={props.data.skills}
+          categories={props.data.categories}
+          section={props.component}
+        />
+      )
     default:
       return <span>No component for {props.component.name}</span>
   }

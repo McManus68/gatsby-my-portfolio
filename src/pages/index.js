@@ -22,29 +22,30 @@ const IndexPage = ({ data }) => {
   /**
   Initiliaze data from current language
    */
-  const getLocalizedData = function () {
+  const getLocalizedData = () => {
     const isLocale = (item) => item.node_locale === locale
     return {
-      menu: data.menu.nodes.filter(isLocale),
-      experience: data.experience.nodes.filter(isLocale),
-      education: data.education.nodes.filter(isLocale),
-      interest: data.interest.nodes.filter(isLocale),
+      menus: data.menus.nodes.filter(isLocale),
+      experiences: data.experiences.nodes.filter(isLocale),
+      educations: data.educations.nodes.filter(isLocale),
+      interests: data.interests.nodes.filter(isLocale),
       me: data.me.nodes.find(isLocale),
       site: data.site.nodes.find(isLocale),
-      skill: data.skill.nodes,
+      skills: data.skills.nodes,
+      categories: data.categories.nodes,
     }
   }
 
   let localeData = getLocalizedData()
 
-  const switchLang = function (newLocale) {
+  const switchLang = (newLocale) => {
     if (newLocale !== locale) {
       i18n.changeLanguage(newLocale)
       setLocale(newLocale)
     }
   }
 
-  const switchTheme = function () {
+  const switchTheme = () => {
     theme < themesCount ? setTheme(theme + 1) : setTheme(1)
   }
 
@@ -52,12 +53,12 @@ const IndexPage = ({ data }) => {
     <main className={'theme-' + theme}>
       <SEO title={localeData.site.title} />
       <Navigation
-        menu={localeData.menu}
+        menus={localeData.menus}
         locale={locale}
         switchLang={switchLang}
         switchTheme={switchTheme}
       />
-      {localeData.menu.map(function (item, key) {
+      {localeData.menus.map(function (item, key) {
         return <Factory component={item} data={localeData} key={key} />
       })}
       <Footer me={localeData.me} site={localeData.site} />
@@ -68,7 +69,7 @@ const IndexPage = ({ data }) => {
 export default IndexPage
 
 export const pageQuery = graphql`
-  query AboutQuery {
+  query contentfulQuery {
     me: allContentfulAboutMe {
       nodes {
         name
@@ -103,16 +104,15 @@ export const pageQuery = graphql`
         bannerList
       }
     }
-    menu: allContentfulMenu(sort: { order: ASC, fields: position }) {
+    menus: allContentfulMenu(sort: { order: ASC, fields: position }) {
       nodes {
         position
         node_locale
         name
         title
-        node_locale
       }
     }
-    experience: allContentfulExperiences(sort: { fields: [startYear], order: DESC }) {
+    experiences: allContentfulExperiences(sort: { fields: [startYear], order: DESC }) {
       nodes {
         id
         node_locale
@@ -145,14 +145,14 @@ export const pageQuery = graphql`
         }
       }
     }
-    interest: allContentfulInterests(sort: { order: ASC, fields: position }) {
+    interests: allContentfulInterests(sort: { order: ASC, fields: position }) {
       nodes {
         icon
         name
         node_locale
       }
     }
-    education: allContentfulEducation(sort: { fields: [startYear], order: DESC }) {
+    educations: allContentfulEducation(sort: { fields: [startYear], order: DESC }) {
       nodes {
         node_locale
         id
@@ -176,17 +176,35 @@ export const pageQuery = graphql`
         }
       }
     }
-    skill: allContentfulSkills(filter: { node_locale: { eq: "en" } }) {
+    skills: allContentfulSkills(
+      sort: { fields: level, order: DESC }
+      filter: { node_locale: { eq: "en" } }
+    ) {
       nodes {
         level
         name
-        type
         node_locale
         logo {
           fixed(width: 32, height: 32, quality: 100) {
             src
           }
           title
+        }
+        category {
+          name
+          id
+          code
+          root
+          category {
+            code
+            name
+            root
+            category {
+              code
+              name
+              root
+            }
+          }
         }
       }
     }
@@ -199,6 +217,27 @@ export const pageQuery = graphql`
         image {
           fluid {
             src
+          }
+        }
+      }
+    }
+    categories: allContentfulSkillCategory(
+      sort: { fields: order, order: ASC }
+      filter: { node_locale: { eq: "en" } }
+    ) {
+      nodes {
+        name
+        order
+        code
+        root
+        category {
+          code
+          name
+          root
+          category {
+            code
+            name
+            root
           }
         }
       }

@@ -11,7 +11,26 @@ import SkillChart from './skill-chart'
 const Skill = (props) => {
   const [modeGraph, setModeGraph] = useState(true)
 
-  const groups = ['backend', 'frontend', 'devops']
+  const getRootCategory = (currentCategory) => {
+    if (currentCategory.root) return currentCategory.code
+    else return getRootCategory(currentCategory.category)
+  }
+
+  // For each category, link the its root category
+  let categories = [...props.categories]
+  categories.forEach((category) => {
+    category['rootCategory'] = getRootCategory(category)
+  })
+
+  // For each skill, link the its root category
+  let skills = [...props.skills]
+  skills.forEach((skill) => {
+    skill['rootCategory'] = getRootCategory(skill.category)
+  })
+
+  // Get only the root categories
+  const rootCategories = categories.filter((category) => category.root)
+
   return (
     <Section section={props.section} className={style.skill}>
       <FontAwesomeIcon
@@ -21,11 +40,11 @@ const Skill = (props) => {
       />
 
       {modeGraph ? (
-        <SkillChart data={props.data} groups={groups} />
+        <SkillChart skills={skills} categories={categories} />
       ) : (
-        groups.map((group, key) => {
-          let groupData = props.data.filter((item) => item.type === group)
-          return <SkillGroup data={groupData} group={group} key={key} />
+        rootCategories.map((category, key) => {
+          let categorySkills = skills.filter((skill) => skill.rootCategory === category.code)
+          return <SkillGroup skills={categorySkills} category={category.code} key={key} />
         })
       )}
     </Section>

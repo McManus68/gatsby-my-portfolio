@@ -11,7 +11,7 @@ import NavigationButton from './navigation-button'
 
 import logo from '../../../assets/images/logo.png'
 
-const Navigation = props => {
+const Navigation = (props) => {
   let [selected, setSelected] = useState('intro')
   let [visible, setVisible] = useState(false)
   let [switchingTheme, setSwitchingTheme] = useState(false)
@@ -26,7 +26,6 @@ const Navigation = props => {
   }
 
   function handleVisibility(e) {
-    console.log('handleVisiblite')
     setSwitchingTheme(false)
     setVisible(!visible)
   }
@@ -45,12 +44,12 @@ const Navigation = props => {
         </div>
 
         <Scrollspy
-          items={props.menu.map(function(item) {
+          items={props.menus.map(function (item) {
             return item.name
           })}
           onUpdate={handleScroll}
         >
-          {props.menu.map(function(item, i) {
+          {props.menus.map(function (item, i) {
             return (
               <NavigationItem
                 name={item.name}

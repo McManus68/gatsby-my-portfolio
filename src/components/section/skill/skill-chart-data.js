@@ -1,39 +1,56 @@
 const initializeData = (props) => {
   console.log('initializeData')
-  let d = {}
-  // All nodes
-  d.nodes = [...props.data]
 
-  // All nodes representing mains groups ( Backend, FrontEnd and Devops)
-  const groupNodes = props.groups.map((group, key) => {
-    return {
-      name: group,
-      level: 10,
-      type: 'group',
-    }
-  })
+  let d = { nodes: [], links: [] }
 
-  // Create a note for the main groups
-  d.nodes.unshift(...groupNodes)
-
-  // Add a root node
-  d.nodes.unshift({
+  // Create the root node
+  d.nodes.push({
     name: 'root',
     level: 15,
     type: 'root',
   })
 
-  // Create links
-  d.links = []
+  let categories = [...props.categories]
 
-  groupNodes.forEach((root, rootIndex) => {
-    d.nodes.forEach((node, nodeIndex) => {
-      if (node.type !== 'group' && root.name === node.type) {
-        d.links.push({ source: rootIndex * 1 + 1, target: nodeIndex })
-      }
-    })
-    d.links.push({ source: 0, target: rootIndex * 1 + 1 })
+  categories.forEach((item) => {
+    item['level'] = 10
+    item['type'] = 'group'
   })
+  // Create the group nodes
+  d.nodes.push(...categories)
+
+  // Create the skills nodes
+  let skills = [...props.skills]
+  skills.forEach((item) => {
+    item['type'] = 'skill'
+  })
+  d.nodes.push(...skills)
+
+  // Create a structure to map the INDEX of all the nodes
+  let map = new Map()
+  d.nodes.forEach((node, index) => {
+    map.set(node.code || node.name, index)
+  })
+
+  // Create all the link betweens categories
+  categories.forEach((category) => {
+    if (category.root) {
+      d.links.push({ source: 0, target: map.get(category.code) })
+    } else {
+      d.links.push({
+        source: map.get(category.category.code),
+        target: map.get(category.code),
+      })
+    }
+  })
+
+  // Create all the links between skills and their category
+  skills.forEach((node, index) => {
+    if (node.type === 'skill') {
+      d.links.push({ source: map.get(node.category.code), target: map.get(node.name) })
+    }
+  })
+
   return d
 }
 

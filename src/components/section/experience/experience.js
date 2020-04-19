@@ -5,11 +5,10 @@ import style from './experience.module.scss'
 import Section from '../../ui/section/section'
 import TimeLine from '../../ui/timeline/timeline'
 
-const Experience = props => {
-  console.log('Redraw Experience')
+const Experience = (props) => {
   return (
     <Section section={props.section} className={style.experience}>
-      <TimeLine data={props.data} />
+      <TimeLine data={props.experiences} />
     </Section>
   )
 }
