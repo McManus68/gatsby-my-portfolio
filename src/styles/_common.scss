@@ -29,6 +29,13 @@
   }
 }
 
+@mixin icon-button-style {
+  align-self: flex-end;
+  margin-right: 2rem;
+  cursor: pointer;
+  color: var(--first-color);
+}
+
 @mixin title-border-style {
   content: '';
   display: block;

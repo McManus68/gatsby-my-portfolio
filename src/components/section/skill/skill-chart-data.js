@@ -13,7 +13,7 @@ const initializeData = (props) => {
   let categories = [...props.categories]
 
   categories.forEach((category) => {
-    category['level'] = category.root ? 15 : 8
+    category['level'] = 15
     category['type'] = 'group'
   })
   // Create the group nodes
@@ -32,23 +32,14 @@ const initializeData = (props) => {
     map.set(node.code || node.name, index)
   })
 
-  // Create all the link betweens categories
+  // Create all the link betweens root node and categories
   categories.forEach((category) => {
-    if (category.root) {
-      d.links.push({ source: 0, target: map.get(category.code) })
-    } else {
-      d.links.push({
-        source: map.get(category.category.code),
-        target: map.get(category.code),
-      })
-    }
+    d.links.push({ source: 0, target: map.get(category.code) })
   })
 
   // Create all the links between skills and their category
   skills.forEach((node, index) => {
-    if (node.type === 'skill') {
-      d.links.push({ source: map.get(node.category.code), target: map.get(node.name) })
-    }
+    d.links.push({ source: map.get(node.category.code), target: map.get(node.name) })
   })
 
   return d

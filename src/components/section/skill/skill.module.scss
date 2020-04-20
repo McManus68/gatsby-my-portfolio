@@ -1,11 +1,7 @@
+@import '../../../styles/_common';
+
 .skill {
   .display-type {
-    align-self: flex-end;
-    margin-right: 2rem;
-    cursor: pointer;
-
-    &:hover {
-      color: var(--first-color);
-    }
+    @include icon-button-style;
   }
 }

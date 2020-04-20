@@ -95,6 +95,7 @@ main section:nth-child(2n) div[class*='arrow'] {
 .separator {
   @include title-border-style;
   margin: 2rem auto;
+  width: 3rem;
   border-bottom: 2px dashed var(--first-text-color);
 }
 

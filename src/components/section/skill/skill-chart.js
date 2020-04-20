@@ -118,7 +118,7 @@ const SkillChart = (props) => {
       .filter((d) => d.type !== 'root')
       .append('circle')
       .attr('r', (d) => (d.type === 'skill' ? radius(5) : radius(d.level)))
-      .attr('class', (d) => d.rootCategory + ' ' + d.type)
+      .attr('class', (d) => (d.type === 'skill' ? d.category.code : d.code))
 
     // Add mouse listeners on techno nodes to display a tooltip
     node
@@ -142,7 +142,7 @@ const SkillChart = (props) => {
     node
       .filter((d) => d.type === 'group')
       .append('text')
-      .attr('class', (d) => d.rootCategory)
+      .attr('class', (d) => d.code)
       .attr('dy', '.35em')
       .attr('text-anchor', 'middle')
       .text((d) => d.name)
