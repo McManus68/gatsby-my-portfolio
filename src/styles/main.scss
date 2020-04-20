@@ -68,6 +68,12 @@ h4 {
   }
 }
 
+@media only screen and (max-width: $small-device) {
+  html {
+    font-size: 12px;
+  }
+}
+
 main section {
   color: var(--first-text-color);
   background-color: var(--first-bg-color);

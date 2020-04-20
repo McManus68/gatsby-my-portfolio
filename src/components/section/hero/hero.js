@@ -7,14 +7,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { AnchorLink } from 'gatsby-plugin-anchor-links'
 import OnVisible from 'react-on-visible'
 import HeroTitle from './hero-title'
+import HeroParticles from './hero-particles'
 import Separator from '../../ui/separator/separator'
-import MyParticles from '../../ui/particles/particles'
 
 const Hero = (props) => {
   const { t } = useTranslation()
   return (
     <section data-section={props.section.name} id={props.section.name}>
-      <div className={style.intro}>
+      <div className={style.hero}>
         <OnVisible visibleClassName={style.animateIcon}>
           <FontAwesomeIcon icon={['fab', 'angellist']} size="4x" />
         </OnVisible>
@@ -39,8 +39,9 @@ const Hero = (props) => {
             <span>{t('intro.button')}</span>
           </AnchorLink>
         </OnVisible>
+
+        <HeroParticles />
       </div>
-      <MyParticles />
     </section>
   )
 }

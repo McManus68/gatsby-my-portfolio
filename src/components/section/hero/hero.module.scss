@@ -1,12 +1,13 @@
 @import '../../../styles/_common';
 
-.intro {
+.hero {
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  min-height: 40rem;
   color: white;
   background: black;
 
@@ -63,7 +64,7 @@
     li {
       padding: 0 15px;
       position: relative;
-      font-size: 18px;
+      font-size: 1.2rem;
       text-shadow: 1px 1px 4px;
 
       &:after {

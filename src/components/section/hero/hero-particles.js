@@ -1,13 +1,13 @@
 import React from 'react'
 
-import style from './particles.module.scss'
+import style from './hero-particles.module.scss'
 
 import Particles from 'react-particles-js'
 
-const MyParticles = (props) => {
+const HeroParticles = (props) => {
   return (
     <Particles
-      className={style.particles}
+      className={style.heroParticles}
       params={{
         particles: {
           number: {
@@ -39,4 +39,4 @@ const MyParticles = (props) => {
   )
 }
 
-export default MyParticles
+export default HeroParticles

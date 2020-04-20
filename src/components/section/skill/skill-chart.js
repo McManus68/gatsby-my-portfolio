@@ -14,7 +14,7 @@ const SkillChart = (props) => {
   const d3Ref = useRef(null)
 
   useEffect(() => {
-    const handleResize = debounce(function handleResize() {
+    const handleResize = debounce(() => {
       console.log(window)
       drawChart()
     }, 1000)
