@@ -16,6 +16,8 @@
   .node {
     circle {
       fill: currentColor;
+      stroke: var(--first-text-color);
+      stroke-width: 2px;
     }
 
     text {
@@ -32,8 +34,8 @@
     justify-content: center;
     text-align: center;
     padding: 15px;
-    background: var(--nav-bg-color);
-    color: var(--nav-text-color);
+    background: var(--second-bg-color);
+    color: var(--second-text-color);
     border-radius: 8px;
     pointer-events: none;
   }
