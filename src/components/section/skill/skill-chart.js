@@ -33,36 +33,23 @@ const SkillChart = (props) => {
       clearTimeout(timer)
       timer = setTimeout((_) => {
         timer = null
-        console.log('decounce')
         fn.apply(this, arguments)
       }, ms)
     }
   }
 
   const drawChart = () => {
-    let width = window.innerWidth - 50 > 1200 ? 1200 : window.innerWidth - 50
-    let height = window.innerHeight > 800 ? 800 : window.innerHeight
-
-    console.log('Dimension = ', width, height)
+    let width = Math.min(window.innerWidth - 50, 1500)
+    let height = Math.min(window.innerHeight, 1200)
 
     const ticked = () => {
       link
-        .attr('x1', function (d) {
-          return d.source.x
-        })
-        .attr('y1', function (d) {
-          return d.source.y
-        })
-        .attr('x2', function (d) {
-          return d.target.x
-        })
-        .attr('y2', function (d) {
-          return d.target.y
-        })
+        .attr('x1', (d) => d.source.x)
+        .attr('y1', (d) => d.source.y)
+        .attr('x2', (d) => d.target.x)
+        .attr('y2', (d) => d.target.y)
 
-      node.attr('transform', function (d) {
-        return 'translate(' + d.x + ',' + d.y + ')'
-      })
+      node.attr('transform', (d) => 'translate(' + d.x + ',' + d.y + ')')
     }
 
     /* Graph Listeners */
@@ -90,7 +77,7 @@ const SkillChart = (props) => {
     const mousemove = (d) => {
       tooltip
         .html(d.name)
-        .style('left', d3.event.pageX + 10 + 'px') // It is important to put the +90: other wise the tooltip is exactly where the point is an it creates a weird effect
+        .style('left', d3.event.pageX + 10 + 'px')
         .style('top', d3.event.pageY - 10 + 'px')
     }
     const mouseleave = (d) => {
@@ -103,13 +90,13 @@ const SkillChart = (props) => {
 
     // Draw Graph
     var svg = d3.select(d3Ref.current).append('svg').attr('width', width).attr('height', height)
-    var radius = d3.scaleSqrt().domain([0, 50]).range([0, 20])
+    var radius = d3.scaleSqrt().domain([0, 15]).range([0, 50])
     var drag = d3.drag().on('start', dragstarted).on('drag', dragged).on('end', dragended)
 
     var simulation = d3
       .forceSimulation()
       .force('link', d3.forceLink())
-      .force('charge', d3.forceManyBody().strength(-80))
+      .force('charge', d3.forceManyBody().strength(-100))
       .force('center', d3.forceCenter(width / 2, height / 2))
       .on('tick', ticked)
       .stop()
@@ -126,79 +113,52 @@ const SkillChart = (props) => {
     link = link.data(data.links).enter().append('line')
     node = node.data(data.nodes).enter().append('g').call(drag)
 
-    // Draw all nodes excepts the root node
+    // Draw all circles except root node
     node
-      .filter(function (d) {
-        return d.type !== 'root'
-      })
+      .filter((d) => d.type !== 'root')
       .append('circle')
-      .attr('r', function (d) {
-        return radius(d.level * 20)
-      })
-      .attr('class', function (d) {
-        switch (d.type) {
-          case 'group':
-            return d.code
-          case 'root':
-            return 'root'
-          default:
-            return d.type
-        }
-      })
+      .attr('r', (d) => (d.type === 'skill' ? radius(5) : radius(d.level)))
+      .attr('class', (d) => d.rootCategory + ' ' + d.type)
 
     // Add mouse listeners on techno nodes to display a tooltip
     node
-      .filter(function (d) {
-        return d.type === 'skill'
-      })
+      .filter((d) => d.type === 'skill')
       .on('mouseover', mouseover)
       .on('mousemove', mousemove)
       .on('mouseleave', mouseleave)
 
     // Draw the root node
     node
-      .filter(function (d) {
-        return d.type === 'root'
-      })
+      .filter((d) => d.type === 'root')
       .append('image')
       .attr('class', 'avatar')
-      .attr('x', '-32')
-      .attr('y', '-32')
-      .attr('height', '64')
-      .attr('width', '64')
+      .attr('x', '-35')
+      .attr('y', '-35')
+      .attr('height', '70')
+      .attr('width', '70')
       .attr('href', avatar)
 
     // Add the text for the groups nodes
     node
-      .filter(function (d) {
-        return d.type === 'group'
-      })
+      .filter((d) => d.type === 'group')
       .append('text')
-      .attr('class', function (d) {
-        return d.code
-      })
+      .attr('class', (d) => d.rootCategory)
       .attr('dy', '.35em')
       .attr('text-anchor', 'middle')
-      .text(function (d) {
-        return d.code
-      })
+      .text((d) => d.name)
 
     // Add the icon for the technos nodes
     node
-      .filter(function (d) {
-        return d.logo
-      })
+      .filter((d) => d.logo)
       .append('image')
       .attr('x', '-16')
       .attr('y', '-16')
       .attr('height', '32')
       .attr('width', '32')
-      .attr('href', function (d) {
-        return d.logo.fixed.src
-      })
+      .attr('href', (d) => d.logo.fixed.src)
 
     simulation.nodes(data.nodes)
-    simulation.force('link').links(data.links).distance(80)
+    simulation.force('link').links(data.links).distance(120)
     simulation.restart()
   }
 

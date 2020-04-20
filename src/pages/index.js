@@ -185,7 +185,7 @@ export const pageQuery = graphql`
         name
         node_locale
         logo {
-          fixed(width: 32, height: 32, quality: 100) {
+          fixed(width: 64, height: 64, quality: 100) {
             src
           }
           title

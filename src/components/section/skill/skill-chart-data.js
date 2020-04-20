@@ -12,17 +12,17 @@ const initializeData = (props) => {
 
   let categories = [...props.categories]
 
-  categories.forEach((item) => {
-    item['level'] = 10
-    item['type'] = 'group'
+  categories.forEach((category) => {
+    category['level'] = category.root ? 10 : 5
+    category['type'] = 'group'
   })
   // Create the group nodes
   d.nodes.push(...categories)
 
   // Create the skills nodes
   let skills = [...props.skills]
-  skills.forEach((item) => {
-    item['type'] = 'skill'
+  skills.forEach((skill) => {
+    skill['type'] = 'skill'
   })
   d.nodes.push(...skills)
 

@@ -9,8 +9,9 @@ import SkillGroup from './skill-group'
 import SkillChart from './skill-chart'
 
 const Skill = (props) => {
-  const [modeGraph, setModeGraph] = useState(true)
+  const [modeGraph, setModeGraph] = useState(false)
 
+  // Get root category using recursivity
   const getRootCategory = (currentCategory) => {
     if (currentCategory.root) return currentCategory.code
     else return getRootCategory(currentCategory.category)
@@ -18,15 +19,11 @@ const Skill = (props) => {
 
   // For each category, link the its root category
   let categories = [...props.categories]
-  categories.forEach((category) => {
-    category['rootCategory'] = getRootCategory(category)
-  })
+  categories.forEach((category) => (category['rootCategory'] = getRootCategory(category)))
 
   // For each skill, link the its root category
   let skills = [...props.skills]
-  skills.forEach((skill) => {
-    skill['rootCategory'] = getRootCategory(skill.category)
-  })
+  skills.forEach((skill) => (skill['rootCategory'] = getRootCategory(skill.category)))
 
   // Get only the root categories
   const rootCategories = categories.filter((category) => category.root)
