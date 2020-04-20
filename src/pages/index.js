@@ -194,7 +194,6 @@ export const pageQuery = graphql`
           name
           id
           code
-          root
         }
       }
     }
@@ -219,7 +218,6 @@ export const pageQuery = graphql`
         name
         order
         code
-        root
       }
     }
   }
