@@ -13,7 +13,7 @@ const initializeData = (props) => {
   let categories = [...props.categories]
 
   categories.forEach((category) => {
-    category['level'] = category.root ? 10 : 5
+    category['level'] = category.root ? 15 : 8
     category['type'] = 'group'
   })
   // Create the group nodes

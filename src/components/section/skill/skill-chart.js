@@ -90,7 +90,7 @@ const SkillChart = (props) => {
 
     // Draw Graph
     var svg = d3.select(d3Ref.current).append('svg').attr('width', width).attr('height', height)
-    var radius = d3.scaleSqrt().domain([0, 15]).range([0, 50])
+    var radius = d3.scaleSqrt().domain([0, 20]).range([0, 50])
     var drag = d3.drag().on('start', dragstarted).on('drag', dragged).on('end', dragended)
 
     var simulation = d3
@@ -158,7 +158,7 @@ const SkillChart = (props) => {
       .attr('href', (d) => d.logo.fixed.src)
 
     simulation.nodes(data.nodes)
-    simulation.force('link').links(data.links).distance(120)
+    simulation.force('link').links(data.links).distance(140)
     simulation.restart()
   }
 

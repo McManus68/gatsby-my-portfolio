@@ -110,6 +110,14 @@ main section:nth-child(2n) div[class*='arrow'] {
   color: var(--devops-color);
 }
 
+.cms {
+  color: var(--cms-color);
+}
+
+.db {
+  color: var(--db-color);
+}
+
 .icon-backend {
   background-image: url('../assets/images/frontend.svg');
 }
@@ -127,4 +135,14 @@ main section:nth-child(2n) div[class*='arrow'] {
 .item-devops {
   background: var(--card-bg-color)
     linear-gradient(135deg, var(--devops-color) 15px, rgba(0, 0, 0, 0.01) 0);
+}
+
+.item-cms {
+  background: var(--card-bg-color)
+    linear-gradient(135deg, var(--cms-color) 15px, rgba(0, 0, 0, 0.01) 0);
+}
+
+.item-db {
+  background: var(--card-bg-color)
+    linear-gradient(135deg, var(--db-color) 15px, rgba(0, 0, 0, 0.01) 0);
 }

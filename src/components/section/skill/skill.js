@@ -9,7 +9,7 @@ import SkillGroup from './skill-group'
 import SkillChart from './skill-chart'
 
 const Skill = (props) => {
-  const [modeGraph, setModeGraph] = useState(false)
+  const [modeGraph, setModeGraph] = useState(true)
 
   // Get root category using recursivity
   const getRootCategory = (currentCategory) => {

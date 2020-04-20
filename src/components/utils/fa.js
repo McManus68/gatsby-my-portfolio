@@ -24,6 +24,7 @@ import {
   faSortAlphaUpAlt,
   faThList,
   faProjectDiagram,
+  faMusic,
 } from '@fortawesome/free-solid-svg-icons'
 
 import { faAngellist } from '@fortawesome/free-brands-svg-icons'
@@ -52,5 +53,6 @@ library.add(
   faSortAlphaDownAlt,
   faSortAlphaUpAlt,
   faThList,
-  faProjectDiagram
+  faProjectDiagram,
+  faMusic
 )

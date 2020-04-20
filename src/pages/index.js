@@ -195,16 +195,6 @@ export const pageQuery = graphql`
           id
           code
           root
-          category {
-            code
-            name
-            root
-            category {
-              code
-              name
-              root
-            }
-          }
         }
       }
     }
@@ -230,16 +220,6 @@ export const pageQuery = graphql`
         order
         code
         root
-        category {
-          code
-          name
-          root
-          category {
-            code
-            name
-            root
-          }
-        }
       }
     }
   }
