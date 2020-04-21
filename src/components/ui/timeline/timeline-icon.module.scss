@@ -9,12 +9,6 @@
   margin: 0 0 0 -35px;
 }
 
-.bounce-in :global {
-  visibility: visible;
-  animation-name: bounceIn;
-  animation-duration: 0.5s;
-}
-
 .timeline-icon.active {
   &:before {
     background: var(--first-color);
