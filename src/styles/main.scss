@@ -29,26 +29,6 @@ h1 {
 
 h2 {
   font: 4rem/1.2 var(--second-font);
-  margin: 0;
-}
-
-h3 {
-  font-size: 1.5rem;
-  margin: 0 0 2rem;
-}
-
-h4 {
-  margin: 0;
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: var(--first-color);
-}
-
-.techno {
-  color: var(--first-color);
-  font-style: italic;
-  font-weight: 800;
 }
 
 @media only screen and (max-width: $large-device) {
@@ -92,6 +72,7 @@ main section:nth-child(2n) div[class*='arrow'] {
   border-top: solid 30px var(--second-bg-color);
 }
 
+// Global style needed cause the css classes are used in Contenful content
 .separator {
   @include title-border-style;
   margin: 2rem auto;
@@ -99,55 +80,26 @@ main section:nth-child(2n) div[class*='arrow'] {
   border-bottom: 2px dashed var(--first-text-color);
 }
 
-.frontend {
-  color: var(--frontend-color);
+.techno {
+  color: var(--first-color);
+  font-style: italic;
+  font-weight: 800;
 }
 
-.backend {
-  color: var(--backend-color);
+// Dynamic creation of styles related to skills categories
+$categories: 'frontend', 'backend', 'devops', 'cms', 'db';
+
+@each $category in $categories {
+  .#{$category} {
+    color: var(--#{$category}-color);
+  }
+  .item-#{$category} {
+    background: var(--card-bg-color)
+      linear-gradient(135deg, var(--#{$category}-color) 15px, rgba(0, 0, 0, 0.01) 0);
+  }
 }
 
-.devops {
-  color: var(--devops-color);
-}
-
-.cms {
-  color: var(--cms-color);
-}
-
-.db {
-  color: var(--db-color);
-}
-
+// Hide the ugly Goolge captcha
 .grecaptcha-badge {
   visibility: hidden;
-}
-
-.icon-backend {
-  background-image: url('../assets/images/frontend.svg');
-}
-
-.item-frontend {
-  background: var(--card-bg-color)
-    linear-gradient(135deg, var(--frontend-color) 15px, rgba(0, 0, 0, 0.01) 0);
-}
-
-.item-backend {
-  background: var(--card-bg-color)
-    linear-gradient(135deg, var(--backend-color) 15px, rgba(0, 0, 0, 0.01) 0);
-}
-
-.item-devops {
-  background: var(--card-bg-color)
-    linear-gradient(135deg, var(--devops-color) 15px, rgba(0, 0, 0, 0.01) 0);
-}
-
-.item-cms {
-  background: var(--card-bg-color)
-    linear-gradient(135deg, var(--cms-color) 15px, rgba(0, 0, 0, 0.01) 0);
-}
-
-.item-db {
-  background: var(--card-bg-color)
-    linear-gradient(135deg, var(--db-color) 15px, rgba(0, 0, 0, 0.01) 0);
 }

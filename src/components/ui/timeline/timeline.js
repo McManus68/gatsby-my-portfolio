@@ -7,10 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import TimelineItem from './timeline-item'
 
 const Timeline = (props) => {
-  const [active, setActive] = useState(-1)
   const [descending, setDescending] = useState(true)
-
-  console.log('draw timeline')
 
   props.data.sort((a, b) => {
     if (a.startYear > b.startYear) return descending ? -1 : 1
@@ -25,7 +22,7 @@ const Timeline = (props) => {
         onClick={() => setDescending(!descending)}
       />
       {props.data.map((item, key) => {
-        return <TimelineItem data={item} key={key} id={key} active={active} callback={setActive} />
+        return <TimelineItem data={item} key={key} id={key} />
       })}
     </div>
   )

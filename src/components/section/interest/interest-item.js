@@ -9,7 +9,7 @@ const InterestItem = (props) => {
   return (
     <OnVisible visibleClassName={style.pulse} className={style.interestItem}>
       <FontAwesomeIcon icon={props.interest.icon} />
-      <h3>{props.interest.name}</h3>
+      <span className={style.name}>{props.interest.name}</span>
     </OnVisible>
   )
 }

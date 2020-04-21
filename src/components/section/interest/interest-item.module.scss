@@ -3,16 +3,17 @@
   flex-direction: column;
   margin: 1rem;
   align-items: center;
-  width: 150px;
+  width: 120px;
 
   svg {
     color: var(--first-color);
     font-size: 3rem;
   }
 
-  h3 {
-    margin-top: 2rem;
+  .name {
+    margin: 1rem;
     font-size: 1.2rem;
+    font-weight: bold;
   }
 }
 

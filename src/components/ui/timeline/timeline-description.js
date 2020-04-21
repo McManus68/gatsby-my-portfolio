@@ -13,7 +13,7 @@ const TimelineDescription = (props) => {
           <img alt={props.data.country.icon.title} src={props.data.country.icon.file.url}></img>
         </div>
 
-        <h4>{props.data.title}</h4>
+        <span className={style.company}>{props.data.title}</span>
       </div>
       <span
         className={style.content}

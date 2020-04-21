@@ -13,7 +13,7 @@ const AboutMe = (props) => {
         </div>
 
         <div className={style.description}>
-          <h3>{props.data.descriptionTitle}</h3>
+          <span className={style.title}>{props.data.descriptionTitle}</span>
 
           <span
             dangerouslySetInnerHTML={{
