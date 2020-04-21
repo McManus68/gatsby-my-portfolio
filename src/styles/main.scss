@@ -119,6 +119,10 @@ main section:nth-child(2n) div[class*='arrow'] {
   color: var(--db-color);
 }
 
+.grecaptcha-badge {
+  visibility: hidden;
+}
+
 .icon-backend {
   background-image: url('../assets/images/frontend.svg');
 }

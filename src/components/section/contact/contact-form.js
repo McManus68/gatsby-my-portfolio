@@ -1,20 +1,21 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import style from './contact-form.module.scss'
 
 import { useTranslation } from 'react-i18next'
-
 import Button from '../../ui/button/button'
 
-import Snackbar from '@bit/mui-org.material-ui.snackbar'
-import IconButton from '@bit/mui-org.material-ui.icon-button'
-import CloseIcon from '@bit/mui-org.material-ui-icons.close'
+import ContactSnackBar from './contact-snackbar'
+
+import ReCAPTCHA from 'react-google-recaptcha'
 
 const ContactForm = (props) => {
   const { t } = useTranslation()
 
   const [status, setStatus] = useState('')
   const [open, setOpen] = useState(false)
+
+  let recaptchaRef = React.createRef()
 
   const handleClose = (event, reason) => {
     if (reason === 'clickaway') {
@@ -23,7 +24,14 @@ const ContactForm = (props) => {
     setOpen(false)
   }
 
-  const submitForm = function (ev) {
+  useEffect(() => {
+    if (recaptchaRef) {
+      recaptchaRef.reset()
+      recaptchaRef.execute()
+    }
+  }, [])
+
+  const submitForm = (ev) => {
     ev.preventDefault()
     const form = ev.target
     const data = new FormData(form)
@@ -31,6 +39,7 @@ const ContactForm = (props) => {
     xhr.open(form.method, form.action)
     xhr.setRequestHeader('Accept', 'application/json')
     xhr.onreadystatechange = () => {
+      console.log(xhr)
       if (xhr.readyState !== XMLHttpRequest.DONE) return
       setOpen(true)
       if (xhr.status === 200) {
@@ -50,6 +59,13 @@ const ContactForm = (props) => {
       action="https://formspree.io/xgelendk"
       method="POST"
     >
+      <ReCAPTCHA
+        ref={(el) => (recaptchaRef = el)}
+        size="invisible"
+        render="explicit"
+        sitekey="6Lc3DOwUAAAAALrXfLSWEctsts1g7NN6Si4ez1rB"
+      />
+
       <label htmlFor="name">{t('contact.name')}</label>
       <span className={style.formItem}>
         <input type="text" name="name" />
@@ -57,34 +73,19 @@ const ContactForm = (props) => {
 
       <label htmlFor="email">{t('contact.email')}</label>
       <span className={style.formItem}>
-        <input type="email" name="email" />
+        <input required type="email" name="email" />
       </span>
 
       <label htmlFor="message">{t('contact.message')}</label>
       <span className={style.formItem + ' ' + style.textarea}>
-        <textarea name="message" />
+        <textarea required name="message" />
       </span>
 
       <p className={style.buttonContainer}>
         <Button label={t('contact.send')}></Button>
       </p>
 
-      <Snackbar
-        anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
-        open={open}
-        ContentProps={{
-          'aria-describedby': 'message-id',
-          className: status === 'success' ? style.success : style.error,
-        }}
-        autoHideDuration={4000}
-        onClose={handleClose}
-        message={<span>{t('contact.' + status)}</span>}
-        action={[
-          <IconButton key="close" aria-label="close" color="inherit" onClick={handleClose}>
-            <CloseIcon />
-          </IconButton>,
-        ]}
-      />
+      <ContactSnackBar open={open} status={status} callback={handleClose} />
     </form>
   )
 }
