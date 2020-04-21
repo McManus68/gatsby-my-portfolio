@@ -31,6 +31,13 @@ const ContactForm = (props) => {
     }
   }, [])
 
+  const resetCaptcha = () => {
+    if (recaptchaRef) {
+      recaptchaRef.reset()
+      recaptchaRef.execute()
+    }
+  }
+
   const submitForm = (ev) => {
     ev.preventDefault()
     const form = ev.target
@@ -39,7 +46,6 @@ const ContactForm = (props) => {
     xhr.open(form.method, form.action)
     xhr.setRequestHeader('Accept', 'application/json')
     xhr.onreadystatechange = () => {
-      console.log(xhr)
       if (xhr.readyState !== XMLHttpRequest.DONE) return
       setOpen(true)
       if (xhr.status === 200) {
@@ -50,6 +56,7 @@ const ContactForm = (props) => {
       }
     }
     xhr.send(data)
+    resetCaptcha()
   }
 
   return (

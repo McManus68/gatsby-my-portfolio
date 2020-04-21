@@ -15,7 +15,6 @@ const SkillChart = (props) => {
 
   useEffect(() => {
     const handleResize = debounce(() => {
-      console.log(window)
       drawChart()
     }, 1000)
 
@@ -81,7 +80,7 @@ const SkillChart = (props) => {
         .style('top', d3.event.pageY - 10 + 'px')
     }
     const mouseleave = (d) => {
-      tooltip.transition().duration(200).style('opacity', 0)
+      tooltip.style('opacity', 0)
     }
 
     // Clean old Graph
