@@ -11,7 +11,6 @@ import CloseIcon from '@bit/mui-org.material-ui-icons.close'
 const ContactSnackBar = (props) => {
   const { t } = useTranslation()
 
-  console.log(props)
   return (
     <Snackbar
       anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
@@ -21,7 +20,7 @@ const ContactSnackBar = (props) => {
         'aria-describedby': 'message-id',
         className: props.status === 'success' ? style.success : style.error,
       }}
-      autoHideDuration={400000}
+      autoHideDuration={4000}
       onClose={props.callback}
       message={<span>{t('contact.' + props.status)}</span>}
       action={[
