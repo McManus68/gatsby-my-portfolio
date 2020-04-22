@@ -79,10 +79,10 @@ const SkillChart = (props) => {
         .style('left', d3.event.pageX + 10 + 'px')
         .style('top', d3.event.pageY - 10 + 'px')
     }
+
     const mouseleave = (d) => {
       tooltip.style('opacity', 0)
     }
-
     // Clean old Graph
     d3.select(d3Ref.current).select('svg').remove()
     d3.select(d3Ref.current).select('div.tooltip').remove()
