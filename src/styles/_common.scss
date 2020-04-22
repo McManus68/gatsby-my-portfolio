@@ -30,8 +30,8 @@
 }
 
 @mixin icon-button-style {
-  align-self: flex-end;
-  margin-right: 2rem;
+  align-self: flex-start;
+  margin-left: 1rem;
   cursor: pointer;
   color: var(--first-color);
 }
