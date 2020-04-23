@@ -1,9 +1,10 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import style from './hero-title.module.scss'
 
-const HeroTitle = (props) => {
-  const words = props.designation.split(' ')
+const HeroTitle = ({ title }) => {
+  const words = title.split(' ')
   let position = 0
   return (
     <div className={style.heroTitle}>
@@ -27,6 +28,10 @@ const HeroTitle = (props) => {
       ))}
     </div>
   )
+}
+
+HeroTitle.propTypes = {
+  title: PropTypes.string.isRequired,
 }
 
 export default HeroTitle

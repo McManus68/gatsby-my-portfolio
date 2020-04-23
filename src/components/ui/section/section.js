@@ -1,20 +1,26 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import style from './section.module.scss'
 
 import Separator from '../separator/separator'
 
-const Section = props => {
+const Section = ({ section, className, children }) => {
   return (
-    <section data-section={props.section.name} id={props.section.name} className={props.className}>
+    <section data-section={section.name} id={section.name} className={className}>
       <div className={style.section}>
-        <h2>{props.section.title}</h2>
+        <h2>{section.title}</h2>
         <Separator />
-        {props.children}
+        {children}
       </div>
       <div className={style.arrow}></div>
     </section>
   )
+}
+
+Section.propTypes = {
+  section: PropTypes.object.isRequired,
+  className: PropTypes.string,
 }
 
 export default Section

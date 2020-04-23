@@ -1,9 +1,11 @@
+@import '../../../styles/_variables';
+
 .interest-item {
   display: flex;
   flex-direction: column;
   margin: 1rem;
   align-items: center;
-  width: 120px;
+  width: 150px;
 
   svg {
     color: var(--first-color);
@@ -21,4 +23,16 @@
   animation: pulse;
   animation-duration: 1.5s;
   animation-delay: 0.5s;
+}
+
+@media only screen and (max-width: $large-device) {
+  .interest-item {
+    width: 120px;
+  }
+}
+
+@media only screen and (max-width: $medium-device) {
+  .interest-item {
+    width: 100px;
+  }
 }

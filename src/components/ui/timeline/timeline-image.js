@@ -1,21 +1,26 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import style from './timeline-image.module.scss'
 
 import ModalImage from 'react-modal-image'
 
-const TimelineImage = (props) => {
+const TimelineImage = ({ image }) => {
   return (
     <div className={style.timelineImage}>
       <ModalImage
         hideDownload={true}
         hideZoom={true}
-        small={props.image.fixed.src}
-        large={props.image.file.url}
-        alt={props.image.title}
+        small={image.fixed.src}
+        large={image.file.url}
+        alt={image.title}
       />
     </div>
   )
+}
+
+TimelineImage.propTypes = {
+  image: PropTypes.object.isRequired,
 }
 
 export default TimelineImage

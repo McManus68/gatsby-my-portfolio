@@ -1,6 +1,4 @@
-const initializeData = (props) => {
-  console.log('initializeData')
-
+const initializeData = (skills, categories) => {
   let d = { nodes: [], links: [] }
 
   // Create the root node
@@ -10,8 +8,6 @@ const initializeData = (props) => {
     type: 'root',
   })
 
-  let categories = [...props.categories]
-
   categories.forEach((category) => {
     category['level'] = 15
     category['type'] = 'group'
@@ -20,7 +16,6 @@ const initializeData = (props) => {
   d.nodes.push(...categories)
 
   // Create the skills nodes
-  let skills = [...props.skills]
   skills.forEach((skill) => {
     skill['type'] = 'skill'
   })

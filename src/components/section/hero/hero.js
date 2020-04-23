@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import style from './hero.module.scss'
 
@@ -10,24 +11,24 @@ import HeroTitle from './hero-title'
 import HeroParticles from './hero-particles'
 import Separator from '../../ui/separator/separator'
 
-const Hero = (props) => {
+const Hero = ({ me, section }) => {
   const { t } = useTranslation()
   return (
-    <section data-section={props.section.name} id={props.section.name}>
+    <section data-section={section.name} id={section.name}>
       <div className={style.hero}>
         <OnVisible visibleClassName={style.animateIcon}>
           <FontAwesomeIcon icon={['fab', 'angellist']} size="4x" />
         </OnVisible>
 
         <OnVisible visibleClassName={style.zoomIn} className={style.header}>
-          <span className={style.name}>{props.data.name}</span>
+          <span className={style.name}>{me.name}</span>
           <ul className={style.subTitle}>
-            {props.data.bannerList.map((item, index) => {
+            {me.bannerList.map((item, index) => {
               return <li key={index}>{item}</li>
             })}
           </ul>
 
-          <HeroTitle designation={props.data.designation} />
+          <HeroTitle title={me.designation} />
         </OnVisible>
 
         <OnVisible visibleClassName={style.zoomIn}>
@@ -44,6 +45,11 @@ const Hero = (props) => {
       </div>
     </section>
   )
+}
+
+Hero.propTypes = {
+  me: PropTypes.object.isRequired,
+  section: PropTypes.object.isRequired,
 }
 
 export default Hero

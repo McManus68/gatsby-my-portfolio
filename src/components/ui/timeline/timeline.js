@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import PropTypes from 'prop-types'
 
 import style from './timeline.module.scss'
 
@@ -6,10 +7,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import TimelineItem from './timeline-item'
 
-const Timeline = (props) => {
+const Timeline = ({ data }) => {
   const [descending, setDescending] = useState(true)
 
-  props.data.sort((a, b) => {
+  data.sort((a, b) => {
     if (a.startYear > b.startYear) return descending ? -1 : 1
     else return descending ? 1 : -11
   })
@@ -21,11 +22,15 @@ const Timeline = (props) => {
         icon={descending ? 'sort-alpha-down-alt' : 'sort-alpha-up-alt'}
         onClick={() => setDescending(!descending)}
       />
-      {props.data.map((item, key) => {
-        return <TimelineItem data={item} key={key} id={key} />
+      {data.map((item, key) => {
+        return <TimelineItem item={item} key={key} id={key} />
       })}
     </div>
   )
+}
+
+Timeline.propTypes = {
+  data: PropTypes.array.isRequired,
 }
 
 export default Timeline

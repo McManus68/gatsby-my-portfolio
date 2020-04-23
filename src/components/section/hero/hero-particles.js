@@ -4,7 +4,7 @@ import style from './hero-particles.module.scss'
 
 import Particles from 'react-particles-js'
 
-const HeroParticles = (props) => {
+const HeroParticles = () => {
   return (
     <Particles
       className={style.heroParticles}

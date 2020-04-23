@@ -9,7 +9,7 @@ import ContactSnackBar from './contact-snackbar'
 
 import ReCAPTCHA from 'react-google-recaptcha'
 
-const ContactForm = (props) => {
+const ContactForm = () => {
   const { t } = useTranslation()
 
   const [status, setStatus] = useState('')
@@ -24,19 +24,16 @@ const ContactForm = (props) => {
     setOpen(false)
   }
 
-  useEffect(() => {
-    if (recaptchaRef) {
-      recaptchaRef.reset()
-      recaptchaRef.execute()
-    }
-  }, [])
-
   const resetCaptcha = () => {
     if (recaptchaRef) {
       recaptchaRef.reset()
       recaptchaRef.execute()
     }
   }
+
+  useEffect(() => {
+    resetCaptcha()
+  }, [])
 
   const submitForm = (ev) => {
     ev.preventDefault()

@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import PropTypes from 'prop-types'
 
 import style from './navigation.module.scss'
 
@@ -11,7 +12,7 @@ import NavigationButton from './navigation-button'
 
 import logo from '../../../assets/images/logo.png'
 
-const Navigation = (props) => {
+const Navigation = ({ menus, locale, switchLang, switchTheme }) => {
   let [selected, setSelected] = useState('intro')
   let [visible, setVisible] = useState(false)
   let [switchingTheme, setSwitchingTheme] = useState(false)
@@ -22,7 +23,7 @@ const Navigation = (props) => {
 
   function handleSwitchTheme(e) {
     setSwitchingTheme(true)
-    props.switchTheme()
+    switchTheme()
   }
 
   function handleVisibility(e) {
@@ -39,17 +40,17 @@ const Navigation = (props) => {
       >
         <img alt="logo" className={style.logo} src={logo}></img>
         <div className={style.header}>
-          <StylePicker style={props.style} callback={handleSwitchTheme} />
-          <LocalePicker locale={props.locale} callback={props.switchLang} />
+          <StylePicker callback={handleSwitchTheme} />
+          <LocalePicker locale={locale} callback={switchLang} />
         </div>
 
         <Scrollspy
-          items={props.menus.map(function (item) {
+          items={menus.map(function (item) {
             return item.name
           })}
           onUpdate={handleScroll}
         >
-          {props.menus.map(function (item, i) {
+          {menus.map(function (item, i) {
             return (
               <NavigationItem
                 name={item.name}
@@ -65,6 +66,13 @@ const Navigation = (props) => {
       <NavigationButton callback={handleVisibility} visible={visible} />
     </div>
   )
+}
+
+Navigation.propTypes = {
+  menus: PropTypes.array.isRequired,
+  locale: PropTypes.string.isRequired,
+  switchLang: PropTypes.func.isRequired,
+  switchTheme: PropTypes.func.isRequired,
 }
 
 export default Navigation

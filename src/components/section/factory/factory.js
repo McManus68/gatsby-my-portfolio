@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import Hero from '../hero/hero'
 import AboutMe from '../about-me/about-me'
@@ -8,31 +9,30 @@ import Interest from '../interest/interest'
 import Contact from '../contact/contact'
 import Skill from '../skill/skill'
 
-const Factory = (props) => {
-  switch (props.component.name) {
+const Factory = ({ data, component }) => {
+  switch (component.name) {
     case 'hero':
-      return <Hero data={props.data.me} section={props.component} />
+      return <Hero me={data.me} section={component} />
     case 'about-me':
-      return <AboutMe data={props.data.me} section={props.component} />
+      return <AboutMe me={data.me} section={component} />
     case 'experience':
-      return <Experience experiences={props.data.experiences} section={props.component} />
+      return <Experience experiences={data.experiences} section={component} />
     case 'interest':
-      return <Interest interests={props.data.interests} section={props.component} />
+      return <Interest interests={data.interests} section={component} />
     case 'education':
-      return <Education educations={props.data.educations} section={props.component} />
+      return <Education educations={data.educations} section={component} />
     case 'contact':
-      return <Contact data={props.data.me} section={props.component} />
+      return <Contact section={component} />
     case 'skill':
-      return (
-        <Skill
-          skills={props.data.skills}
-          categories={props.data.categories}
-          section={props.component}
-        />
-      )
+      return <Skill skills={data.skills} categories={data.categories} section={component} />
     default:
-      return <span>No component for {props.component.name}</span>
+      return <span>No component for {component.name}</span>
   }
+}
+
+Factory.propTypes = {
+  data: PropTypes.object.isRequired,
+  component: PropTypes.object.isRequired,
 }
 
 export default Factory

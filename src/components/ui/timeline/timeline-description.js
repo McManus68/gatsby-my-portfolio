@@ -1,30 +1,36 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import style from './timeline-description.module.scss'
 
 import TimelineImage from './timeline-image'
 
-const TimelineDescription = (props) => {
+const TimelineDescription = ({ item, odd }) => {
   return (
-    <div className={`${style.timelineDescription} ${props.odd ? style.odd : ''}`}>
+    <div className={`${style.timelineDescription} ${odd ? style.odd : ''}`}>
       <div className={style.header}>
         <div className={style.subHeader}>
-          <span className={style.date}> {props.data.period} </span>
-          <img alt={props.data.country.icon.title} src={props.data.country.icon.file.url}></img>
+          <span className={style.date}> {item.period} </span>
+          <img alt={item.country.icon.title} src={item.country.icon.file.url}></img>
         </div>
 
-        <span className={style.company}>{props.data.title}</span>
+        <span className={style.company}>{item.title}</span>
       </div>
       <span
         className={style.content}
         dangerouslySetInnerHTML={{
-          __html: props.data.description.childMarkdownRemark.html,
+          __html: item.description.childMarkdownRemark.html,
         }}
       />
 
-      {props.data.image ? <TimelineImage image={props.data.image} /> : null}
+      {item.image ? <TimelineImage image={item.image} /> : null}
     </div>
   )
+}
+
+TimelineDescription.propTypes = {
+  item: PropTypes.object.isRequired,
+  odd: PropTypes.bool.isRequired,
 }
 
 export default TimelineDescription

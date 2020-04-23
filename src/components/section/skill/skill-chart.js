@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react'
+import PropTypes from 'prop-types'
 
 import * as d3 from 'd3'
 
@@ -8,8 +9,8 @@ import initializeData from './skill-chart-data.js'
 
 import avatar from '../../../assets/images/avatar.png'
 
-const SkillChart = (props) => {
-  const [data, setData] = useState(initializeData(props))
+const SkillChart = ({ skills, categories }) => {
+  const [data] = useState(initializeData(skills, categories))
 
   const d3Ref = useRef(null)
 
@@ -162,6 +163,11 @@ const SkillChart = (props) => {
   }
 
   return <div ref={d3Ref} className={style.skillChart}></div>
+}
+
+SkillChart.propTypes = {
+  skills: PropTypes.array.isRequired,
+  categories: PropTypes.array.isRequired,
 }
 
 export default SkillChart
