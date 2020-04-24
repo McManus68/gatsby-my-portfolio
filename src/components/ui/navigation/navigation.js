@@ -15,32 +15,21 @@ import logo from '../../../assets/images/logo.png'
 const Navigation = ({ menus, locale, switchLang, switchTheme }) => {
   let [selected, setSelected] = useState('intro')
   let [visible, setVisible] = useState(false)
-  let [switchingTheme, setSwitchingTheme] = useState(false)
 
   function handleScroll(e) {
     setSelected(e.id)
   }
 
-  function handleSwitchTheme(e) {
-    setSwitchingTheme(true)
-    switchTheme()
-  }
-
   function handleVisibility(e) {
-    setSwitchingTheme(false)
     setVisible(!visible)
   }
 
   return (
     <div className={style.navigation}>
-      <nav
-        className={`${switchingTheme ? style.disableTransitions : ''} ${
-          visible ? style.visible : ''
-        }`}
-      >
+      <nav className={visible ? style.visible : ''}>
         <img alt="logo" className={style.logo} src={logo}></img>
         <div className={style.header}>
-          <StylePicker callback={handleSwitchTheme} />
+          <StylePicker callback={switchTheme} />
           <LocalePicker locale={locale} callback={switchLang} />
         </div>
 

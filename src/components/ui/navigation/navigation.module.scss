@@ -18,6 +18,7 @@
     width: 230px;
     height: 100%;
     transition: 0.3s;
+    transition-property: transform;
     transform: translate(110%, 0);
 
     .logo {
@@ -35,6 +36,7 @@
 
     ul {
       transition: 0.6s;
+      transition-property: transform;
       transform: translate(110%, 0);
       margin: 0;
       padding: 2rem 0 0;
@@ -55,14 +57,6 @@
     ul {
       transition-delay: 0.3s;
       transform: translate(0, 0);
-    }
-  }
-
-  nav.disable-transitions,
-  nav.visible.disable-transitions {
-    transition: 0s;
-    ul {
-      transition: 0s;
     }
   }
 }

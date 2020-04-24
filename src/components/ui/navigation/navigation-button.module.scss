@@ -23,6 +23,7 @@
     background: currentColor;
     border-radius: 3px;
     transition: 0.3s;
+    transition-property: transform;
     animation-name: nav-trigger;
     animation-iteration-count: infinite;
     animation-duration: 10s;
