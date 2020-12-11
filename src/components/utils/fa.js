@@ -55,5 +55,6 @@ library.add(
   faSortAlphaUpAlt,
   faThList,
   faProjectDiagram,
-  faMusic
+  faMusic,
+  faChessKing
 )
