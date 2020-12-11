@@ -14,20 +14,22 @@ const Skill = ({ skills, categories, section }) => {
 
   return (
     <Section section={section} className={style.skill}>
-      <FontAwesomeIcon
-        className={style.displayType}
-        icon={modeGraph ? 'th-list' : 'project-diagram'}
-        onClick={() => setModeGraph(!modeGraph)}
-      />
+      <div className={style.content}>
+        <FontAwesomeIcon
+          className={style.displayType}
+          icon={modeGraph ? 'th-list' : 'project-diagram'}
+          onClick={() => setModeGraph(!modeGraph)}
+        />
 
-      {modeGraph ? (
-        <SkillChart skills={skills} categories={categories} />
-      ) : (
-        categories.map((category, key) => {
-          let categorySkills = skills.filter((skill) => skill.category.code === category.code)
-          return <SkillGroup skills={categorySkills} category={category.code} key={key} />
-        })
-      )}
+        {modeGraph ? (
+          <SkillChart skills={skills} categories={categories} />
+        ) : (
+          categories.map((category, key) => {
+            let categorySkills = skills.filter((skill) => skill.category.code === category.code)
+            return <SkillGroup skills={categorySkills} category={category.code} key={key} />
+          })
+        )}
+      </div>
     </Section>
   )
 }

@@ -4,4 +4,8 @@
   .display-type {
     @include icon-button-style;
   }
+
+  .content {
+    margin-top: 3rem;
+  }
 }
