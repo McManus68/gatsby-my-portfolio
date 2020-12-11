@@ -25,6 +25,7 @@ import {
   faThList,
   faProjectDiagram,
   faMusic,
+  faChessKing
 } from '@fortawesome/free-solid-svg-icons'
 
 import { faAngellist } from '@fortawesome/free-brands-svg-icons'
