@@ -6,8 +6,8 @@
     display: flex;
     flex-direction: row;
     width: 100%;
-    max-width: 1200px;
-    margin-top: 3rem;
+    max-width: $max-container-width;
+    margin-top: 5rem;
 
     .photo {
       margin: 0 3rem 3rem 3rem;

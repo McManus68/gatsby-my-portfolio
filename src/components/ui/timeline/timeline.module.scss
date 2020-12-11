@@ -4,9 +4,10 @@
 .timeline {
   display: flex;
   flex-direction: column;
-  margin-top: 2rem;
+  margin-top: 4rem;
   position: relative;
   width: 100%;
+  max-width: $max-container-width;
 
   &:before {
     content: '';

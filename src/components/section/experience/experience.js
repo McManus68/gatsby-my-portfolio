@@ -1,14 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import style from './experience.module.scss'
-
 import Section from '../../ui/section/section'
 import TimeLine from '../../ui/timeline/timeline'
 
 const Experience = ({ experiences, section }) => {
   return (
-    <Section section={section} className={style.experience}>
+    <Section section={section}>
       <TimeLine data={experiences} />
     </Section>
   )

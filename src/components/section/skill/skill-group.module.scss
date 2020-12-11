@@ -1,25 +1,27 @@
 @import '../../../styles/_common';
 
 .skill-group {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 2rem 0 0 0;
-  max-width: 1000px;
+  display: grid;
+  grid-template-columns: 100px 14px 1fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 5px;
+  grid-row-gap: 25px;
+  max-width: $max-container-width;
+  width: 100%;
+  margin: 2.5rem 0;
 
   .group-name {
     padding: 0.5rem;
-    font-size: 1.2rem;
-    text-transform: uppercase;
+    text-align: right;
+    margin-top: auto;
 
-    &::after {
-      @include title-border-style;
-      border-bottom: 2px solid currentColor;
-    }
+    &::first-letter {
+      text-transform: uppercase;
+    }   
+  }
 
-    svg {
-      padding-right: 0.5rem;
-    }
+  .group-separator {
+    background-color: currentColor;
   }
 
   .items {
@@ -29,5 +31,6 @@
     justify-content: center;
     align-items: center;
     padding: 0 0.5rem;
+    width: 100%;
   }
 }

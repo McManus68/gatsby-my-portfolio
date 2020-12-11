@@ -18,58 +18,54 @@
   .theme-1 {
     --first-color: #fb544d;
     --first-color-darker: #fa241b;
-    --first-text-color: #000;
-    --second-text-color: #000;
+    --text-color: #000;
     --reverse-text-color: #fff;
-    --first-bg-color: #e8e8e8;
-    --second-bg-color: #fafafa;
+    --bg-color: #fafafa;
     --nav-text-color: #fff;
+    --card-text-color: #000;
     --card-bg-color: #fafafa;
-    color: var(--first-text-color);
+    color: var(--text-color);
     background-color: var(--first-bg-color);
   }
   .theme-2 {
     --first-color: #488cff;
     --first-color-darker: #2629c5;
-    --first-text-color: #000;
-    --second-text-color: #fff;
+    --text-color: #000;
     --reverse-text-color: #fff;
-    --first-bg-color: #fafafa;
-    --second-bg-color: #030207;
+    --bg-color: #fafafa;
     --nav-bg-color: #fafafa;
     --nav-text-color: #000;
-    --card-bg-color: #f3ebeb;
-    color: var(--first-text-color);
+    --card-text-color: #fff;
+    --card-bg-color: #4e3434;
+    color: var(--text-color);
     background-color: var(--first-bg-color);
   }
   .theme-3 {
     --first-color: #00ba8c;
     --first-color-darker: #00a77e;
-    --first-text-color: #fff;
-    --second-text-color: #000;
+    --text-color: #fff;
     --reverse-text-color: #000;
-    --first-bg-color: #030102;
-    --second-bg-color: #fffdf4;
+    --bg-color: #030102;
     --nav-bg-color: #fafafa;
     --nav-text-color: #000;
-    --card-bg-color: #1b0812;
+    --card-text-color: #000;
+    --card-bg-color: #fdb4db;
     --backend-color: #488cff;
     --devops-color: #f9ff21;
-    color: var(--first-text-color);
+    color: var(--text-color);
     background-color: var(--first-bg-color);
   }
   .theme-4 {
     --first-color: #dc0073;
     --first-color-darker: rgb(168, 8, 91);
-    --first-text-color: #000;
-    --second-text-color: #000;
+    --text-color: #000;
     --reverse-text-color: #fff;
-    --first-bg-color: #e7f6fc;
-    --second-bg-color: #fafafa;
+    --bg-color: #e7f6fc;
     --nav-bg-color: #000;
     --nav-text-color: #fff;
+    --card-text-color: #000;
     --card-bg-color: #fafafa;
-    color: var(--first-text-color);
+    color: var(--text-color);
     background-color: var(--first-bg-color);
   }
 }

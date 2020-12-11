@@ -2,8 +2,8 @@
 
 .skill-item {
   padding: 5px;
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -14,7 +14,7 @@
   box-shadow: 1px 1px 15px 4px rgba(67, 38, 100, 0.15);
   border-bottom-right-radius: 15px;
   margin: 1.1em 0.7em;
-  color: var(--first-text-color);
+  color: var(--card-text-color);
 
   img {
     width: 32px;

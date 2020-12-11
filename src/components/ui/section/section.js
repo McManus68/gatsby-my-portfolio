@@ -13,7 +13,6 @@ const Section = ({ section, className, children }) => {
         <Separator />
         {children}
       </div>
-      <div className={style.arrow}></div>
     </section>
   )
 }

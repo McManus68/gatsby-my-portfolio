@@ -9,6 +9,7 @@ const SkillGroup = ({ skills, category }) => {
   return (
     <div className={style.skillGroup}>
       <span className={`${style.groupName} ${category}`}>{category}</span>
+      <div className={`${style.groupSeparator} ${category}`}></div>
       <div className={style.items}>
         {skills.map((item, index) => {
           return <SkillItem skill={item} category={category} key={index} />

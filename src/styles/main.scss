@@ -55,29 +55,17 @@ h2 {
 }
 
 main section {
-  color: var(--first-text-color);
-  background-color: var(--first-bg-color);
+  color: var(--text-color);
+  background-color: var(--bg-color);
 }
 
-main section:nth-child(2n) {
-  color: var(--second-text-color);
-  background-color: var(--second-bg-color);
-}
-
-main section div[class*='arrow'] {
-  border-top: solid 30px var(--first-bg-color);
-}
-
-main section:nth-child(2n) div[class*='arrow'] {
-  border-top: solid 30px var(--second-bg-color);
-}
 
 // Global style needed cause the css classes are used in Contenful content
 .separator {
   @include title-border-style;
   margin: 2rem auto;
   width: 3rem;
-  border-bottom: 2px dashed var(--first-text-color);
+  border-bottom: 2px dashed var(--text-color);
 }
 
 .techno {
@@ -95,7 +83,7 @@ $categories: 'frontend', 'backend', 'devops', 'cms', 'db';
   }
   .item-#{$category} {
     background: var(--card-bg-color)
-      linear-gradient(135deg, var(--#{$category}-color) 15px, rgba(0, 0, 0, 0.01) 0);
+      linear-gradient(135deg, var(--#{$category}-color) 8px, rgba(0, 0, 0, 0.01) 0);
   }
 }
 
