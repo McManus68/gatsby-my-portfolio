@@ -13,7 +13,7 @@ My resume built using Gatsby JS and Contenful.
 
 ## 🚀 Démo
 
-https://www.emmanuel-tarrou.com/
+https://emmanuel-tarrou.netlify.app/
 
 ## 🚀 Quick start
 
